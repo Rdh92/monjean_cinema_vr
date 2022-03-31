@@ -31,7 +31,7 @@ function estConnecte() {
     if (isset($_SESSION['membre'])) { // s'il y a un indice membre, le membre est passé par la page de connexion
         return true; // true = il est connecté
     } else {
-        return false;  // false = il n'est as connecté
+        return false;  // false = il n'est pas connecté
     }
 }
 

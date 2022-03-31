@@ -13,7 +13,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'deconnexion') { // si il exist
 }
 // 3- REDIRECTION VERS LA PAGE PROFIL
 if (estConnecte()) { // si le membre est connecté on le renvoi vers le profil
-    header('location:profil.php');// header() est une fonction prédéfinie qui va nous rediriger vers la page souhaitée (ici profil.php)
+    header('location:../accueil.admin.php');// header() est une fonction prédéfinie qui va nous rediriger vers la page souhaitée (ici profil.php)
     exit();
 }
 
@@ -72,19 +72,19 @@ if ( !empty( $_POST ) ) {
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <title>La boutique - Connectez-vous</title>
+    <title>Connectez-vous</title>
   </head>
-  <body class="m-2">
-   <header class="container bg-primary text-white p-4 ">
-        <h1 class="display-4">Connexion à votre espace </h1>
-        <p class="lead">Rentrez vos identifiants pour vous connecter</p>
+  <body>
+   <header class="container bg-success bg-gradient text-white p-2 ">
+        <h1 class="display-4">Connexion à votre espace administrateur</h1>
+        <p class="lead">Administration site Montjean_cinéma</p>
    </header>
    <div class="container">      
         <section class="row m-4 justify-content-center">
             
         <?php echo $message; ?>            
-            <div class="col-md-4 bg-light border border-primary">
-                <p class="lead">Rentrez vos identifiants pour vous connecter</p> 
+            <div class="col-md-9 p-4 text-white bg-success bg-gradient border border-warning">
+                <p class="lead text-color-white">Rentrez vos identifiants pour vous connecter</p> 
                 <!-- 1- FORMULAIRE DE CONNEXION   -->
                 <form action="" method="POST" class="">
                     <?php echo $contenu; ?>
@@ -97,7 +97,7 @@ if ( !empty( $_POST ) ) {
                         <input type="password" name="mdp" id="mdp" class="form-control">
                     </div>
                         <div class="form-group mt-2">
-                        <input type="submit" value="Connectez-vous" class="btn btn-sm btn-success"> 
+                        <input type="submit" value="Connectez-vous" class="btn btn-sm btn-warning"> 
                     </div>
                 </form>
             </div>

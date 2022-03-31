@@ -4,7 +4,7 @@
           <div class="col-12">
             <a class="p-4 text-light" href="programme.php">Voir le programme</a>
             <a class="p-4 text-light" href="panier.php">Réserver</a>
-            <a class="p-4 text-light" href="inscription.php">S'inscrire</a>
+            <a class="p-4 text-light" href="../../inscription.php">S'inscrire</a>
             <a class="p-4 text-light" href="connexion.php">Se connecter</a>
             <a class="p-4 text-light" href="contact.php">Contactez-nous</a>
             <a class="p-4 text-light" href="infos_pratiques.php">Informations pratiques</a>

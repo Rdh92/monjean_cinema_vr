@@ -8,7 +8,7 @@ if (!estAdmin()) { // accès non autorisé si on n'est pas admin (et pas connect
 
 // 3 RÉCEPTION DES INFORMATIONS D'UN PRODUIT AVEC $_GET
 debug($_GET);
-if ( isset($_GET['id_produit']) ) {
+if ( isset($_GET['id_film']) ) {
     debug($_GET);
     $resultat = $pdoMAB->prepare( " SELECT * FROM produits, categories WHERE produits.id_categorie = categories.id_categorie AND id_produit = :id_produit " );
     $resultat->execute(array(
@@ -33,9 +33,6 @@ if ( !empty($_POST) ) {//not empty
 $_POST['categories'] = htmlspecialchars($_POST['categorie']);
 $_POST['titre'] = htmlspecialchars($_POST['titre']);
 $_POST['description'] = $_POST['description'];
-
-$_POST['taille'] = htmlspecialchars($_POST['taille']);
-$_POST['public'] = htmlspecialchars($_POST['public']);
 $_POST['prix'] = htmlspecialchars($_POST['prix']);
 $_POST['stock'] = htmlspecialchars($_POST['stock']);
 

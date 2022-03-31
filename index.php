@@ -40,7 +40,7 @@ require_once 'inc/init.inc.php';
     <!-- Mes styles -->
     <link rel="stylesheet" href="css/styles.css" >
 
-    <title>Test - Montjean Cinéma</title>
+    <title>Montjean Cinéma</title>
 </head>
 
 <body>
@@ -59,7 +59,7 @@ require_once 'inc/init.inc.php';
         ?>
     </div>
     <!-- fin jumbotron -->
-maj
+
     <div class="container rounded">
       <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>

@@ -41,7 +41,7 @@ if (!estConnecte()) { // accès à la page autorisé quand on est connecté
             <ul class="nav nav-pills nav-fill">
             <?php 
                 if(estAdmin()) { // si le membre est 'admin' il n'a pas les mêmes accès qu'un membre 'client'
-                    echo '<li class="nav-item"><a class="btn btn-primary" href="' .RACINE_SITE. 'admin/accueil.php">Espace admin</a></li>';
+                    echo '<li class="nav-item"><a class="btn btn-primary" href="' .RACINE_SITE. 'admin/accueil.admin.php">Espace admin</a></li>';
                     echo '<li class="nav-item"><a class="btn btn-success" href="' .RACINE_SITE. 'index.php">Aller à l\'Accueil du Montjean !</a></li>';
                     // echo 'coucou';
                 } else {

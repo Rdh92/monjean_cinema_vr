@@ -122,7 +122,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <title>La Boutique - Administration</title>
+    <title>Administration</title>
 
 	 <!-- ck editor 5  -->
      <script src="https://cdn.ckeditor.com/ckeditor5/30.0.0/classic/ckeditor.js"></script>
@@ -136,21 +136,14 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
         <div class="row">
           <div class="col-5">
             <h1 class="display-4">Admin</h1>
-            <p class="lead">La Boutique gestion des produits</p>
+            <p class="lead">La Boutique gestion des films</p>
           </div>         
-          <?php require_once '../inc/navbar.inc.php'; ?>
+          <?php require_once '../inc/navbis.inc.php'; ?>
         </div>
    </header>
 
    <div class="container">      
-        <section class="row m-4 justify-content-center">
-          
-            <?php echo $contenu02; ?>
-            <?php
-             $requete = $pdoMAB->query( " SELECT * FROM produits, categories WHERE produits.id_categorie = categories.id_categorie " );
-             $nbr_produits = $requete->rowCount();
-            ?>
-            <h2>Les produits : <?php echo $nbr_produits; ?></h2>           
+        <section class="row m-4 justify-content-center">          
             <div class="col-md-8 p-2 bg-light border border-primary">
                 <table class=" table table-striped">
             <?php
@@ -158,16 +151,15 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
               while ( $ligne = $requete->fetch( PDO::FETCH_ASSOC )) { ?>
                 <tr>
                     <td> <img src="../<?php echo $ligne['photo']; ?>" class="figure-img img-fluid rounded img-admin"></td>
-                    <td> <?php echo $ligne['id_produit']; ?></td>
+                    <td> <?php echo $ligne['id_film']; ?></td>
                     <td>ref. <?php echo $ligne['reference']; ?></td>                   
-                    <td><?php echo $ligne['titre']. ' ** ' .$ligne['categorie']; ?></td>
+                    <td><?php echo $ligne['titre']. ' ** ' .$ligne['categories']; ?></td>
                     <td><?php echo html_entity_decode($ligne['description']); ?></td>
-                    <td><?php echo $ligne['couleur']; ?></td>
                     <td><?php echo $ligne['public']; ?></td>
                     <td><?php echo $ligne['prix']; ?> Euros</td>
                     <td><?php echo $ligne['stock']; ?></td>
-                    <td><a href="fiche_produit.php?id_produit=<?php echo $ligne['id_produit']; ?>">maj</a></td>
-                    <td><a href="?action=supprimer&id_produit=<?php echo $ligne['id_produit']; ?>" onclick="return(confirm('Voulez-vous supprimer cet article id  <?php echo $ligne['id_produit']; ?> ? '))">suppr</a></td>
+                    <td><a href="fiche_film.php?id_produit=<?php echo $ligne['id_film']; ?>">maj</a></td>
+                    <td><a href="?action=supprimer&id_produit=<?php echo $ligne['id_film']; ?>" onclick="return(confirm('Voulez-vous supprimer cet article id  <?php echo $ligne['id_film']; ?> ? '))">suppr</a></td>
                 </tr>
                 <!-- fermeture de la boucle -->
             <?php   } 
@@ -189,12 +181,8 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
                     <input type="text" name="reference" id="reference" class="form-control">
 
                     <label for="id_categorie" class="form-label">Catégorie *</label>
-                    <select name="id_categorie" id="id_categorie" class="form-select">
-                       <?php
-                        foreach ( $pdoMAB->query ( " SELECT * FROM categories ORDER BY categorie ASC " ) as $ligne_categorie ) {
-                            echo '<option value="' .$ligne_categorie['id_categorie']. '">' .$ligne_categorie['categorie']. '</option>';
-                        }
-                       ?>
+                    <select name="id_film" id="id_categorie" class="form-select">
+                       
                     </select>
 
                     <label for="titre" class="form-label">Titre *</label>
@@ -205,18 +193,6 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
                     
                     <label for="couleur" class="form-label">Couleur *</label>
                     <input type="text" name="couleur" id="couleur" class="form-control">
-
-                    <label for="taille" class="form-label">Taille *</label>
-                    <select name="taille" id="taille" class="form-select">
-                        <option value="XS">Extra-small</option>
-                        <option value="S">Small</option>
-                        <option value="M">Medium</option>
-                        <option value="L">Large</option>
-                        <option value="XL">Extra-large</option>
-                    </select>
-
-                    <input type="radio" name="public" value="f" class="form-check-input" checked>
-                    <label for="public" class="form-check-label">Femme</label>
 
                     <input type="radio" name="public" value="m" class="form-check-input">
                     <label for="public" class="form-check-label">Masculin</label>

@@ -21,7 +21,7 @@ array(
 // var_dump(get_class_methods($pdoMJC));
 
 //2- OUVERTURE DE SESSION
-// session_start();
+session_start();
 
 //3- CHEMIN DU SITE DANS UNE CONSTANTE
 // Ici on définit le chemin absolut dans une constante, on écrira tous les chemins src et href avec cette constante

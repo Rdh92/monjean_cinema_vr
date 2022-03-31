@@ -80,7 +80,7 @@ require_once 'inc/init.inc.php';
     <!-- fin container-fluid header -->
 
   <body class="m-2">      
-      <?php require_once 'inc/nav.inc.php'; ?>
+      <?php require_once 'inc/navbar.inc.php'; ?>
 
     <header class="container bg-warning p-4">
             <h1 class="display-4">Votre profil </h1>

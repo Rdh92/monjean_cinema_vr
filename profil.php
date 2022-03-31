@@ -32,9 +32,9 @@ if (!estConnecte()) { // accès à la page autorisé quand on est connecté
             <p class="lead">Bonjour <?php echo $_SESSION['membre']['prenom']; ?>
             <?php
             if(estAdmin()) { // si le membre est 'admin' il n'a pas les mêmes accès qu'un membre 'client'
-                echo ' -- Vous êtes administrateur</p>';
+                echo ' -- Vous êtes administrateur !</p>';
             } else {
-                echo ' -- Vous êtes connecté rendez-vous à la Boutique</p>';
+                echo ' -- Vous êtes connecté ! Rendez-vous à l\'Accueil du Montjean !</p>';
             }
             ?>
 
@@ -42,10 +42,10 @@ if (!estConnecte()) { // accès à la page autorisé quand on est connecté
             <?php 
                 if(estAdmin()) { // si le membre est 'admin' il n'a pas les mêmes accès qu'un membre 'client'
                     echo '<li class="nav-item"><a class="btn btn-primary" href="' .RACINE_SITE. 'admin/accueil.php">Espace admin</a></li>';
-                    echo '<li class="nav-item"><a class="btn btn-success" href="' .RACINE_SITE. 'index.php">Aller à la boutique</a></li>';
+                    echo '<li class="nav-item"><a class="btn btn-success" href="' .RACINE_SITE. 'index.php">Aller à l\'Accueil du Montjean !</a></li>';
                     // echo 'coucou';
                 } else {
-                    echo '<li class="nav-item"><a class="btn btn-success" href="index.php">Retour à la boutique</a></li>';
+                    echo '<li class="nav-item"><a class="btn btn-success" href="index.php">Retour à l\'Accueil du Montjean !</a></li>';
                 }
                 if (estConnecte()) {
                     //  echo 'coucou';

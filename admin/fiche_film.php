@@ -30,27 +30,25 @@ if ( isset($_GET['id_produit']) ) {
 if ( !empty($_POST) ) {//not empty
   debug($_POST);
 
-$_POST['reference'] = htmlspecialchars($_POST['reference']);
-$_POST['categorie'] = htmlspecialchars($_POST['categorie']);
+$_POST['categories'] = htmlspecialchars($_POST['categorie']);
 $_POST['titre'] = htmlspecialchars($_POST['titre']);
 $_POST['description'] = $_POST['description'];
-$_POST['couleur'] = htmlspecialchars($_POST['couleur']);
+
 $_POST['taille'] = htmlspecialchars($_POST['taille']);
 $_POST['public'] = htmlspecialchars($_POST['public']);
 $_POST['prix'] = htmlspecialchars($_POST['prix']);
 $_POST['stock'] = htmlspecialchars($_POST['stock']);
 
-$resultat = $pdoMAB->prepare( " UPDATE produits SET reference = :reference, categorie = :categorie, titre = :titre, description = :description, couleur = :couleur, taille = :taille, public = :public, prix = :prix, stock = :stock WHERE id_produit = :id_produit " );// requete préparée avec des marqueurs
+$resultat = $pdoMAB->prepare( " UPDATE produits SET reference = :reference, categorie = :categorie, titre = :titre, description = :description, prix = :prix, stock = :stock WHERE id_produit = :id_produit " );// requete préparée avec des marqueurs
 
 $resultat->execute( array(
   ':reference' => $_POST['reference'],
   ':categorie' => $_POST['categorie'],
   ':titre' => $_POST['titre'],
   ':description' => $_POST['description'],
-  ':couleur' => $_POST['couleur'],
-  ':taille' => $_POST['taille'],
   ':public' => $_POST['public'],
-  // ':photo' => $photo_bdd,
+  
+  ':photo' => $photo_bdd,
   ':prix' => $_POST['prix'],
   ':stock' => $_POST['stock'],
   ':id_produit' => $_GET['id_produit']

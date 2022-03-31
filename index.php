@@ -69,7 +69,7 @@ require_once 'inc/init.inc.php';
         ?>
     </div>
     <!-- fin jumbotron -->
-
+maj
     <div class="container rounded">
       <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -83,7 +83,7 @@ require_once 'inc/init.inc.php';
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="img/printemps_du_cinema_Capture d’écran 2022-03-26 184832.png" class="d-block w-100" alt="...">
+            <img src="affiches/printemps_du_cinema_Capture d’écran 2022-03-26 184832.png" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
               <!-- <h5>First slide label</h5>
               <p>Some representative placeholder content for the first slide.</p> -->
@@ -92,28 +92,28 @@ require_once 'inc/init.inc.php';
           <div class="carousel-item">
             <img src="affiches/batman.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5>Second slide label</h5>
+              <h5>BATMAN</h5>
               <p>Some representative placeholder content for the second slide.</p>
             </div>
           </div>
           <div class="carousel-item">
             <img src="affiches/permis_de_construire.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
+              <h5>PERMIS DE CONSTRUIRE</h5>
               <p>Some representative placeholder content for the third slide.</p>
             </div>
           </div>
           <div class="carousel-item">
             <img src="affiches/goliath.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
+              <h5>GOLIATH</h5>
               <p>Some representative placeholder content for the third slide.</p>
             </div>
           </div>
           <div class="carousel-item">
             <img src="affiches/notre_dame_brule.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
+              <h5>NOTRE DAME BRÛLE</h5>
               <p>Some representative placeholder content for the third slide.</p>
             </div>
           </div>
@@ -127,14 +127,14 @@ require_once 'inc/init.inc.php';
           <div class="carousel-item">
             <img src="affiches/sonic2.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
+              <h5>SONIC 2</h5>
               <p>Some representative placeholder content for the third slide.</p>
             </div>
           </div>
           <div class="carousel-item">
             <img src="affiches/morbius.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
+              <h5>MORBIUS</h5>
               <p>Some representative placeholder content for the third slide.</p>
             </div>
           </div>

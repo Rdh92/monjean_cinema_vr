@@ -52,24 +52,12 @@ require_once 'inc/init.inc.php';
     <?php require_once 'inc/navbar.inc.php'; ?> 
    
   <header class="container-fluid f-header p-2 mb-4 bg-light col-12 text-center"><div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-    <div class="jumbotron jumbotron-fluid p-4 m-4">
-      <h1 class="display-4">Printemps du Cinéma 2022</h1>
-      <p class="lead">L'événement revient après deux ans d’absence en raison de la crise Covid-19. <br>
-      C'est un rendez-vous incontournable et un événement populaire immanquable !</p>
-
-      <p>Du dimanche 20 au mardi 22 mars 2022 inclus, dans toute la France, pour un tarif exceptionnel de 4 € la séance!</p>
-
-      <a class="border border-secondary btn-lg" href="https://video.wbdsta.net/ops/allocine/PrintempsDuCinema/PrintempsDuCinema_2.mp4" role="button">Plus d'infos</a>
-
-        <hr class="my-4">
-       <!-- passage PHP pour tester s'il fonctionne avant de poursuivre -->
+        <!-- passage PHP pour tester s'il fonctionne avant de poursuivre -->
        <?php
           // $positiva = "Bon ciné !";
           // echo "<p class=\"text-green\">$positiva</p>";
         ?>
-    </div>
-    <!-- fin jumbotron -->
-
+  <!-- div pour le carousel -->
     <div class="container rounded">
       <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -153,31 +141,82 @@ require_once 'inc/init.inc.php';
   </header>
       <!-- fin container-fluid header -->
     
-    <!-- ====================================================== -->
+      <!-- ====================================================== -->
     <!--                CONTAINER : contenu principal           --> 
     <!-- ====================================================== -->
   <main class="container">
-    <section class="text-center">
-      <div class="row py-lg-5">
-        <div class="col-lg-6 col-md-8 mx-auto">
-          <h2 class="fw-light">Venez passez un bon moment !</h2>
-          <p class="lead text-muted"></p>
-          <p>
-            <a href="programme.php" class="btn btn-secondary my-2">Consulter le programme</a>
-          </p>
-        </div>
-      </div>
-      <!--  fin row 1 -->
-    </section>    
-  </main>
-  <!-- fin container
+    <!-- DEBUT SECTION : A L AFFICHE -->
+    <section class="py-5 text-center">
+        <h2 class="fw-light">A l'affiche</h2>
+        <div class="album py-5 bg-light">
+            <div class="galerie justify-content-evenly">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
 
-  VOIR pour la transition du carrousel : https://getbootstrap.com/docs/4.3/components/carousel/#carouselcycle -->
+                  <!-- debut div col de la galerie -->
+                    <div class="col">
+                        <div class="card shadow-sm m-4" style="width: 18rem;">
+                            <img src="affiches/batman.jpg" class="card-img-top rounded-3" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- fin col -->
+                    
+                    <div class="col">
+                        <div class="card shadow-sm m-4" style="width: 18rem;">
+                            <img src="affiches/notre_dame_brule.jpg" class="card-img-top rounded-3" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- fin col -->
+            
+                    <div class="col">
+                        <div class="card shadow-sm m-4" style="width: 18rem;">
+                            <img src="affiches/ambulance.jpg" class="card-img-top rounded-3" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- fin col -->
+            
+                    <div class="col">
+                        <div class="card shadow-sm m-4" style="width: 18rem;">
+                            <img src="affiches/goliath.jpg" class="card-img-top rounded-3" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- fin col -->
+                </div>
+                <!-- fin row -->
+            </div>
+           <!--  fin container -->
+        </div class="album py-5 bg-light">
+    </section>
+    <!-- FIN SECTION : A L AFFICHE -->
+  </main>
+  <!-- fin container  -->
+
+  <!-- VOIR pour la transition du carrousel : https://getbootstrap.com/docs/4.3/components/carousel/#carouselcycle -->
 
     <!-- ====================================================== -->
     <!--                  FOOTER : en require                   --> 
     <!-- ====================================================== -->  
     <?php require_once 'inc/footer.inc.php';?> 
+
 
     <!-- ====================================================== -->
     <!--              Bootstrap Bundle with Popper              --> 

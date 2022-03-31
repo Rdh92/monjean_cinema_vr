@@ -13,7 +13,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'deconnexion') { // si il exist
 }
 // 3- REDIRECTION VERS LA PAGE PROFIL
 if (estConnecte()) { // si le membre est connecté on le renvoi vers le profil
-    header('location:../accueil.admin.php');// header() est une fonction prédéfinie qui va nous rediriger vers la page souhaitée (ici profil.php)
+    header('location:../profil.php');// header() est une fonction prédéfinie qui va nous rediriger vers la page souhaitée (ici profil.php)
     exit();
 }
 

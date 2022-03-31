@@ -2,7 +2,7 @@
 
 // 1- FONCTION VAR DUMP AVEC STYLES BOOTSTRAP : ma fonction var_dump est nomée "debug" :
 function debug($mavar) { // la fonction avec son paramètre, une variable
-    echo "<br><small class=\"bg-success text-white \"> * * *  var_dump de la BDD test_montjean * * *  </smal><pre class=\"alert alert-info w-25\">";
+    echo "<br><small class=\"bg-danger text-white \"> * * *  var_dump de la BDD montjean_cinema * * *  </smal><pre class=\"alert alert-info w-25\">";
     var_dump($mavar); // à cette variable on applique la fonction var_dump()
     echo "</pre>";
 
@@ -12,9 +12,9 @@ function debug($mavar) { // la fonction avec son paramètre, une variable
 function executeRequete( $requete, $parametres = array ()) { // utile pour toutes les requetes 1) la requete  2) fabrication du tableau avec des marqueurs
     foreach ($parametres as $indice => $valeur) { // boucle foreach
         $parametres[$indice] = htmlspecialchars($valeur); // boucle foreach // pour eviter les injections ???
-        global $pdoTMJ; // "global" nous permet d'acceder à la variable $pdoMTJ dans l'espace global du fichier init.inc.php
+        global $pdoMJC; // "global" nous permet d'acceder à la variable $pdoMJC dans l'espace global du fichier init.inc.php
 
-        $resultat = $pdoTMJ->prepare($requete); // prépare requête
+        $resultat = $pdoMJC->prepare($requete); // prépare requête
         $succes = $resultat->execute($parametres); // et ici exécute
 
         if ($succes === false) {

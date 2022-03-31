@@ -1,6 +1,3 @@
-init.inc.php
-
-
 <?php
 
 // connexion la session star, une constante

@@ -16,13 +16,13 @@ if ( isset($_GET['id_produit']) ) {
     ));
     // debug($resultat->rowCount());
       if ($resultat->rowCount() == 0) { // si le rowCount est égal à 0 c'est qu'il n'y a pas de produit
-          header('location:accueil.php');// redirection vers la page de départ
+          header('location:index.php');// redirection vers la page de départ
           exit();// arrêt du script
       }  
       $fiche = $resultat->fetch(PDO::FETCH_ASSOC);//je passe les infos dans une variable
     //   debug($fiche);// ferme if isset accolade suivante
       } else {
-      header('location:accueil.php');// si j'arrive sur la page sans rien dans l'url
+      header('location:index.php');// si j'arrive sur la page sans rien dans l'url
       exit();// arrête du script
   }
 
@@ -56,7 +56,7 @@ $resultat->execute( array(
   ':id_produit' => $_GET['id_produit']
 
 ));
-header('location:accueil.php');
+header('location:index.php');
 exit();
 }
 

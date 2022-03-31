@@ -1,0 +1,23 @@
+/* styles pour le dossier test_montjean en PHP */
+
+/* Couleurs charte graphique  */
+/* bleu marine : #3340A7;  */
+/* gris clair : #E0E4EF; */
+
+body {
+    font-family:'Barlow';
+    color:  rgba(48, 3, 151, 0.8);
+    font-size: 1.5em;
+}
+
+footer{
+    background-color: #3340A7;
+    color: #E0E4EF;
+}
+
+/* h1, h2, h3, h4 {
+    color: rgba(132, 113, 122, 0.8); */
+/* } */
+
+
+

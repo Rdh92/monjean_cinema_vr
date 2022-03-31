@@ -1,9 +1,14 @@
-<?php 
-// require connexion, session etc.
+<?php
+// 1- POUR SE CONNECTER ET SE DECONNECTER avec fichier init, REQUIRE CONNEXION, SESSION, ETC :
+
+// 2- (CONNEXION AU FICHIER INIT dans le dossier INC)
 require_once 'inc/init.inc.php';
 
+
 // debug($_SESSION);
-// debug(strlen(' ma grand mère fait du vélo plus vite que moi '));
+
+
+// 3 - TRAITEMENT DU FORMULAIRE : INSERTION D'UN NOUVEAU MEMBRE - ENVOI DES INFORMATIONS A SCTOKER AVEC $_POST : 
 
 if ( !empty($_POST) ) {
     // debug($_POST);
@@ -106,7 +111,7 @@ if ( !empty($_POST) ) {
        </div>
         <section class="row m-4 justify-content-center">
              
-            <div class="col-md-6 p-2 bg-light border border-primary">
+            <div class="col-md-6 p-2 bg-light border border-warning">
                 
                 <form action="" method="POST">
                 <div class="form-group mt-2">

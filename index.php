@@ -1,5 +1,5 @@
 <?php 
-// POUR SE CONNECTER ET SE DECONNECTER vec fichier init :
+// POUR SE CONNECTER ET SE DECONNECTER avec fichier init :
 
 // (CONNEXION AU FICHIER INIT dans le dossier INC)
 require_once 'inc/init.inc.php';
@@ -51,6 +51,10 @@ require_once 'inc/init.inc.php';
     
     <?php require_once 'inc/navbar.inc.php'; ?> 
    
+    <!-- ====================================================== -->
+    <!--              EN-TETE : header avec carousel            --> 
+    <!-- ====================================================== --> 
+    
   <header class="container-fluid f-header p-2 mb-4 bg-light col-12 text-center"><div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <!-- passage PHP pour tester s'il fonctionne avant de poursuivre -->
        <?php
@@ -61,6 +65,7 @@ require_once 'inc/init.inc.php';
     <!-- fin jumbotron -->
 
     <div class="container rounded">
+      <h1>Bienvenue au Montjean Cinéma !</h1>
       <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -73,7 +78,7 @@ require_once 'inc/init.inc.php';
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="affiches/printemps_du_cinema_Capture d’écran 2022-03-26 184832.png" class="d-block w-100" alt="...">
+            <img src="img/printemps_du_cinema_Capture d’écran 2022-03-26 184832.png" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
               <!-- <h5>First slide label</h5>
               <p>Some representative placeholder content for the first slide.</p> -->
@@ -143,7 +148,7 @@ require_once 'inc/init.inc.php';
   </header>
       <!-- fin container-fluid header -->
     
-      <!-- ====================================================== -->
+    <!-- ====================================================== -->
     <!--                CONTAINER : contenu principal           --> 
     <!-- ====================================================== -->
   <main class="container">

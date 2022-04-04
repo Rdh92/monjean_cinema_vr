@@ -18,7 +18,7 @@ require_once 'inc/init.inc.php';
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;1,400&family=Belgrano&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,800;1,300;1,400&family=Michroma&display=swap" rel="stylesheet">
 
     <!-- favicon -->
     <link rel="shortcut icon" type="image/png" href="img/favicon.ico"/>
@@ -155,7 +155,7 @@ require_once 'inc/init.inc.php';
     <!-- DEBUT SECTION : A L AFFICHE -->
     <section class="py-5 text-center">
         <h2 class="fw-light">A l'affiche</h2>
-        <div class="album py-5 bg-light">
+        <div class="album py-5 bg-light ">
             <div class="galerie justify-content-evenly">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
 

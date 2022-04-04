@@ -15,7 +15,7 @@ if (!estConnecte()) { // accès à la page autorisé quand on est connecté
 ?> 
 
 <?php 
-// POUR SE CONNECTER ET SE DECONNECTER vec fichier init :
+// POUR SE CONNECTER ET SE DECONNECTER avec fichier init :
 
 // (CONNEXION AU FICHIER INIT dans le dossier INC)
 require_once 'inc/init.inc.php';
@@ -34,7 +34,7 @@ require_once 'inc/init.inc.php';
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;1,400&family=Belgrano&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,800;1,300;1,400&family=Michroma&display=swap" rel="stylesheet">
 
     <!-- favicon -->
     <link rel="shortcut icon" type="image/png" href="img/favicon.ico"/>

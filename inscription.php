@@ -105,7 +105,7 @@ require_once 'inc/init.inc.php';
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;1,400&family=Belgrano&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,800;1,300;1,400&family=Michroma&display=swap" rel="stylesheet">
 
     <!-- favicon -->
     <link rel="shortcut icon" type="image/png" href="img/favicon.ico"/>
@@ -160,7 +160,7 @@ require_once 'inc/init.inc.php';
        </div>
         <section class="row m-4 justify-content-center">
              
-            <div class="col-md-6 p-2 bg-light border border-warning">
+            <div class="col-md-6 p-2 bg-light border border-primary">
                 
                 <form action="" method="POST">
                 <div class="form-group mt-2">
@@ -205,7 +205,7 @@ require_once 'inc/init.inc.php';
                 </div>
             </div>
             <div class="form-group mt-2">
-                <input type="submit" value="Inscription" class="btn btn-sm btn-success"> 
+                <input type="submit" value="Inscription" class="rounded-pill btn btn-sm btn-danger"> 
             </div>
                 </form>
             </div>

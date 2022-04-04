@@ -18,7 +18,7 @@ require_once 'inc/init.inc.php';
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;1,400&family=Belgrano&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,800;1,300;1,400&family=Michroma&display=swap" rel="stylesheet">
 
     <!-- favicon -->
     <link rel="shortcut icon" type="image/png" href="img/favicon.ico"/>
@@ -71,7 +71,7 @@ require_once 'inc/init.inc.php';
               Au guichet du cinéma <br>
               de mercredi à dimanche <br>
               de 14 h à 22 h <br>
-          <p>Adresse : Rue de l'AUmônerie 49570 Mauges-sur-Loire</p>
+          <p>Adresse : Rue de l'Aumônerie 49570 Mauges-sur-Loire</p>
           <p>Par téléphone : 00 00 00 00 00</p>
           <p>Par e-email : montjean@montjean.com</p>
       </div>

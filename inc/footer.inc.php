@@ -14,7 +14,7 @@
           <div class="col-12">
             <a class="p-4 text-light" href="mentions_legales.php">Mentions légales</a>
             <a class="p-4 text-light" href="confidentialite.php">Politique de confidentialité</a>
-            <a class="p-4 text-light" href="cookies.php">Politique des cookies</a>
+            <a class="p-4 text-light" href="cookies.php">Cookies</a>
           </div>
           <!-- fin col -->
 

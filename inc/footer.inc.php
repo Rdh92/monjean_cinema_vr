@@ -1,12 +1,12 @@
-<footer class="container-fluid p-3 m-5 m-auto text-center bg-secondary">
+<footer class="container-fluid p-3 m-5 m-auto text-center">
 <!-- <footer class="container-fluid p-4 m-4 m-auto text-center" style="background-color: rgba(132, 113, 122, 0.8);"> -->  
         <div class="row d-flex text-center justify-content-center">
           <div class="col-12">
             <a class="p-4 text-light" href="programme.php">Voir le programme</a>
-            <a class="p-4 text-light" href="panier.php">Réserver</a>
-            <a class="p-4 text-light" href="../../inscription.php">S'inscrire</a>
+            <!-- <a class="p-4 text-light" href="panier.php">Réserver</a> -->
+            <a class="p-4 text-light" href="inscription.php">S'inscrire</a>
             <a class="p-4 text-light" href="connexion.php">Se connecter</a>
-            <a class="p-4 text-light" href="contact.php">Contactez-nous</a>
+            <a class="p-4 text-light" href="contact.php">Contact</a>
             <a class="p-4 text-light" href="infos_pratiques.php">Informations pratiques</a>
           </div>
           <!-- fin col -->

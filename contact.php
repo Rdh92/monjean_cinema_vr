@@ -100,11 +100,7 @@ require_once 'inc/init.inc.php';
 	<!-- section -->
 		<section class="row text-center m-5 py-5">
 			<h3>Nous retrouver !</h3>
-      <div class="col-4">
-        <p>Adresse :</p>
-        <p>Téléphone :</p>
-      </div>
-			<div class="col-4 m-2 p-2">
+			<div class="m-2 p-2">
         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10804.743787052914!2d-0.8622309!3d47.3888047!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3479c23dee996fa2!2sMontjean%20Cin%C3%A9ma!5e0!3m2!1sfr!2sfr!4v1648318885619!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
 		</section>

@@ -11,23 +11,19 @@
 
 
 body {
-    font-family: 'Michroma', bold, sans-serif;
+    font-family: 'Michroma', sans-serif;
     color: #110D2C;
-    background-color: #E0E4EF;
     font-size: 1.5em;
 }
 
-.navbar {
-    color: #E0E4EF;
-}
-
-
-footer{
-    background-color: #E0E4EF;
-}
-
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
     font-family: 'Barlow', sans-serif;
+}
+
+footer {
+    background-color: #3340A7;
+   color: #000000;
+    /* color: #E0E4EF; */
 }
 
 

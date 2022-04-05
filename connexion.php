@@ -1,7 +1,7 @@
 <?php 
 // 1- POUR SE CONNECTER ET SE DECONNECTER
 require_once 'inc/init.inc.php';
-debug($_SESSION);
+//debug($_SESSION);
 
 // 2- DÉCONNEXION DU MEMBRE
 // debug($_GET);

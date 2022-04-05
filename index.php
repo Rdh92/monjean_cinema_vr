@@ -78,7 +78,7 @@ require_once 'inc/init.inc.php';
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="img/printemps_du_cinema_Capture d’écran 2022-03-26 184832.png" class="d-block w-100" alt="...">
+            <img src="img/printemps_du_cinema.png" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
               <!-- <h5>First slide label</h5>
               <p>Some representative placeholder content for the first slide.</p> -->

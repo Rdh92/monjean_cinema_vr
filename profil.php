@@ -15,7 +15,7 @@ if (!estConnecte()) { // accès à la page autorisé quand on est connecté
 ?> 
 
 <?php 
-// POUR SE CONNECTER ET SE DECONNECTER vec fichier init :
+// POUR SE CONNECTER ET SE DECONNECTER avec fichier init :
 
 // (CONNEXION AU FICHIER INIT dans le dossier INC)
 require_once 'inc/init.inc.php';
@@ -104,7 +104,7 @@ require_once 'inc/init.inc.php';
                 }
                 if (estConnecte()) {
                     //  echo 'coucou';
-                    echo '<li class="nav-item"><a class="btn btn-secondary" href="' .RACINE_SITE. 'connexion.php?action=deconnexion">Se déconnecter</a></li>';
+                    echo '<li class="nav-item"><a class="btn btn-secondary" href="connexion.php?action=deconnexion">Se déconnecter</a></li>';
                 }
             ?>
             </ul>

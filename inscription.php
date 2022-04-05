@@ -105,7 +105,7 @@ require_once 'inc/init.inc.php';
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;1,400&family=Belgrano&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,800;1,300;1,400&family=Michroma&display=swap" rel="stylesheet">
 
     <!-- favicon -->
     <link rel="shortcut icon" type="image/png" href="img/favicon.ico"/>
@@ -160,7 +160,7 @@ require_once 'inc/init.inc.php';
        </div>
         <section class="row m-4 justify-content-center">
              
-            <div class="col-md-6 p-2 bg-light border border-warning">
+            <div class="col-md-6 p-2 bg-light border border-primary">
                 
                 <form action="" method="POST">
                 <div class="form-group mt-2">
@@ -205,7 +205,7 @@ require_once 'inc/init.inc.php';
                 </div>
             </div>
             <div class="form-group mt-2">
-                <input type="submit" value="Inscription" class="btn btn-sm btn-success"> 
+                <input type="submit" value="Inscription" class="rounded-pill btn btn-sm btn-danger"> 
             </div>
                 </form>
             </div>
@@ -214,17 +214,20 @@ require_once 'inc/init.inc.php';
         <!-- fin row -->
    </div>
 
-	
+    <!-- ====================================================== -->
+    <!--                  FOOTER : en require                   --> 
+    <!-- ====================================================== -->  
+    <?php require_once 'inc/footer.inc.php';?> 
 
-    <!-- Optional JavaScript; choose one of the two! -->
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- ====================================================== -->
+    <!--              Bootstrap Bundle with Popper              --> 
+    <!-- ====================================================== -->  
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    -->
-  </body>
+    <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+</body>
 </html>

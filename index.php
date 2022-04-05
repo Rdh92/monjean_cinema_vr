@@ -18,7 +18,8 @@ require_once 'inc/init.inc.php';
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;1,400&family=Belgrano&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,800;1,300;1,400&family=Michroma&display=swap" rel="stylesheet">
+
 
     <!-- favicon -->
     <link rel="shortcut icon" type="image/png" href="img/favicon.ico"/>
@@ -64,86 +65,30 @@ require_once 'inc/init.inc.php';
     </div>
     <!-- fin jumbotron -->
 
-    <div class="container rounded">
+    <div class="container rounded mt-5">
       <h1>Bienvenue au Montjean Cinéma !</h1>
-      <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" class="active" aria-current="true" aria-label="Slide 4"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6" aria-label="Slide 7"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="7" aria-label="Slide 8"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="img/printemps_du_cinema.png" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <!-- <h5>First slide label</h5>
-              <p>Some representative placeholder content for the first slide.</p> -->
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="affiches/batman.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>BATMAN</h5>
-              <p>Some representative placeholder content for the second slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="affiches/permis_de_construire.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>PERMIS DE CONSTRUIRE</h5>
-              <p>Some representative placeholder content for the third slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="affiches/goliath.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>GOLIATH</h5>
-              <p>Some representative placeholder content for the third slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="affiches/notre_dame_brule.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>NOTRE DAME BRÛLE</h5>
-              <p>Some representative placeholder content for the third slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="affiches/ogre.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>Some representative placeholder content for the third slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="affiches/sonic2.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>SONIC 2</h5>
-              <p>Some representative placeholder content for the third slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="affiches/morbius.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>MORBIUS</h5>
-              <p>Some representative placeholder content for the third slide.</p>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-    </ class="rounded-pill">
+
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="img/printemps_du_cinema_Capture d’écran 2022-03-26 184832.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="img/batman_686_356.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="img/box_office.png" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
     <!-- fin carousel -->
   </header>
       <!-- fin container-fluid header -->
@@ -155,18 +100,18 @@ require_once 'inc/init.inc.php';
     <!-- DEBUT SECTION : A L AFFICHE -->
     <section class="py-5 text-center">
         <h2 class="fw-light">A l'affiche</h2>
-        <div class="album py-5 bg-light">
+        <div class="album py-5">
             <div class="galerie justify-content-evenly">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
 
                   <!-- debut div col de la galerie -->
                     <div class="col">
                         <div class="card shadow-sm m-4" style="width: 18rem;">
-                            <img src="affiches/batman.jpg" class="card-img-top rounded-3" alt="...">
+                            <img src="affiches/goliath.jpg" class="card-img-top rounded-3" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <h5 class="card-title">Goliath</h5>
+                                <p class="card-text"></p>
+                                <a href="#" class="btn btn-light">Voir la bande d'annonce</a>
                             </div>
                         </div>
                     </div>
@@ -176,9 +121,9 @@ require_once 'inc/init.inc.php';
                         <div class="card shadow-sm m-4" style="width: 18rem;">
                             <img src="affiches/notre_dame_brule.jpg" class="card-img-top rounded-3" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <h5 class="card-title">Notre-Dame brûle</h5>
+                                <p class="card-text"></p>
+                                <a href="#" class="btn">Voir la bande d'annonce</a>
                             </div>
                         </div>
                     </div>
@@ -186,11 +131,11 @@ require_once 'inc/init.inc.php';
             
                     <div class="col">
                         <div class="card shadow-sm m-4" style="width: 18rem;">
-                            <img src="affiches/ambulance.jpg" class="card-img-top rounded-3" alt="...">
+                            <img src="affiches/em_meme_temps.jpg" class="card-img-top rounded-3" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <h5 class="card-title">En même temps</h5>
+                                <p class="card-text"></p>
+                                <a href="#" class="btn btn-light">Voir la bande d'annonce</a>
                             </div>
                         </div>
                     </div>
@@ -198,11 +143,11 @@ require_once 'inc/init.inc.php';
             
                     <div class="col">
                         <div class="card shadow-sm m-4" style="width: 18rem;">
-                            <img src="affiches/goliath.jpg" class="card-img-top rounded-3" alt="...">
+                            <img src="affiches/ogre.jpg" class="card-img-top rounded-3" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <h5 class="card-title">Ogre</h5>
+                                <p class="card-text"></p>
+                                <a href="#" class="btn btn-light">Voir la bande d'annonce</a>
                             </div>
                         </div>
                     </div>

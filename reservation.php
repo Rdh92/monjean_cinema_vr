@@ -18,7 +18,7 @@ require_once 'inc/init.inc.php';
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;1,400&family=Belgrano&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,800;1,300;1,400&family=Michroma&display=swap" rel="stylesheet">
 
     <!-- favicon -->
     <link rel="shortcut icon" type="image/png" href="img/favicon.ico"/>
@@ -62,3 +62,26 @@ require_once 'inc/init.inc.php';
         </div>
     </header>
     <!-- fin container-fluid header -->
+    <main>
+        <section>
+
+        </section>
+    </main>
+
+      <!-- ====================================================== -->
+    <!--                  FOOTER : en require                   --> 
+    <!-- ====================================================== -->  
+    <?php require_once 'inc/footer.inc.php';?> 
+
+
+    <!-- ====================================================== -->
+    <!--              Bootstrap Bundle with Popper              --> 
+    <!-- ====================================================== -->  
+
+    <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+</body>
+</html>

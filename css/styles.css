@@ -1,23 +1,30 @@
 /* styles pour le dossier montjean_cinema_vr en PHP */
 
-/* Couleurs charte graphique  */
+/* Couleurs charte graphique : 6 couleurs */
+
+/* noir : #000000  */
+/* bleu nuit : #110D2C;  */
 /* bleu marine : #3340A7;  */
+/* bleu royal : #3A3CDC;  */
+/* bleu ciel : #5D83D5;  */
 /* gris clair : #E0E4EF; */
 
+
 body {
-    font-family:'Barlow';
-    color:  rgba(48, 3, 151, 0.8);
+    font-family: 'Michroma', sans-serif;
+    color: #110D2C;
     font-size: 1.5em;
 }
 
-footer{
-    background-color: #3340A7;
-    color: #E0E4EF;
+h1, h2, h3, h4, h5 {
+    font-family: 'Barlow', sans-serif;
 }
 
-/* h1, h2, h3, h4 {
-    color: rgba(132, 113, 122, 0.8); */
-/* } */
+footer {
+    background-color: #3340A7;
+   color: #000000;
+    /* color: #E0E4EF; */
+}
 
 
 

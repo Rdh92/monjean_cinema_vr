@@ -18,7 +18,7 @@ require_once 'inc/init.inc.php';
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;1,400&family=Belgrano&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,800;1,300;1,400&family=Michroma&display=swap" rel="stylesheet">
 
     <!-- favicon -->
     <link rel="shortcut icon" type="image/png" href="img/favicon.ico"/>
@@ -65,7 +65,7 @@ require_once 'inc/init.inc.php';
     <!--                CONTAINER : contenu principal           --> 
     <!-- ====================================================== -->
   <main class="container">
-    <section class="row py-5 text-center">
+    <section class="row py-5 justify-content-center">
             <div class="col-5 py-lg-5">
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis earum molestiae est quod quaerat tenetur cum, expedita hic maxime, placeat facilis voluptate iure? Ea quia laborum ad, iusto odit voluptatem!
             </div>

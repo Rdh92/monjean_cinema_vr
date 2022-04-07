@@ -70,28 +70,49 @@ require_once 'inc/init.inc.php';
   <main class="container">
     <section class="row py-5 justify-content-center">
       <div class="row mb-2">
-        <div class="col-12 col-md-6 col-lg-8">
+        <div class="col-12 col-md-6 col-lg-6">
           <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
             <div class="col p-4 d-flex flex-column position-static">
-              <strong class="d-inline-block mb-2 text-primary">World</strong>
-              <h3 class="mb-0">Featured post</h3>
-              <div class="mb-1 text-muted">Nov 12</div>
-              <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="stretched-link">Continue reading</a>
+              <strong class="d-inline-block mb-2 text-primary">Sur nos tarifs</strong>
+              <h3 class="mb-0">3 catégories :</h3>
+              <div class="mb-1 text-muted"></div>
+              <p class="card-text mb-auto">- Adulte</p>
+              <p class="card-text mb-auto">- Carte Cézam</p>
+              <p class="card-text mb-auto">- Enfant (-16ans)</p>
+              <a href="tarifs.php" class="stretched-link">Voir tous les tarifs !</a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <img class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></img>
+            </div>
+          </div>
+        </div>
+        <!-- fin col -->
+        <div class="col-12 col-md-6 col-lg-6">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-success">Abonnés Orange</strong>
+              <h3 class="mb-0">Cinéday</h3>
+              <div class="mb-1 text-muted">Tous les mardis</div>
+              <p class="mb-auto">Une place achetée, une place offerte</p>
+              <a href="tarifs.php" class="stretched-link">Voir tous les tarifs !</a>
             </div>
             <div class="col-auto d-none d-lg-block">
               <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-8">
+        <!-- fin col -->
+        <div class="col-12 col-md-6 col-lg-6">
           <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
             <div class="col p-4 d-flex flex-column position-static">
-              <strong class="d-inline-block mb-2 text-success">Design</strong>
-              <h3 class="mb-0">Post title</h3>
-              <div class="mb-1 text-muted">Nov 11</div>
-              <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="stretched-link">Continue reading</a>
+              <strong class="d-inline-block mb-2 text-success">Modes de reglements : sur place</strong>
+              <h3 class="mb-0">- Carte bancaire</h3>
+              <h3 class="mb-0">- Espèces</h3>
+              <h3 class="mb-0">- Chèque</h3>
+              <h3 class="mb-0">- Chèque vacances</h3>
+              <div class="mb-1 text-muted"></div>
+              <p class="mb-auto">Le mardi c'est Cinéday, pour les abonnés Orange, une place achetée, une place offerte, voir conditions auprès de votre opérateur..</p>
+              <a href="tarifs.php" class="stretched-link">Cliquer ici pour aller à ala page des tarifs !</a>
             </div>
             <div class="col-auto d-none d-lg-block">
               <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>

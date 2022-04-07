@@ -73,14 +73,14 @@ require_once 'inc/init.inc.php';
         <h2 class="fw-light">A l'affiche</h2>
         <div class="album py-5 bg-light">
             <div class="galerie justify-content-evenly">
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
                     <div class="col">
                         <div class="card shadow-sm m-4" style="width: 18rem;">
-                            <img src="affiches/batman.jpg" class="card-img-top rounded-3" alt="...">
+                        <img src="<?php echo $ligne['photo']; ?>" class="figure-img img-fluid rounded img-admin">
                             <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <h5 class="card-title">Batman</h5>
+                                <p class="h6">Deux années à arpenter les rues en tant que Batman et à insuffler la peur chez les criminels ont mené Bruce Wayne au coeur des ténèbres de Gotham City...</p>
+                                <a href="#" class="btn btn-primary">Synopsis et Bande-annonce</a>
                             </div>
                         </div>
                     </div>
@@ -88,11 +88,11 @@ require_once 'inc/init.inc.php';
                     
                     <div class="col">
                         <div class="card shadow-sm m-4" style="width: 18rem;">
-                            <img src="affiches/notre_dame_brule.jpg" class="card-img-top rounded-3" alt="...">
+                        <img src="<?php echo $ligne['photo']; ?>" class="figure-img img-fluid rounded img-admin">
                             <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <h5 class="card-title">Goliath</h5>
+                                <p class="h6">France, professeure de sport le jour, ouvrière la nuit, milite activement contre l'usage des pesticides. Patrick, obscur et solitaire avocat parisien...</p>
+                                <a href="#" class="btn btn-primary">Synopsis et Bande-annonce</a>
                             </div>
                         </div>
                     </div>
@@ -100,11 +100,11 @@ require_once 'inc/init.inc.php';
             
                     <div class="col">
                         <div class="card shadow-sm m-4" style="width: 18rem;">
-                            <img src="affiches/ambulance.jpg" class="card-img-top rounded-3" alt="...">
+                        <img src="<?php echo $ligne['photo']; ?>" class="figure-img img-fluid rounded img-admin">
                             <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <h5 class="card-title">Notre-Dame Brûle</h5>
+                                <p class="h6">Le long métrage de Jean-Jacques Annaud, reconstitue heure par heure l'invraisemblable réalité des évènements du 15 avril 2019 lorsque la cathédrale subissait...</p>
+                                <a href="#" class="btn btn-primary">Synopsis et Bande-annonce</a>
                             </div>
                         </div>
                     </div>
@@ -112,35 +112,11 @@ require_once 'inc/init.inc.php';
             
                     <div class="col">
                         <div class="card shadow-sm m-4" style="width: 18rem;">
-                            <img src="affiches/goliath.jpg" class="card-img-top rounded-3" alt="...">
+                        <img src="<?php echo $ligne['photo']; ?>" class="figure-img img-fluid rounded img-admin">
                             <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- fin col -->
-            
-                    <div class="col">
-                        <div class="card shadow-sm m-4" style="width: 18rem;">
-                            <img src="affiches/em_meme_temps.jpg" class="card-img-top rounded-3" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- fin col -->
-            
-                    <div class="col">
-                        <div class="card shadow-sm m-4" style="width: 18rem;">
-                            <img src="affiches/le_temps_des_secrets.jpg" class="card-img-top rounded-3" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <h5 class="card-title">Morbius</h5>
+                                <p class="h6">Gravement atteint d'une rare maladie sanguine, et déterminé à sauver toutes les victimes de cette pathologie, le Dr Morbius tente un pari désespéré. Mais ce qui semble à première vue...</p>
+                                <a href="#" class="btn btn-primary">Synopsis et Bande-annonce</a>
                             </div>
                         </div>
                     </div>
@@ -158,42 +134,53 @@ require_once 'inc/init.inc.php';
         <h2 class="fw-light">A venir</h2>
         <div class="album py-5 bg-light">
             <div class="galerie">
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
                     <div class="col">
-                        <div class="card shadow-sm m-4" style="width: 10rem;">
-                            <img src="affiches/morbius.jpg" class="card-img-top rounded-3" alt="...">
+                        <div class="card shadow-sm m-4" style="width: 18.5rem;">
+                        <img src="<?php echo $ligne['photo']; ?>" class="figure-img img-fluid rounded img-admin">
                             <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <h5 class="card-title">Les Animaux Fantastiques 3 : Les secrets de Dumbledore</h5>
+                                <a href="#" class="btn btn-primary">Synopsis et Bande-annonce</a>
                             </div>
                         </div>
                     </div>
                     <!-- fin col -->
                     
-                    <div class="col">
-                        <div class="card shadow-sm m-4" style="width: 10rem;">
-                            <img src="affiches/ogre.jpg" class="card-img-top rounded-3" alt="...">
+                    <div class="col-12">
+                        <div class="card shadow-sm m-4" style="width: 18.5rem;">
+                        <img src="<?php echo $ligne['photo']; ?>" class="figure-img img-fluid rounded img-admin">
                             <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <h5 class="card-title">Ogre</h5>
+                                <p class="card-text"></p>
+                                <a href="#" class="btn btn-primary">Synopsis et Bande-annonce</a>
                             </div>
                         </div>
                     </div>
                     <!-- fin col -->
             
                     <div class="col">
-                        <div class="card shadow-sm m-4" style="width: 10rem;">
-                            <img src="affiches/permis_de_construire.jpg" class="card-img-top rounded-3" alt="...">
+                        <div class="card shadow-sm m-4" style="width: 18rem;">
+                        <img src="<?php echo $ligne['photo']; ?>" class="figure-img img-fluid rounded img-admin">
                             <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <h5 class="card-title">Détective Conan : La Fiancée de Shibuya</h5>
+                                <p class="card-text"></p>
+                                <a href="#" class="btn btn-primary">Synopsis et Bande-annonce</a>
                             </div>
                         </div>
                     </div>
                     <!-- fin col -->
+
+                    <div class="col">
+                        <div class="card shadow-sm m-4" style="width: 18rem;">
+                        <img src="<?php echo $ligne['photo']; ?>" class="figure-img img-fluid rounded img-admin">
+                            <div class="card-body">
+                                <h5 class="card-title">Le tigre qui s'invita pour le thé </h5>
+                                <p class="card-text"</p>
+                                <a href="#" class="btn btn-primary">Synopsis et Bande-annonce</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- fin col  -->
                 </div>
                 <!-- fin row -->
             </div>

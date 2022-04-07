@@ -121,6 +121,8 @@ require_once 'inc/init.inc.php';
                         <input type="submit" value="Connectez-vous" class="btn btn-sm btn-warning"> 
                     </div>
                 </form>
+
+                <button class="btn btn-primary" a="">Retour à l'Accueil</button>
             </div>
         <!-- fin col -->
         </section>

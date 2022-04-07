@@ -2,11 +2,8 @@
 // require connexion, session etc.
 require_once '../inc/init.inc.php';
 
-if (!estAdmin()) { // accès non autorisé si on n'est pas admin (et pas connecté)
-    header('location:../connexion.php');
-}
 
-// 1 INSERTION D'UN PRODUIT 
+// 1 INSERTION D'UN FILM 
 
 if (!empty($_POST)) {
 
@@ -16,7 +13,7 @@ if (!empty($_POST)) {
         $contenu .='<div class="alert alert-warning">La référence : entre 5 et 20 caractères</div>';
     }
     
-    if ( !isset($_POST['id_categorie']) || strlen($_POST['id_categorie']) < 1 || strlen($_POST['id_categorie']) > 3) {
+    if ( !isset($_POST['categorie']) || strlen($_POST['categorie']) < 1 || strlen($_POST['categorie']) > 3) {
         $contenu .='<div class="alert alert-warning">Choissisez la bonne catégorie</div>';
     }
 

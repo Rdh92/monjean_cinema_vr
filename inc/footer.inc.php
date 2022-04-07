@@ -4,17 +4,10 @@
           <div class="col-12">
             <a class="p-4 text-light" href="programme.php">Voir le programme</a>
             <!-- <a class="p-4 text-light" href="panier.php">Réserver</a> -->
-            <a class="p-4 text-light" href="inscription.php">S'inscrire</a>
-            <a class="p-4 text-light" href="connexion.php">Se connecter</a>
+            <a class="p-4 text-light" href="inscription.php">Inscription Bénévole</a>
+            <a class="p-4 text-light" href="connexion.php">Connexion Admin</a>
             <a class="p-4 text-light" href="contact.php">Contact</a>
             <a class="p-4 text-light" href="infos_pratiques.php">Informations pratiques</a>
-          </div>
-          <!-- fin col -->
-
-          <div class="col-12">
-            <a class="p-4 text-light" href="mentions_legales.php">Mentions légales</a>
-            <a class="p-4 text-light" href="confidentialite.php">Politique de confidentialité</a>
-            <a class="p-4 text-light" href="cookies.php">Cookies</a>
           </div>
           <!-- fin col -->
 
@@ -34,10 +27,3 @@
         </div>
         <!-- fin div copyright -->      
 </footer>
-
-
-<!-- plus d'infos sur la fonction des heures :
-https://www.php.net/manual/fr/function.date.php
-
-https://www.php.net/manual/fr/timezones.europe.php
--->

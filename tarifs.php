@@ -1,5 +1,5 @@
 <?php 
-// POUR SE CONNECTER ET SE DECONNECTER vec fichier init :
+// POUR SE CONNECTER ET SE DECONNECTER avec fichier init :
 
 // (CONNEXION AU FICHIER INIT dans le dossier INC)
 require_once 'inc/init.inc.php';
@@ -40,34 +40,30 @@ require_once 'inc/init.inc.php';
     <!-- Mes styles -->
     <link rel="stylesheet" href="css/styles.css" >
 
-    <title>Montjean_infos_pratiques</title>
+    <title>Montjean_tarifs</title>
 </head>
 
 <body>
     <!-- ====================================================== -->
     <!--  EN-TETE : header à preceder de NAVBAR en require      --> 
     <!-- ====================================================== --> 
-    
     <?php require_once 'inc/navbar.inc.php'; ?> 
   
-  <header class="container-fluid f-header p-2 mb-4 bg-light">
-    <div class="col-12 text-center">
-        <a class="navbar-brand" href="infos_pratiques.php"><h1 class="display-4">Informations pratiques !</h1></a>
+    <header class="container-fluid f-header p-2 mb-4 bg-light col-12 text-center">
+      <div class="col-12 text-center">
+        <a class="navbar-brand" href="qui_sommes_nous.php"><h1 class="display-4">Tarifs</h1></a>
         <p class="lead"></p>
-        <!-- passage PHP pour tester s'il fonctionne avant de poursuivre -->
+       <!-- passage PHP pour tester s'il fonctionne avant de poursuivre -->
           <?php
           // $positiva = "Bon ciné !";
           // echo "<p class=\"text-green\">$positiva</p>";
         ?>
-    </div>
-  </header>
+    </header>
     <!-- fin container-fluid header -->
-    
-     
-    <!-- ====================================================== -->
+   <!-- ====================================================== -->
     <!--                CONTAINER : contenu principal           --> 
     <!-- ====================================================== -->
-  <main class="container">
+    <main class="container">
     <section class="row py-5 justify-content-center">
       <div class="row mb-2">
         <div class="col-12 col-md-6 col-lg-8">
@@ -76,7 +72,16 @@ require_once 'inc/init.inc.php';
               <strong class="d-inline-block mb-2 text-primary">World</strong>
               <h3 class="mb-0">Featured post</h3>
               <div class="mb-1 text-muted">Nov 12</div>
-              <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+              <p class="card-text mb-auto">o Adulte = 5.00€
+                o Carte Cézam = 4.50€ <br>
+                o Enfant (-16ans) = 3.50€ <br>
+                - Tarifs 3D : <br>
+                o Adulte = 6.00€ <br>
+                o Carte Cézam = 5.50€ <br>
+                o Enfant (-16ans) = 4.50€ <br>
+                - Tarifs du dimanche à 11h : <br>
+                o Adulte = 4.00€ <br>
+                o Enfant (-16ans) = 3.00€</p>
               <a href="#" class="stretched-link">Continue reading</a>
             </div>
             <div class="col-auto d-none d-lg-block">
@@ -105,9 +110,6 @@ require_once 'inc/init.inc.php';
 
 
       
-        Montjean cinéma est une grande famille créé en 1963 par George VIAU. <br>
-          Aujourd'hui, une équipe de 77 bénévoles est à votre service pour vous assurer une séance de qualité dans les meilleures conditions possibles et aux meilleurs
-          - Tarifs normal :
 o Adulte = 5.00€
 o Carte Cézam = 4.50€
 o Enfant (-16ans) = 3.50€
@@ -155,18 +157,16 @@ o Sanitaires femmes, hommes et handicapés Voir moins
   <!--  fin section row -->
 </main>
 <!-- fin container
+  VOIR pour la transition du carrousel : https://getbootstrap.com/docs/4.3/components/carousel/#carouselcycle -->
 
-
-      <!-- ====================================================== -->
+    <!-- ====================================================== -->
     <!--                  FOOTER : en require                   --> 
     <!-- ====================================================== -->  
     <?php require_once 'inc/footer.inc.php';?> 
 
-
     <!-- ====================================================== -->
     <!--              Bootstrap Bundle with Popper              --> 
     <!-- ====================================================== -->  
-
     <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
@@ -174,3 +174,5 @@ o Sanitaires femmes, hommes et handicapés Voir moins
     crossorigin="anonymous"></script>
 </body>
 </html>
+
+

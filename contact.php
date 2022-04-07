@@ -70,16 +70,14 @@ require_once 'inc/init.inc.php';
           <p>Informations et service client : <br>
               Au guichet du cinéma <br>
               de mercredi à dimanche <br>
-              de 14 h à 22 h <br>
+              de 20 h à 23 h <br>
           <p>Adresse : Rue de l'Aumônerie 49570 Mauges-sur-Loire</p>
-          <p>Par téléphone : 00 00 00 00 00</p>
+          <p>Par téléphone : 02 41 39 82 82</p>
           <p>Par e-email : montjean@montjean.com</p>
       </div>
     </section>
 
-    <section>
-
-    </section class="row text-center m-5 py-5">
+    <section class="row text-center m-5 py-5">
       <div class="col-lg-6 col-md-8 mx-auto border border-light">
           <h2 class="fw-light">Que pouvons-nous faire pour vous ?</h2>
           <form action="">
@@ -90,14 +88,15 @@ require_once 'inc/init.inc.php';
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Votre e-mail</label>
               <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+              <button type="submit" class="btn btn-dark">Envoyer votre message</button>
             </div>      
           </form>
       </div>
       <!-- fin col -->
     </section>
-       <!--  fin row -->
+    <!--  fin row -->
 
-	<!-- section -->
+	  <!-- section -->
 		<section class="row text-center m-5 py-5">
 			<h3>Nous retrouver !</h3>
 			<div class="m-2 p-2">

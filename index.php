@@ -162,7 +162,7 @@ require_once 'inc/init.inc.php';
   </main>
   <!-- fin container  -->
 
-  <!-- VOIR pour la transition du carrousel : https://getbootstrap.com/docs/4.3/components/carousel/#carouselcycle -->
+    <!-- VOIR pour la transition du carrousel : https://getbootstrap.com/docs/4.3/components/carousel/#carouselcycle -->
 
     <!-- ====================================================== -->
     <!--                  FOOTER : en require                   --> 

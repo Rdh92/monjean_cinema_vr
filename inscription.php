@@ -160,7 +160,7 @@ require_once 'inc/init.inc.php';
        </div>
         <section class="row m-4 justify-content-center">
              
-            <div class="col-md-6 p-2 bg-light border border-primary">
+            <div class="col-12 col-md-8 p-2 bg-light border border-primary">
                 
                 <form action="" method="POST">
                 <div class="form-group mt-2">

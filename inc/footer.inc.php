@@ -2,10 +2,10 @@
 <!-- <footer class="container-fluid p-4 m-4 m-auto text-center" style="background-color: rgba(132, 113, 122, 0.8);"> -->  
         <div class="row d-flex text-center justify-content-center">
           <div class="col-12">
+            <a class="p-4 text-light" href="qui_sommes_nous.php">Qui sommes-nous ?</a>
+            <a class="p-4 text-light" href="evenements.php">Evenements</a>
             <a class="p-4 text-light" href="programme.php">Voir le programme</a>
-            <!-- <a class="p-4 text-light" href="panier.php">Réserver</a> -->
-            <a class="p-4 text-light" href="inscription.php">Inscription Bénévole</a>
-            <a class="p-4 text-light" href="connexion.php">Connexion Admin</a>
+            <a class="p-4 text-light" href="inscription.php">S'inscrire</a>
             <a class="p-4 text-light" href="contact.php">Contact</a>
             <a class="p-4 text-light" href="infos_pratiques.php">Informations pratiques</a>
           </div>

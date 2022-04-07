@@ -1,5 +1,5 @@
 <?php 
-// POUR SE CONNECTER ET SE DECONNECTER vec fichier init :
+// POUR SE CONNECTER ET SE DECONNECTER avec fichier init :
 
 // (CONNEXION AU FICHIER INIT dans le dossier INC)
 require_once 'inc/init.inc.php';
@@ -40,30 +40,27 @@ require_once 'inc/init.inc.php';
     <!-- Mes styles -->
     <link rel="stylesheet" href="css/styles.css" >
 
-    <title>Montjean_infos_pratiques</title>
+    <title>Montjean_evenements</title>
 </head>
 
 <body>
     <!-- ====================================================== -->
     <!--  EN-TETE : header à preceder de NAVBAR en require      --> 
     <!-- ====================================================== --> 
-    
     <?php require_once 'inc/navbar.inc.php'; ?> 
   
-  <header class="container-fluid f-header p-2 mb-4 bg-light">
-    <div class="col-12 text-center">
-        <a class="navbar-brand" href="infos_pratiques.php"><h1 class="display-4">Informations pratiques !</h1></a>
+    <header class="container-fluid f-header p-2 mb-4 bg-light col-12 text-center">
+      <div class="col-12 text-center">
+        <a class="navbar-brand" href="qui_sommes_nous.php"><h1 class="display-4">Qui sommes-nous ?</h1></a>
         <p class="lead"></p>
-        <!-- passage PHP pour tester s'il fonctionne avant de poursuivre -->
+       <!-- passage PHP pour tester s'il fonctionne avant de poursuivre -->
           <?php
           // $positiva = "Bon ciné !";
           // echo "<p class=\"text-green\">$positiva</p>";
         ?>
-    </div>
-  </header>
+    </header>
     <!-- fin container-fluid header -->
     
-     
     <!-- ====================================================== -->
     <!--                CONTAINER : contenu principal           --> 
     <!-- ====================================================== -->
@@ -156,17 +153,16 @@ o Sanitaires femmes, hommes et handicapés Voir moins
 </main>
 <!-- fin container
 
+  VOIR pour la transition du carrousel : https://getbootstrap.com/docs/4.3/components/carousel/#carouselcycle -->
 
-      <!-- ====================================================== -->
+    <!-- ====================================================== -->
     <!--                  FOOTER : en require                   --> 
     <!-- ====================================================== -->  
     <?php require_once 'inc/footer.inc.php';?> 
 
-
     <!-- ====================================================== -->
     <!--              Bootstrap Bundle with Popper              --> 
     <!-- ====================================================== -->  
-
     <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
@@ -174,3 +170,5 @@ o Sanitaires femmes, hommes et handicapés Voir moins
     crossorigin="anonymous"></script>
 </body>
 </html>
+
+

@@ -74,11 +74,21 @@ INSERT INTO `membres` (`id_membre`, `pseudo`, `mdp`, `nom`, `prenom`, `email`, `
 -- Déchargement des données de la table `films`
 --
 
+<<<<<<< Updated upstream
 INSERT INTO `films` (`id_film`, `titre`, `categorie`, `acteurs`, `realisateur`, `description`, `photo`, `prix`) VALUES
 (01, 'Batman', 'Films à l\'affiche', 'Robert Pattinson','Matt Reeves','Dans sa deuxième année de lutte contre le crime, le milliardaire et justicier masqué Batman...''affiches/ambulance.jpg', 12),
 (02, 'Goliath', 'Films à l\'affiche', 'Gilles Lellouche','Frédéric Tellier','France, professeure de sport de jour, ouvrière la nuit, milite activement contre l\'usage des pesticides', 'affiches/goliath.jpg', 12),
 (03, 'Notre-Dame Brûle','Films à l\'affiche','Jean-Paul Bordes, Mikaël Chirinian', 'Jean-Jacques Annaud', 'Le long métrage de Jean-Jacques Annaud, reconstitue heure par heure l\'invraissemblable réalité...', 12),
 (04, 'Morbius', 'Films à l\'affiche', 'Jared Leto, Adria Arjona','Daniel Espinosa','Gravement atteint d\'une rare maladie sanguine, le Dr Morbius tent un pari désespéré', 'affiches/le_temps_des_secrets.jpg', 12);
+=======
+INSERT INTO `films` (`id_film`, `reference`, `categorie`, `titre`, `description`, `photo`, `prix`, `stock`) VALUES
+(01, '111', 'Films à l\'affiche', 'Ambulance', 'NOUVEAU','affiches/ambulance.jpg', 12, 30),
+(02, '222', 'Films à l'affiche', 'Batman', 'NOUVEAU', 'affiches/batman.jpg', 12, 25),
+(03, '333', 'Films à l\'affiche', 'Goliath', 'NOUVEAU', 'affiches/goliath.jpg', 12, 20),
+(04, '444', 'Films à l'affiche', 'Le Temps des secrets', 'NOUVEAU','affiches/le_temps_des_secrets.jpg', 12, 15);
+(05, '555', 'Films à l'affiche', 'Notre-Dâme brûle', 'NOUVEAU','affiches/notre_dame_brule.jpg',12, 10);
+(06, '666', 'Films à l'affiche', 'Permis de construire', 'NOUVEAU','affiches/permis_de_construire.jpg', 12, 5);
+>>>>>>> Stashed changes
 
 
 --

@@ -1,30 +1,23 @@
 <?php 
-// POUR SE CONNECTER ET SE DECONNECTER vec fichier init :
+    // POUR SE CONNECTER ET SE DECONNECTER vec fichier init :
 
-// (CONNEXION AU FICHIER INIT dans le dossier INC)
-require_once 'inc/init.inc.php';
+    // (CONNEXION AU FICHIER INIT dans le dossier INC)
+    require_once 'inc/init.inc.php';
 
-// debug($_SESSION);
+    // debug($_SESSION);
 
-$requete = $pdoMJC->query( " SELECT * FROM films, categorie WHERE film.id_categorie = categorie.id_categorie " );
-              debug($requete);
-              // $nbr_produits = $requete->rowCount();
-              // debug($nbr_produits); 
+    $requete = $pdoMJC->query( " SELECT * FROM films " );
+              //debug($requete);
+              // $nbr_films = $requete->rowCount();
+              // debug($nbr_films); 
             
-              while ( $ligne = $requete->fetch( PDO::FETCH_ASSOC )) { 
+              while ( $ligne = $requete->fetch( PDO::FETCH_ASSOC )) {
+
                 
-                debug($ligne);
-                ?>
-             
-                <tr>
-                    <td scope="row">n° <?php echo $ligne['id_produit']; ?></td>                   
-                    <td><?php echo $ligne['titre']. ' - ' .$ligne['categorie']; ?></td>
-                    <td><?php echo html_entity_decode($ligne['description']); ?></td>
-                    <td><?php echo $ligne['couleur']; ?></td>
-                    <td> <img src="<?php echo $ligne['photo']; ?>" class="figure-img img-fluid rounded img-admin"></td>
-                    <td><?php echo $ligne['prix']; ?> €</td>
-           <td><a href="produit.php?id_produit=<?php echo $ligne['id_produit']; ?>">Voir le produit</a></td>
-                </tr>
+              }
+                
+                //debug($ligne);
+
 ?>
 
 <!DOCTYPE html>
@@ -73,7 +66,7 @@ $requete = $pdoMJC->query( " SELECT * FROM films, categorie WHERE film.id_catego
         <div class="p-4 m-4 text-center">
             <a class="navbar-brand" href="programme.php"><h1 class="display-4">Programme</h1></a>
                
-        <!-- passage PHP pour tester s'il fonctionne avant de poursuivre -->
+            <!-- passage PHP pour tester s'il fonctionne avant de poursuivre -->
                 <?php
                 // $positiva = "Bon ciné !";
                 // echo "<p class=\"text-green\">$positiva</p>";
@@ -230,5 +223,3 @@ $requete = $pdoMJC->query( " SELECT * FROM films, categorie WHERE film.id_catego
     crossorigin="anonymous"></script>
 </body>
 </html>
-
-

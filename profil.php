@@ -3,85 +3,6 @@
 require_once 'inc/init.inc.php';
 
 
-// 1 INSERTION D'UN FILM 
-
-if (!empty($_POST)) {
-
-    // 9 conditions pour vérifier que les champs du form sont bien remplis
-    
-    if ( !isset($_POST['categorie']) || strlen($_POST['categorie']) < 1 || strlen($_POST['categorie']) > 3) {
-        $contenu .='<div class="alert alert-warning">Choissisez la bonne catégorie</div>';
-    }
-
-    if ( !isset($_POST['titre']) || strlen($_POST['titre']) < 5 || strlen($_POST['titre']) > 100) {
-        $contenu .='<div class="alert alert-warning">Titre entre 5 et 100 caractères</div>';
-    }
-
-    if ( !isset($_POST['realisateur']) || strlen($_POST['realisateur']) < 4 || strlen($_POST['realisateur']) > 200) {
-        $contenu .='<div class="alert alert-warning">Description incomplète !</div>';
-    }
-    if ( !isset($_POST['acteurs']) || strlen($_POST['acteurs']) < 4 || strlen($_POST['acteurs']) > 20) {
-        $contenu .='<div class="alert alert-warning">Champs compris entre 4 et 50 caractères</div>';
-    }
-
-    if ( !isset($_POST['pays']) || strlen($_POST['pays']) < 1 || strlen($_POST['pays']) > 5) {
-        $contenu .='<div class="alert alert-warning">Pays : Champs compris entre 5 et  caractères</div>';
-    }
-
-    if ( !isset($_POST['description']) || $_POST['description'] != 'm' && $_POST['description'] != 'f'  && $_POST['description'] ) { // && ET
-        $contenu .='<div class="alert alert-warning">Public : non conforme !</div>';
-    }
-    if ( !isset($_POST['photo']) || strlen($_POST['photo']) < 1 || strlen($_POST['photo']) > 5 ) {
-        $contenu .='<div class="alert alert-warning">Prix : rentrez le prix de vente !</div>';
-    }
-
-    if ( !isset($_POST['prix']) || strlen($_POST['prix']) < 1 || strlen($_POST['prix']) > 5 ) {
-        $contenu .='<div class="alert alert-warning">Prix : rentrez le prix de vente !</div>';
-    }
-    
-
-    
-    //var_dump($_POST);
-
-    if (empty($contenu)) {
-
-    $_POST['categorie'] = htmlspecialchars($_POST['categorie']);
-    $_POST['titre'] = $_POST['titre'];
-    $_POST['realisateur'] = htmlspecialchars($_POST['realisateur']);
-    $_POST['acteurs'] = $_POST['acteurs'];
-    $_POST['pays'] = htmlspecialchars($_POST['pays']);
-    $_POST['description'] = htmlspecialchars($_POST['description']);
-    $_POST['photo'] = htmlspecialchars($_POST['photo']);
-    $_POST['prix'] = htmlspecialchars($_POST['prix']);
-
-    // debug($_FILES);
-    // traitement du fichier image, de la photo
-
-    $photo_bdd = '';
-    if (!empty($_FILES['photo']['name'])) {
-        $photo_bdd = 'affiches/' .$_FILES['photo']['name'];
-        copy($_FILES['photo']['tmp_name'], '../' .$photo_bdd);
-    }//fin du traitement photo
-
-    $requete =  executeRequete( " INSERT INTO films (categorie, titre, realisateur, acteurs, pays, description, photo, prix,) VALUES ( :categorie, :titre, :titre, :realisateur, :acteurs, :pays, :description, :photo, :prix) ",
-    array(
-        ':categorie' => $_POST['categorie'],
-        ':titre' => $_POST['titre'],
-        ':realisateur' => $_POST['realisateur'],
-        ':acteurs' => $_POST['acteur'],
-        ':pays' => $_POST['pays'],
-        ':description' => $_POST['description'],
-        ':photo' => $photo_bdd,
-        ':prix' => $_POST['prix'],
-    ));
-
-    if ($requete) {
-        $contenu .= '<div class="alert alert-success">Le film a été enregistré.</div>';
-    } else {
-        $contenu .= '<div class="alert alert-danger">Erreur lors de l\'enregistrement...</div>';
-    }
-  } 
-}// fin insertion nouveau film
 
 // 2 SUPPRESSION D'UN FILM
 
@@ -171,12 +92,10 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
             <ul class="nav nav-pills nav-fill">
             <?php 
                 if(estAdmin()) { 
-                    echo '<li class="nav-item"><a class="btn btn-primary" href="' .RACINE_SITE. 'admin/accueil.admin.php">Espace admin</a></li>';
-                    echo '<li class="nav-item"><a class="btn btn-success" href="' .RACINE_SITE. 'index.php">Aller à l\'Accueil </a></li>';
+                    echo '<li class="nav-item"><a class="btn btn-success" href="index.php">Aller à l\'Accueil </a></li>';
                     // echo 'coucou';
-                } else {
-                    echo '<li class="nav-item"><a class="btn btn-success" href="index.php">Retour à l\'Accueil du Montjean !</a></li>';
-                }
+                } 
+                
                 if (estConnecte()) {
                     //  echo 'coucou';
                     echo '<li class="nav-item"><a class="btn btn-secondary" href="connexion.php?action=deconnexion">Se déconnecter</a></li>';
@@ -185,7 +104,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
             </ul>
     </header>
     <div class="container-fluid">
-    <section class="row m-3 justify-content-start">
+    <section class="row justify-content-start">
         <div class="col-md-5">
             <form method="POST" action="" class="shadow p-3 mb-5 bg-body rounded">
                 <h2>Mise à jour de vos informations</h2>

@@ -28,26 +28,15 @@ USE `montjean_cinema`;
 -- Structure de la table `reservation`
 --
 
-CREATE TABLE `reservation` (
-  `id_reservation` int(3) NOT NULL,
-  `id_membre` int(3) DEFAULT NULL,
-  `montant` int(3) NOT NULL,
-  `date_enregistrement` datetime NOT NULL,
-  `etat` enum('réservé') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `details_reservation`
---
-
-CREATE TABLE `details_reservation` (
-  `id_details_reservation` int(3) NOT NULL,
-  `id_reservation` int(3) DEFAULT NULL,
-  `id_produit` int(3) DEFAULT NULL,
-  `quantite` int(3) NOT NULL,
-  `prix` int(3) NOT NULL
+CREATE TABLE `films` (
+  `id_film` int(3) NOT NULL,
+  `titre` varchar(20) DEFAULT NULL,
+  `categorie` varchar(20) DEFAULT NULL,
+  `acteurs`varchar(30) NOT NULL,
+  `realisateur` varchar(30) NOT NULL
+  `description` text(50) NOT NULL
+  `photo` varchar NOT NULL
+  `prix` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -79,41 +68,18 @@ INSERT INTO `membres` (`id_membre`, `pseudo`, `mdp`, `nom`, `prenom`, `email`, `
 
 -- --------------------------------------------------------
 
---
--- Structure de la table `films`
---
 
-CREATE TABLE `films` (
-  `id_film` int(3) NOT NULL,
-  `reference` varchar(20) NOT NULL,
-  `categorie` varchar(20) NOT NULL,
-  `titre` varchar(100) NOT NULL,
-  `description` text NOT NULL,
-  `photo` varchar(250) NOT NULL,
-  `prix` float NOT NULL,
-  `stock` int(3) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `films`
 --
 
-INSERT INTO `films` (`id_film`, `reference`, `categorie`, `titre`, `description`, `photo`, `prix`, `stock`) VALUES
-(01, '111', 'Films à l\'affiche', 'Ambulance', 'NOUVEAU','affiches/ambulance.jpg', 12, 30),
-<<<<<<< Updated upstream
-(02, '222', 'Films à l\'affiche', 'Batman', 'NOUVEAU', 'affiches/batman.jpg', 12, 30),
-(03, '333', 'Films à l\'affiche', 'Goliath', 'NOUVEAU', 'affiches/goliath.jpg', 12, 30),
-(04, '444', 'Films à l\'affiche', 'Le Temps des secrets', 'NOUVEAU','affiches/le_temps_des_secrets.jpg', 12, 30);
-(05, '555', 'Films à l\'affiche', 'Notre-Dâme brûle', 'NOUVEAU','affiches/notre_dame_brule.jpg',12, 30);
-(06, '666', 'Films à l\'affiche', 'Permis de construire', 'NOUVEAU','affiches/permis_de_construire.jpg', 12, 30);
-=======
-(02, '222', 'Films à l'affiche', 'Batman', 'NOUVEAU', 'affiches/batman.jpg', 12, 25),
-(03, '333', 'Films à l\'affiche', 'Goliath', 'NOUVEAU', 'affiches/goliath.jpg', 12, 20),
-(04, '444', 'Films à l'affiche', 'Le Temps des secrets', 'NOUVEAU','affiches/le_temps_des_secrets.jpg', 12, 15);
-(05, '555', 'Films à l'affiche', 'Notre-Dâme brûle', 'NOUVEAU','affiches/notre_dame_brule.jpg',12, 10);
-(06, '666', 'Films à l'affiche', 'Permis de construire', 'NOUVEAU','affiches/permis_de_construire.jpg', 12, 5);
+INSERT INTO `films` (`id_film`, `titre`, `categorie`, `acteurs`, `realisateur`, `description`, `photo`, `prix`) VALUES
+(01, 'Batman', 'Films à l\'affiche', 'Robert Pattinson','Matt Reeves','Dans sa deuxième année de lutte contre le crime, le milliardaire et justicier masqué Batman...''affiches/ambulance.jpg', 12),
+(02, 'Goliath', 'Films à l\'affiche', 'Gilles Lellouche','Frédéric Tellier','France, professeure de sport de jour, ouvrière la nuit, milite activement contre l\'usage des pesticides', 'affiches/goliath.jpg', 12),
+(03, 'Notre-Dame Brûle','Films à l\'affiche','Jean-Paul Bordes, Mikaël Chirinian', 'Jean-Jacques Annaud', 'Le long métrage de Jean-Jacques Annaud, reconstitue heure par heure l\'invraissemblable réalité...', 12),
+(04, 'Morbius', 'Films à l\'affiche', 'Jared Leto, Adria Arjona','Daniel Espinosa','Gravement atteint d\'une rare maladie sanguine, le Dr Morbius tent un pari désespéré', 'affiches/le_temps_des_secrets.jpg', 12);
 
->>>>>>> Stashed changes
 
 --
 -- Index pour les tables déchargées

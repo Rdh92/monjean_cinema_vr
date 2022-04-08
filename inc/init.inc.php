@@ -10,7 +10,6 @@ $host = 'localhost';//le chemin vers le serveur de données
 $database = 'montjean_cinema';//le nom de la BDD
 $user = 'root';// le nom d'utilisateur pour se connecter
 $psw = '';// mdp pour PC sur XAMPP
-// $psw = 'root';// mdp pour MAC sur MAMPP
 
 $pdoMJC = new PDO('mysql:host='.$host.';dbname='.$database,$user,$psw,
 array(

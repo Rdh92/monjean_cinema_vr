@@ -81,13 +81,13 @@ if (!empty($_POST)) {
         $contenu .= '<div class="alert alert-danger">Erreur lors de l\'enregistrement...</div>';
     }
   } 
-}// fin insertion nouveau produit
+}// fin insertion nouveau film
 
-// 2 SUPPRESSION D'UN ARTICLE
+// 2 SUPPRESSION D'UN FILM
 
 // debug($_GET);
 if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_film'])) {
-  $resultat = $pdoMAB->prepare( " DELETE FROM films WHERE id_film = :id_film " );
+  $resultat = $pdoMJC->prepare( " DELETE FROM films WHERE id_film = :id_film " );
 
   $resultat->execute(array(
     ':id_film' => $_GET['id_film']
@@ -164,13 +164,13 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
             <p class="lead">Bonjour <?php echo $_SESSION['membre']['prenom']; ?>
             <?php
             if(estAdmin()) { // si le membre est 'admin' il n'a pas les mêmes accès qu'un membre 'client'
-                echo ' -- Vous êtes administrateur !</p>';
+                echo ' -- Vous êtes l\'administrateur !</p>';
             }
             ?>
 
             <ul class="nav nav-pills nav-fill">
             <?php 
-                if(estAdmin()) { // si le membre est 'admin' il n'a pas les mêmes accès qu'un membre 'client'
+                if(estAdmin()) { 
                     echo '<li class="nav-item"><a class="btn btn-primary" href="' .RACINE_SITE. 'admin/accueil.admin.php">Espace admin</a></li>';
                     echo '<li class="nav-item"><a class="btn btn-success" href="' .RACINE_SITE. 'index.php">Aller à l\'Accueil </a></li>';
                     // echo 'coucou';
@@ -267,7 +267,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
                     <br>
                     <div class="mb-3">
                 
-                        <label for="pays" class="form-label">Pays</label>
+                        <label for="pays" class="form-label">Pays d'origine</label>
                             <select name="pays" id="pays">
                                 <option value="pays">----</option>
                                 <option value="pays">FRANCE</option>
@@ -308,7 +308,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
             <h5>Il y a <?php echo $nbr_films; ?> films </h5>
             <?php echo $contenu; ?>
 
-            <table class="table table-striped  ">
+            <table class="table table-striped">
              <thead>
                <tr>
                  <th>Id</th>
@@ -335,7 +335,8 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
                    <td><?php echo $ligne['categorie']; ?></td>
                    <td><?php echo $ligne['photo']; ?></td>
                    <td><?php echo $ligne['prix']; ?></td>
-          <td><a href="fiche_film.php?id_film=<?php echo $ligne['id_film']; ?>">Mise à jour</a></td>
+          <td><a href="
+          fiche_film_maj.php?id_film=<?php echo $ligne['id_film']; ?>">Mise à jour</a></td>
           <td><a href="?action=supprimer&id_film=<?php echo $ligne['id_film']; ?>" onclick="return(confirm('Voulez-vous supprimer le film ? '))">Supprimer le film</a></td>
 			   </tr>
 			   <!-- fermeture de la boucle -->

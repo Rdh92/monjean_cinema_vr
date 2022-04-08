@@ -6,17 +6,11 @@
 
     // debug($_SESSION);
 
-    $requete = $pdoMJC->query( " SELECT * FROM films " );
+    $requete = $pdoMJC->query( " SELECT * FROM films WHERE categorie = 'Films à l\'affiche' " );
               //debug($requete);
               // $nbr_films = $requete->rowCount();
               // debug($nbr_films); 
-            
-              while ( $ligne = $requete->fetch( PDO::FETCH_ASSOC )) {
-
-                
-              }
-                
-                //debug($ligne);
+            //debug($ligne);
 
 ?>
 
@@ -86,115 +80,53 @@
         <div class="album py-5 bg-light">
             <div class="galerie justify-content-evenly">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
-                    <div class="col">
-                        <div class="card shadow-sm m-4" style="width: 18rem;">
-                        <img src="<?php echo $ligne['photo']; ?>" class="figure-img img-fluid rounded img-admin">
-                            <div class="card-body">
-                                <h5 class="card-title">Batman</h5>
-                                <p class="h6">Deux années à arpenter les rues en tant que Batman et à insuffler la peur chez les criminels ont mené Bruce Wayne au coeur des ténèbres de Gotham City...</p>
-                                <a href="#" class="btn btn-primary">Synopsis et Bande-annonce</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- fin col -->
+                    <?php while ( $ligne = $requete->fetch( PDO::FETCH_ASSOC )) {
+                        
+                    ?>
                     
-                    <div class="col">
-                        <div class="card shadow-sm m-4" style="width: 18rem;">
-                        <img src="<?php echo $ligne['photo']; ?>" class="figure-img img-fluid rounded img-admin">
-                            <div class="card-body">
-                                <h5 class="card-title">Goliath</h5>
-                                <p class="h6">France, professeure de sport le jour, ouvrière la nuit, milite activement contre l'usage des pesticides. Patrick, obscur et solitaire avocat parisien...</p>
-                                <a href="#" class="btn btn-primary">Synopsis et Bande-annonce</a>
+                    <div class="col-md-4"> 
+                            <div class="card shadow-sm m-4" style="width: 18rem;">
+                                <img src="<?php echo $ligne['photo']; ?>" class="figure-img img-fluid rounded img-admin">
+                                <div class="card-body">
+                                    <h5 class="card-title">"<?php echo $ligne['titre']; ?>" </h5>
+                                    <p class="h6">"<?php echo $ligne['description']; ?>" .</p>
+                                    <a href="#" class="btn btn-primary">Synopsis et Bande-annonce</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- fin col -->
-            
-                    <div class="col">
-                        <div class="card shadow-sm m-4" style="width: 18rem;">
-                        <img src="<?php echo $ligne['photo']; ?>" class="figure-img img-fluid rounded img-admin">
-                            <div class="card-body">
-                                <h5 class="card-title">Notre-Dame Brûle</h5>
-                                <p class="h6">Le long métrage de Jean-Jacques Annaud, reconstitue heure par heure l'invraisemblable réalité des évènements du 15 avril 2019 lorsque la cathédrale subissait...</p>
-                                <a href="#" class="btn btn-primary">Synopsis et Bande-annonce</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- fin col -->
-            
-                    <div class="col">
-                        <div class="card shadow-sm m-4" style="width: 18rem;">
-                        <img src="<?php echo $ligne['photo']; ?>" class="figure-img img-fluid rounded img-admin">
-                            <div class="card-body">
-                                <h5 class="card-title">Morbius</h5>
-                                <p class="h6">Gravement atteint d'une rare maladie sanguine, et déterminé à sauver toutes les victimes de cette pathologie, le Dr Morbius tente un pari désespéré. Mais ce qui semble à première vue...</p>
-                                <a href="#" class="btn btn-primary">Synopsis et Bande-annonce</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- fin col -->
-                </div>
-                <!-- fin row -->
-            </div>
-           <!--  fin container -->
-        </div class="album py-5 bg-light">
-    </section>
-    <!-- FIN SECTION : A L AFFICHE -->
+                 <?php  } ?>
+                   
 
     <!-- DEBUT SECTION : A VENIR -->
+    <?php
+
+    $newRequete = $pdoMJC->query( " SELECT * FROM films WHERE categorie = 'Films à venir' " );
+
+    ?>
     <section class="py-5 text-center">
         <h2 class="fw-light">A venir</h2>
         <div class="album py-5 bg-light">
             <div class="galerie">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
-                    <div class="col">
-                        <div class="card shadow-sm m-4" style="width: 18.5rem;">
-                        <img src="<?php echo $ligne['photo']; ?>" class="figure-img img-fluid rounded img-admin">
-                            <div class="card-body">
-                                <h5 class="card-title">Les Animaux Fantastiques 3 : Les secrets de Dumbledore</h5>
-                                <a href="#" class="btn btn-primary">Synopsis et Bande-annonce</a>
+
+                    <?php while ( $ligne2 = $newRequete->fetch( PDO::FETCH_ASSOC )) {
+                        
+                    ?>
+                    
+                    <div class="col-md-4"> 
+                            <div class="card shadow-sm m-4" style="width: 18rem;">
+                                <img src="<?php echo $ligne2['photo']; ?>" class="figure-img img-fluid rounded img-admin">
+                                <div class="card-body">
+                                    <h5 class="card-title">"<?php echo $ligne2['titre']; ?>" </h5>
+                                    <p class="h6">"<?php echo $ligne2['description']; ?>" </p>
+                                    <a href="#" class="btn btn-primary">Synopsis et Bande-annonce</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                 <?php  } ?>
                     <!-- fin col -->
                     
-                    <div class="col-12">
-                        <div class="card shadow-sm m-4" style="width: 18.5rem;">
-                        <img src="<?php echo $ligne['photo']; ?>" class="figure-img img-fluid rounded img-admin">
-                            <div class="card-body">
-                                <h5 class="card-title">Ogre</h5>
-                                <p class="card-text"></p>
-                                <a href="#" class="btn btn-primary">Synopsis et Bande-annonce</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- fin col -->
-            
-                    <div class="col">
-                        <div class="card shadow-sm m-4" style="width: 18rem;">
-                        <img src="<?php echo $ligne['photo']; ?>" class="figure-img img-fluid rounded img-admin">
-                            <div class="card-body">
-                                <h5 class="card-title">Détective Conan : La Fiancée de Shibuya</h5>
-                                <p class="card-text"></p>
-                                <a href="#" class="btn btn-primary">Synopsis et Bande-annonce</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- fin col -->
-
-                    <div class="col">
-                        <div class="card shadow-sm m-4" style="width: 18rem;">
-                        <img src="<?php echo $ligne['photo']; ?>" class="figure-img img-fluid rounded img-admin">
-                            <div class="card-body">
-                                <h5 class="card-title">Le tigre qui s'invita pour le thé </h5>
-                                <p class="card-text"</p>
-                                <a href="#" class="btn btn-primary">Synopsis et Bande-annonce</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- fin col  -->
-                </div>
-                <!-- fin row -->
+                    
             </div>
            <!--  fin div galerie container -->
         </div>

@@ -24,6 +24,13 @@ h1, h2, h3, h4, h5 {
     font-family: 'Barlow', sans-serif;
 }
 
+.bg-image{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('img/background_peliculle_gris.png');
+}
+
 footer {
     background-color: #3340A7;
    /* color: #000000; */

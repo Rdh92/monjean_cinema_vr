@@ -36,10 +36,6 @@ $contenu = '';
 require_once 'fonctions.inc.php';
 
 // debug($pdoMJC);
-
-//  Ici ce debug nous montre la liste de méthodes en haut de la page
 // debug(get_class_methods($pdoMJC));
-
-// Et on peut fermer le passage php à partir d'ici !
 
 ?>

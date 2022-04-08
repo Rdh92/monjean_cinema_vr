@@ -43,7 +43,7 @@ require_once 'inc/init.inc.php';
     <title>Montjean_contact</title>
 </head>
 
-<body>
+<body class="bg-image" style="background-image: url('')">
     <!-- ====================================================== -->
     <!--  EN-TETE : header à preceder de NAVBAR en require      --> 
     <!-- ====================================================== --> 

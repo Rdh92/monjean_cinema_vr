@@ -133,7 +133,7 @@ require_once 'inc/init.inc.php';
             
                     <div class="col">
                         <div class="card shadow-sm m-4" style="width: 18rem;">
-                            <img src="affiches/em_meme_temps.jpg" class="card-img-top rounded-3" alt="...">
+                            <img src="affiches/en_meme_temps.jpg" class="card-img-top rounded-3" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">En même temps</h5>
                                 <p class="card-text"></p>

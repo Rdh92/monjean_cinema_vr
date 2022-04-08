@@ -1,13 +1,17 @@
 /* styles pour le dossier montjean_cinema_vr en PHP */
 
 /* Couleurs charte graphique : 6 couleurs */
+/* https://cssgenerator.org/rgba-and-hex-color-generator.html */
+
+/* Convertir vers RGBA en transparence */
+/* https://web-color.aliasdmc.fr/couleur-web-black-avec-transparence.html */
 
 /* noir : #000000  */
-/* bleu nuit : #110D2C;  */
-/* bleu marine : #3340A7;  */
-/* bleu royal : #3A3CDC;  */
-/* bleu ciel : #5D83D5;  */
-/* gris clair : #E0E4EF; */
+/* bleu nuit : #110D2C; RGBA(255,101,80,1) */
+/* bleu marine : #3340A7; RGBA(51,64,167,1) */
+/* bleu royal : #3A3CDC;  RGBA(58,60,220,1) */
+/* bleu ciel : #5D83D5; RGBA(93,131,213,1) */
+/* gris clair : #E0E4EF; RGBA(224,228,239,1) */
 
 
 body {
@@ -22,8 +26,8 @@ h1, h2, h3, h4, h5 {
 
 footer {
     background-color: #3340A7;
-   color: #000000;
-    /* color: #E0E4EF; */
+   /* color: #000000; */
+    color: #E0E4EF;
 }
 
 

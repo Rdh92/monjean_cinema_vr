@@ -31,13 +31,13 @@
                                     <a class="nav-link" href="inscription.php">Nouveau bénévole ? Inscrivez-vous !</a>
                                 </li>
                                 <li class="nav-item m-4">
-                                    <a class="nav-link" href="connexion.php"><i class="bi bi-person-fill p-2"></i></a>
+                                    <a class="nav-link" href="connexion.php"><i class="bi bi-person-fill p-2"></i>Espace Admin</a>
                                 </li>
                                 <!-- <li class="nav-item m-4">
                                     <a class="nav-link" href="panier.php"><i class="bi bi-handbag-fill p-2"></i></a>
                                 </li> -->
                                 <!-- <li class="nav-item m-4">
-                                    <a class="nav-link" style="color: rgba(132, 113, 122, 0.8);" href="profil.php"></i>Profil</a>
+                                    <a class="nav-link" style="color: #110D2C;" href="profil.php"></i>Profil</a>
                                 </li>
                                 <li class="nav-item m-4">
                                     <a class="nav-link" style="color: rgba(132, 113, 122, 0.8);" href="admin/accueil_admin.php">Accueil Admin</a>

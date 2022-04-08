@@ -62,33 +62,31 @@ require_once 'inc/init.inc.php';
           // $positiva = "Bon ciné !";
           // echo "<p class=\"text-green\">$positiva</p>";
         ?>
-    </div>
-    <!-- fin jumbotron -->
 
     <div class="container rounded mt-5">
       <h1>Bienvenue au Montjean Cinéma !</h1>
 
       <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="img/printemps_du_cinema_Capture d’écran 2022-03-26 184832.png" class="d-block w-100" alt="...">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img/printemps_du_cinema_Capture d’écran 2022-03-26 184832.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/batman_686_356.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/box_office.png" class="d-block w-100" alt="...">
+          </div>
+        </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-    <div class="carousel-item">
-      <img src="img/batman_686_356.png" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="img/box_office.png" class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
     <!-- fin carousel -->
   </header>
       <!-- fin container-fluid header -->
@@ -111,7 +109,9 @@ require_once 'inc/init.inc.php';
                             <div class="card-body">
                                 <h5 class="card-title">Goliath</h5>
                                 <p class="card-text"></p>
-                                <a href="#" class="btn btn-light">Voir la bande d'annonce</a>
+                                <a href="https://youtu.be/I3gZ6Iz6yQI" class="btn btn-light">Voir la bande d'annonce</a>
+                                <!-- code d'integration :
+                                <iframe width="853" height="480" src="https://www.youtube.com/embed/I3gZ6Iz6yQI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
                             </div>
                         </div>
                     </div>
@@ -123,7 +123,9 @@ require_once 'inc/init.inc.php';
                             <div class="card-body">
                                 <h5 class="card-title">Notre-Dame brûle</h5>
                                 <p class="card-text"></p>
-                                <a href="#" class="btn">Voir la bande d'annonce</a>
+                                <a href="https://youtu.be/YlDXdPSEtgk" class="btn">Voir la bande d'annonce</a>
+                                <!-- code d'integration :
+                                <iframe width="853" height="480" src="https://www.youtube.com/embed/YlDXdPSEtgk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
                             </div>
                         </div>
                     </div>
@@ -135,7 +137,9 @@ require_once 'inc/init.inc.php';
                             <div class="card-body">
                                 <h5 class="card-title">En même temps</h5>
                                 <p class="card-text"></p>
-                                <a href="#" class="btn btn-light">Voir la bande d'annonce</a>
+                                <a href="https://youtu.be/M_ZsmTnkIPk" class="btn btn-light">Voir la bande d'annonce</a>
+                                <!-- code d'integration :
+                                <iframe width="853" height="480" src="https://www.youtube.com/embed/M_ZsmTnkIPk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
                             </div>
                         </div>
                     </div>
@@ -147,7 +151,9 @@ require_once 'inc/init.inc.php';
                             <div class="card-body">
                                 <h5 class="card-title">Ogre</h5>
                                 <p class="card-text"></p>
-                                <a href="#" class="btn btn-light">Voir la bande d'annonce</a>
+                                <a href="https://youtu.be/1J2KnMxKkgQ" class="btn btn-light">Voir la bande d'annonce</a>
+                                <!-- code d'integration :
+                                <iframe width="853" height="480" src="https://www.youtube.com/embed/1J2KnMxKkgQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
                             </div>
                         </div>
                     </div>

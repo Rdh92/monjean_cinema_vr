@@ -172,22 +172,21 @@ require_once 'inc/init.inc.php';
     
     <?php require_once 'inc/navbar.inc.php'; ?> 
    
-<header class="container-fluid f-header p-4 mb-4 bt-4 col-12 text-center">
+<header class="container-fluid f-header col-12 text-center">
     <div class="text-center">
-        <h1 class="display-4">Inscrivez-vous !</h1>
+        <h1 class="p-2">Inscrivez-vous !</h1>
         <a class="navbar-brand" href="contact.php"><p class="lead">Déjà bénévole ? Restons en contact !</p></a>          
     </div>
 </header>
 <!-- fin container-fluid header -->
 
 <main class="container bg-image">
-<!-- a ajouterstyle="background-image: url('img/background_peliculle_gris.png');" -->
     <div>
-       <div class="row pt-2 justify-content-center">
+       <!-- <div class="row pt-2 justify-content-center">
           <div class="col-6 text-center">
                <?php echo $contenu; ?>
           </div>
-       </div>
+       </div> -->
         <section class="row m-4 justify-content-center" style="color:rgba(17,13,44,1);">          
             <div class="col-12 col-lg-8 p-4" style="background-color: rgba(93,131,213,1); color: rgba(224,228,239,1)">             
              <form action="" method="POST">
@@ -233,7 +232,7 @@ require_once 'inc/init.inc.php';
                 </div>
             </div>
             <div class="form-group mt-4 text-center">
-                <input type="submit" value="Inscription" class="rounded-pill btn btn-sm p-2 m-4 w-25" style="background-color: rgba(58,60,220,1); color: rgba(224,228,239,1);"> 
+                <input type="submit" value="Inscription" class="rounded-pill btn btn-sm p-2 m-4 w-50" style="background-color: rgba(58,60,220,1); color: rgba(224,228,239,1);"> 
             </div>
                 </form>
             </div>

@@ -56,12 +56,14 @@ require_once 'inc/init.inc.php';
     <!-- ====================================================== --> 
     
 <header class="container-fluid f-header p-4 mb-4 bt-4 col-12 text-center">
-  <h1 class="p-1 m-1">Venez passer un bon moment avec nous !</h1>
   <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
   <div class="container p-3 mb-5">
     <div id="carouselExampleControls" class="carousel slide shadow-lg" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
+          <a href="programme.php"><img src="img/affiche_carousel_bienvenue.png" class="d-block w-100" alt="Affiche de bienvenue"></a>         
+        </div>
+        <div class="carousel-item">
           <a href="https://video.wbdsta.net/ops/allocine/PrintempsDuCinema/PrintempsDuCinema_2.mp4"><img src="img/printemps_du_cinema_1920_1080.png" class="d-block w-100" alt="Affiche du Printemps du cinéma 2022"></a>
         </div>
         <div class="carousel-item">
@@ -71,7 +73,7 @@ require_once 'inc/init.inc.php';
           <a href="https://www.allocine.fr/video/player_gen_cmedia=19586202&cfilm=248481.html?jwsource=cl"><img src="img/minions_carousel.png" class="d-block w-100" alt="Affiche du box office - film Batman 2022"></a>         
         </div>
         <div class="carousel-item">
-          <a href="evenements.php"><img src="img/avant_premieres_montjean_1920_1080.png" class="d-block w-100" alt="Affiche avant-premieres du Montjean"></a>         
+          <a href="evenements.php"><img src="img/cine_debat_carousel.png" class="d-block w-100" alt="Affiche evenement Ciné débat"></a>         
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -95,8 +97,9 @@ require_once 'inc/init.inc.php';
   <main class="container">
     <!-- DEBUT SECTION : A L AFFICHE -->
     <section class="text-center">
-        <h2 class="fw-light">A L'AFFICHE</h2>
-        <div class="album py-5">
+      <!-- Ici les 2 classes pour l'animation du h1 de la page accueil -->
+        <h1 class="fw-light battement bouton">A L'AFFICHE CHEZ MONTJEAN</h1>
+        <div class="album">
             <div class="galerie justify-content-around">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
                   <!-- debut div col de la galerie -->

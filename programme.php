@@ -11,7 +11,6 @@
               // $nbr_films = $requete->rowCount();
               // debug($nbr_films); 
             //debug($ligne);
-
 ?>
 
 <!DOCTYPE html>

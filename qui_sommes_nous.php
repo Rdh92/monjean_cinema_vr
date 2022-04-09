@@ -49,9 +49,9 @@ require_once 'inc/init.inc.php';
     <!-- ====================================================== --> 
     <?php require_once 'inc/navbar.inc.php'; ?> 
   
-    <header class="container-fluid f-header p-2 mb-4 bg-light col-12 text-center">
+    <header class="container-fluid f-header p-2 mb-4 col-12 text-center">
       <div class="col-12 text-center">
-        <a class="navbar-brand" href="qui_sommes_nous.php"><h1 class="display-4">Qui sommes-nous ?</h1></a>
+        <a class="navbar-brand" href="qui_sommes_nous.php"><h1 class="">Qui sommes-nous ?</h1></a>
         <p class="lead"></p>
        <!-- passage PHP pour tester s'il fonctionne avant de poursuivre -->
           <?php
@@ -66,90 +66,30 @@ require_once 'inc/init.inc.php';
     <!-- ====================================================== -->
   <main class="container">
     <section class="row py-5 justify-content-center">
-      <div class="row mb-2">
-        <div class="col-12 col-md-6 col-lg-8">
-          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div class="col p-4 d-flex flex-column position-static">
-              <strong class="d-inline-block mb-2 text-primary">World</strong>
-              <h3 class="mb-0">Featured post</h3>
-              <div class="mb-1 text-muted">Nov 12</div>
-              <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="stretched-link">Continue reading</a>
-            </div>
-            <div class="col-auto d-none d-lg-block">
-              <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-8">
-          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div class="col p-4 d-flex flex-column position-static">
-              <strong class="d-inline-block mb-2 text-success">Design</strong>
-              <h3 class="mb-0">Post title</h3>
-              <div class="mb-1 text-muted">Nov 11</div>
-              <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="stretched-link">Continue reading</a>
-            </div>
-            <div class="col-auto d-none d-lg-block">
-              <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-            </div>
-          </div>
-        </div>
-        <!-- fin col -->
-    </div>
-    <!-- fin row -->
-</section>
+      <div class="col-12 col-lg-5 w-50">
+        <article>
+          <p> Montjean cinéma est une grande famille créé en 1963 par George VIAU. <br>
+          Aujourd'hui, une équipe de 77 bénévoles est à votre service pour vous assurer une séance de qualité dans les meilleures conditions possibles et aux meilleurs
+          tarifs</p>
+        </article>
+      </div>
+      <div class="col-12 col-lg-5 w-50">
+        <img src="img/salle_montjean.jpg" class="rounded float-start" alt="...">     
+      </div>
+    </section>
+
+    <section class="row py-5 justify-content-center">
+      <div class="col-12 col-lg-5">     
+        <img src="img/" class="rounded float-end" alt="...">
+      </div>
+      <div class="col-12 col-lg-5">
+        <img src="img/" class="rounded float-start" alt="...">     
+      </div>
+    </section>
 
 
       
-        Montjean cinéma est une grande famille créé en 1963 par George VIAU. <br>
-          Aujourd'hui, une équipe de 77 bénévoles est à votre service pour vous assurer une séance de qualité dans les meilleures conditions possibles et aux meilleurs
-          - Tarifs normal :
-o Adulte = 5.00€
-o Carte Cézam = 4.50€
-o Enfant (-16ans) = 3.50€
-- Tarifs 3D :
-o Adulte = 6.00€
-o Carte Cézam = 5.50€
-o Enfant (-16ans) = 4.50€
-- Tarifs du dimanche à 11h :
-o Adulte = 4.00€
-o Enfant (-16ans) = 3.00€
-- Le mardi c'est Cinéday, pour les abonnés Orange, une place achetée, une place offerte, voir conditions auprès de votre opérateur.
-- Mode de règlement
-o Carte bancaire
-o Espèces
-o Chèques
-o Chèques vacance
-o Carte de fidélité gratuite (la 12ème séance est gratuite)
-- Carte d'abonnement : (à 7€ pour les adultes et 3.5€ pour les enfants)
-o Adulte = Donne droit à une réduction de 1€ par place pendant un an.
-o enfant = Donne droit à une réduction de 0.50€ par place pendant un an.
-La carte d'abonnement et la carte de fidélité sont cumulable.
-Montjean cinéma n’a rien à envié du point de vue technique aux différentes salles d’un multiplex ou autre, elle est équipée de toutes les dernières technologies possible :
-- Vidéo :
-o Projecteur numérique
-o 2D (24 images par seconde)
-o 3D avec lunette active (144 images par seconde)
-- Audio :
-o Analogique (2.1)
-o Sons Dolby (numérique 2.1)
-o Sons Dolby Digital (Numérique 5.1)
-o Sons Dolby Digital (Numérique 7.1)
-o Boucle magnétique pour personnes malentendantes
-o 11 enceintes avec ampli intégré
-o 2 Boomers
-- Salle :
-o 153 places assises
-o 3 places handicapées (pas de marche)
-o Climatisation
-o Caisse informatique
-o 1 distributeur de bonbons
-o Sanitaires femmes, hommes et handicapés Voir moins
-  </div>
-  <!-- fin row -->
-  </section>
-  <!--  fin section row -->
+       
 </main>
 <!-- fin container
 

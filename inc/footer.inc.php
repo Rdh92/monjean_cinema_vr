@@ -1,29 +1,25 @@
-<footer class="container-fluid p-3 m-5 m-auto text-center">
-<!-- <footer class="container-fluid p-4 m-4 m-auto text-center" style="background-color: rgba(132, 113, 122, 0.8);"> -->  
-        <div class="row d-flex text-center justify-content-center">
-          <div class="col-12">
-            <a class="p-4 text-light" href="qui_sommes_nous.php">Qui sommes-nous ?</a>
-            <a class="p-4 text-light" href="evenements.php">Evenements</a>
-            <a class="p-4 text-light" href="programme.php">Voir le programme</a>
-            <a class="p-4 text-light" href="inscription.php">S'inscrire</a>
-            <a class="p-4 text-light" href="contact.php">Contact</a>
-            <a class="p-4 text-light" href="infos_pratiques.php">Informations pratiques</a>
-          </div>
-          <!-- fin col -->
 
-          <div class="col-12 p-5">  
-            <a class="p-4 text-light" href="https://fr-fr.facebook.com/Montjean.cinema/"><i class="bi bi-facebook"></i></a>
+<footer class="container-fluid p-2 m-2 col-12 text-center bg-image" style="background-image: url('img/background_peliculle_bleu_royal.png'); rgba(17,13,44,1);"> 
+  <div class="row d-flex text-center justify-content-center">
+    <div class="col-12">
+      <a class="p-4" href="qui_sommes_nous.php">Qui sommes-nous ?</a>
+      <a class="p-4" href="inscription.php">S'inscrire</a>
+      <a class="p-4" href="contact.php">Restons en contact !</a>
+      <a class="p-4" href="infos_pratiques.php">Informations pratiques</a>
+    </div>
+    <!-- fin col -->
 
-            <a class="p-4 text-light" href="https://www.anjou-tourisme.com/fr/diffusio/loisirs/montjean-cinema-mauges-sur-loire_TFOLOIPDL049V50E71W"><i class="bi bi-instagram"></i></a>
+    <div class="col-12 p-5">  
+      <a class="p-4" href="https://fr-fr.facebook.com/Montjean.cinema/"><i class="bi bi-facebook"></i></a>
+      <a class="p-4" href="https://www.anjou-tourisme.com/fr/diffusio/loisirs/montjean-cinema-mauges-sur-loire_TFOLOIPDL049V50E71W"><i class="bi bi-instagram"></i></a>
+      <a class="p-4" href="https://twitter.com/MontjeanCinema/status/301772075394269184"><i class="bi bi-twitter"></i></a>           
+    </div>
+    <!-- fin col -->
+  </div>
+  <!-- fin row -->
 
-            <a class="p-4 text-light" href="https://twitter.com/MontjeanCinema/status/301772075394269184"><i class="bi bi-twitter"></i></a>           
-          </div>
-          <!-- fin col -->
-        </div>
-        <!-- fin row -->
-
-        <div class="text-light">
-            <small>Copyright &copy; Vanusa Santos & Redha Talamine - Soutenance Colombbus 2022</small>
-        </div>
-        <!-- fin div copyright -->      
+  <div class="">
+    <small>Copyright &copy; Vanusa Santos & Redha Talamine - Soutenance Colombbus 2022</small>
+  </div>
+  <!-- fin div copyright -->      
 </footer>

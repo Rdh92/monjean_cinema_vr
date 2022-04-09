@@ -97,7 +97,7 @@ require_once 'inc/init.inc.php';
   </head>
   <body>
    <header class="container bg-success bg-gradient text-white p-2 ">
-        <h1 class="display-4">Connexion à votre espace administrateur</h1>
+        <h1 class="">Connexion à votre espace administrateur</h1>
         <p class="lead">Administration site Montjean_cinéma</p>
    </header>
    <div class="container">      

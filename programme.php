@@ -56,9 +56,9 @@
     
     <?php require_once 'inc/navbar.inc.php'; ?> 
   
-    <header class="container-fluid f-header p-2 mb-4 bg-light col-12 text-center">
+    <header class="container-fluid f-header p-2 mb-4 col-12 text-center">
         <div class="p-4 m-4 text-center">
-            <a class="navbar-brand" href="programme.php"><h1 class="display-4">Programme</h1></a>
+            <a class="navbar-brand" href="programme.php"><h1 class="">Programme</h1></a>
                
             <!-- passage PHP pour tester s'il fonctionne avant de poursuivre -->
                 <?php

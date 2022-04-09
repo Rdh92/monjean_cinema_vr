@@ -3,15 +3,15 @@
 /* Couleurs charte graphique : 6 couleurs */
 /* https://cssgenerator.org/rgba-and-hex-color-generator.html */
 
-/* Convertir vers RGBA en transparence */
+/* Convertir vers rgba en transparence */
 /* https://web-color.aliasdmc.fr/couleur-web-black-avec-transparence.html */
 
-/* noir : #000000  */
-/* bleu nuit : #110D2C; RGBA(255,101,80,1) */
-/* bleu marine : #3340A7; RGBA(51,64,167,1) */
-/* bleu royal : #3A3CDC;  RGBA(58,60,220,1) */
-/* bleu ciel : #5D83D5; RGBA(93,131,213,1) */
-/* gris clair : #E0E4EF; RGBA(224,228,239,1) */
+/* TYPO : noir : #000000  */
+/* TYPO : bleu nuit : #110D2C; rgba(17,13,44,1) */
+/* FOOTER : bleu marine : #3340A7; rgba(51,64,167,1) */
+/* BUTTONS : bleu royal : #3A3CDC;  rgba(58,60,220,1) */
+/* BCG : bleu ciel : #5D83D5; rgba(93,131,213,1) */
+/* BCG, typo : gris clair : #E0E4EF; rgba(224,228,239,1) */
 
 
 body {
@@ -21,21 +21,49 @@ body {
 }
 
 h1, h2, h3, h4, h5 {
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Michroma', sans-serif;
+    color: #110D2C;
 }
 
-.bg-image{
+
+p {
+    font-family: 'Barlow', bold, sans-serif;
+}
+
+/* .bg-image{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url('img/background_peliculle_gris.png');
-}
+} */
 
 footer {
-    background-color: #3340A7;
-   /* color: #000000; */
-    color: #E0E4EF;
+    font-family: 'Michroma', sans-serif;
+}
+
+a:link {
+    text-decoration: none;
 }
 
 
+/* ANIMATION page Accueil */
+.battement {
+    margin: 50px;
+ }
 
+ .bouton {
+    background-color: #E0E4EF;
+    text-align: center;
+    padding: 1rem 2rem;
+    border-radius: 1px;
+    animation: battement 3s infinite cubic-bezier(.66, 0, 0, 1);
+ }
+
+ @keyframes battement {
+    from {
+        box-shadow: 0 0 5px -15px rgba(58,60,220,1), 0 0 5px -5px rgba(58,60,220,1);
+    }
+
+    to {
+        box-shadow: 0 0 5px 10px rgba(224,228,239,1), 0 0 5px 15px rgba(224,228,239,1);
+    }   
+}

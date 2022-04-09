@@ -49,9 +49,9 @@ require_once 'inc/init.inc.php';
     <!-- ====================================================== --> 
     <?php require_once 'inc/navbar.inc.php'; ?> 
   
-    <header class="container-fluid f-header p-2 mb-4 bg-light col-12 text-center">
+    <header class="container-fluid f-header p-4 mb-4 bt-4 col-12 text-center">
       <div class="col-12 text-center">
-        <a class="navbar-brand" href="evenements.php"><h1 class="display-4">Evenements</h1></a>
+        <h1 class="" style="color: rgba(93,131,213,1);">Evenements</h1>
         <p class="lead"></p>
        <!-- passage PHP pour tester s'il fonctionne avant de poursuivre -->
           <?php
@@ -66,12 +66,145 @@ require_once 'inc/init.inc.php';
     <!-- ====================================================== -->
   <main class="container">
     <section class="row py-5 justify-content-center">
-            <div class="col-5 py-lg-5">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis earum molestiae est quod quaerat tenetur cum, expedita hic maxime, placeat facilis voluptate iure? Ea quia laborum ad, iusto odit voluptatem!
+      <div class="container px-4 py-5" id="custom-cards">
+      <h2 class="pb-2 border-bottom">Prochainement</h2>
+        <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+          <div class="col">
+            <div class="card card-cover h-100 overflow-hidden text-white rounded-5 shadow-lg" style="background-image: url('img/gravure_accueil.jpg');">
+              <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">1</h2>
+                <ul class="d-flex list-unstyled mt-auto">
+                  <li class="me-auto">
+                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                  </li>
+                  <li class="d-flex align-items-center me-3">
+                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+                    <small>Earth</small>
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
+                    <small>3d</small>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div class="col-5 py-lg-5">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis earum molestiae est quod quaerat tenetur cum, expedita hic maxime, placeat facilis voluptate iure? Ea quia laborum ad, iusto odit voluptatem!
-        </section>
+          </div>
+
+          <div class="col">
+          <div class="card card-cover h-100 overflow-hidden text-white rounded-5 shadow-lg" style="background-image: url('img/gravure_accueil.jpg');">
+              <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">2</h2>
+                <ul class="d-flex list-unstyled mt-auto">
+                  <li class="me-auto">
+                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                  </li>
+                  <li class="d-flex align-items-center me-3">
+                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+                    <small>Pakistan</small>
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
+                    <small>4d</small>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+          <div class="card card-cover h-100 overflow-hidden text-white rounded-5 shadow-lg" style="background-image: url('img/gravure_accueil.jpg');">
+              <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">3</h2>
+                <ul class="d-flex list-unstyled mt-auto">
+                  <li class="me-auto">
+                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                  </li>
+                  <li class="d-flex align-items-center me-3">
+                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+                    <small>California</small>
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
+                    <small>5d</small>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--  fin section row -->
+
+    <section class="row py-5 justify-content-center">
+      <div class="container px-4 py-5" id="custom-cards">
+      <h2 class="pb-2 border-bottom">Evenements passés</h2>
+        <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+          <div class="col">
+            <div class="card card-cover h-100 overflow-hidden text-white rounded-5 shadow-lg" style="background-image: url('img/gravure_accueil.jpg');">
+              <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">1</h2>
+                <ul class="d-flex list-unstyled mt-auto">
+                  <li class="me-auto">
+                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                  </li>
+                  <li class="d-flex align-items-center me-3">
+                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+                    <small>Earth</small>
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
+                    <small>3d</small>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+          <div class="card card-cover h-100 overflow-hidden text-white rounded-5 shadow-lg" style="background-image: url('img/gravure_accueil.jpg');">
+              <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">2</h2>
+                <ul class="d-flex list-unstyled mt-auto">
+                  <li class="me-auto">
+                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                  </li>
+                  <li class="d-flex align-items-center me-3">
+                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+                    <small>Pakistan</small>
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
+                    <small>4d</small>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+          <div class="card card-cover h-100 overflow-hidden text-white rounded-5 shadow-lg" style="background-image: url('img/gravure_accueil.jpg');">
+              <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">3</h2>
+                <ul class="d-flex list-unstyled mt-auto">
+                  <li class="me-auto">
+                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                  </li>
+                  <li class="d-flex align-items-center me-3">
+                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+                    <small>California</small>
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
+                    <small>5d</small>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <!--  fin section row -->
   </main>
   <!-- fin container

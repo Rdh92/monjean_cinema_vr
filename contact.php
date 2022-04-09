@@ -43,15 +43,15 @@ require_once 'inc/init.inc.php';
     <title>Montjean_contact</title>
 </head>
 
-<body class="bg-image" style="background-image: url('')">
+<body>
     <!-- ====================================================== -->
     <!--  EN-TETE : header à preceder de NAVBAR en require      --> 
     <!-- ====================================================== --> 
     <?php require_once 'inc/navbar.inc.php'; ?> 
   
-    <header class="container-fluid f-header p-2 mb-4 bg-light col-12 text-center">
+    <header class="container-fluid f-header p-2 m-2 col-12 text-center bg-image" style="background-image: url('img/background_peliculle_gris.png');">
       <div class="col-12 text-center">
-        <a class="navbar-brand" href="contact.php"><h1 class="display-4">Restons en contact !</h1></a>
+        <h1 class="">Restons en contact !</h1>
         <p class="lead"></p>
        <!-- passage PHP pour tester s'il fonctionne avant de poursuivre -->
           <?php
@@ -66,48 +66,37 @@ require_once 'inc/init.inc.php';
     <!-- ====================================================== -->
   <main class="container">
     <section class="row text-center m-5 py-5">
-      <div class="col-lg-6 col-md-8 mx-auto border border-light">
-          <p>Informations et service client : <br>
-              Au guichet du cinéma <br>
-              de mercredi à dimanche <br>
-              de 20 h à 23 h <br>
+      <h3>Informations et service client</h3>
+      <div class="col col-lg-12 col-md-8 mx-auto">      
+          <h4>Au guichet du cinéma de mercredi à dimanche de 20 h à 23 h</h4>
           <p>Adresse : Rue de l'Aumônerie 49570 Mauges-sur-Loire</p>
           <p>Par téléphone : 02 41 39 82 82</p>
           <p>Par e-email : montjean@montjean.com</p>
       </div>
     </section>
 
-    <section class="row text-center m-5 py-5">
+    <section class="row justify-content-evenly m-5 py-5">   
       <div class="col-lg-6 col-md-8 mx-auto border border-light">
-          <h2 class="fw-light">Que pouvons-nous faire pour vous ?</h2>
-          <form action="">
-            <div class="mb-3">
-              <label for="exampleFormControlTextarea1" class="form-label">Dites-nous tout !</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Votre e-mail</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-              <button type="submit" class="btn btn-dark">Envoyer votre message</button>
-            </div>      
-          </form>
+        <h4 class="fw-light"></h4>        
+        <form action="">
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Que pouvons-nous faire pour vous ? Dites-nous tout en quelques mots !</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Votre e-mail</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            <button type="submit" class="rounded-pill btn btn-sm p-2 m-2" style="background-color: rgba(58,60,220,1); color: rgba(224,228,239,1);">Envoyer votre message</button>         
+          </div>      
+        </form>
       </div>
       <!-- fin col -->
     </section>
     <!--  fin row -->
-
-	  <!-- section -->
-		<section class="row text-center m-5 py-5">
-			<h3>Nous retrouver !</h3>
-			<div class="m-2 p-2">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10804.743787052914!2d-0.8622309!3d47.3888047!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3479c23dee996fa2!2sMontjean%20Cin%C3%A9ma!5e0!3m2!1sfr!2sfr!4v1648318885619!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-		</section>
-		<!-- section -->
   </main>
-  <!-- fin container
+  <!-- fin container -->
 
-  VOIR pour la transition du carrousel : https://getbootstrap.com/docs/4.3/components/carousel/#carouselcycle -->
+  <!-- VOIR pour la transition du carrousel : https://getbootstrap.com/docs/4.3/components/carousel/#carouselcycle  -->
 
     <!-- ====================================================== -->
     <!--                  FOOTER : en require                   --> 

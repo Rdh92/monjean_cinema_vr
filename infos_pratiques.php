@@ -50,9 +50,9 @@ require_once 'inc/init.inc.php';
     
     <?php require_once 'inc/navbar.inc.php'; ?> 
   
-  <header class="container-fluid f-header p-2 mb-4 bg-light">
-    <div class="col-12 text-center">
-        <a class="navbar-brand" href="infos_pratiques.php"><h1 class="display-4">Informations pratiques !</h1></a>
+<header class="container-fluid f-header p-2 mb-4">
+  <div class="col-12 text-center">
+        <a class="navbar-brand" href="infos_pratiques.php"><h1 class="">Informations pratiques</h1></a>
         <p class="lead"></p>
         <!-- passage PHP pour tester s'il fonctionne avant de poursuivre -->
           <?php
@@ -60,101 +60,26 @@ require_once 'inc/init.inc.php';
           // echo "<p class=\"text-green\">$positiva</p>";
         ?>
     </div>
-  </header>
+</header>
     <!-- fin container-fluid header -->
     
      
     <!-- ====================================================== -->
     <!--                CONTAINER : contenu principal           --> 
     <!-- ====================================================== -->
-  <main class="container">
-    <section class="row py-5 justify-content-center">
-      <div class="row mb-2">
-        <div class="col-12 col-md-6 col-lg-6">
-          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div class="col p-4 d-flex flex-column position-static">
-              <strong class="d-inline-block mb-2 text-primary">Sur nos tarifs</strong>
-              <h3 class="mb-0">3 catégories :</h3>
-              <div class="mb-1 text-muted"></div>
-              <p class="card-text mb-auto">- Adulte</p>
-              <p class="card-text mb-auto">- Carte Cézam</p>
-              <p class="card-text mb-auto">- Enfant (-16ans)</p>
-              <a href="tarifs.php" class="stretched-link">Voir tous les tarifs !</a>
-            </div>
-            <div class="col-auto d-none d-lg-block">
-              <img class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></img>
-            </div>
-          </div>
-        </div>
-        <!-- fin col -->
-        <div class="col-12 col-md-6 col-lg-6">
-          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div class="col p-4 d-flex flex-column position-static">
-              <strong class="d-inline-block mb-2 text-success">Abonnés Orange</strong>
-              <h3 class="mb-0">Cinéday</h3>
-              <div class="mb-1 text-muted">Tous les mardis</div>
-              <p class="mb-auto">Une place achetée, une place offerte</p>
-              <a href="tarifs.php" class="stretched-link">Voir tous les tarifs !</a>
-            </div>
-            <div class="col-auto d-none d-lg-block">
-              <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-            </div>
-          </div>
-        </div>
-        <!-- fin col -->
-        <div class="col-12 col-md-6 col-lg-6">
-          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div class="col p-4 d-flex flex-column position-static">
-              <strong class="d-inline-block mb-2 text-success">Modes de reglements : sur place</strong>
-              <h3 class="mb-0">- Carte bancaire</h3>
-              <h3 class="mb-0">- Espèces</h3>
-              <h3 class="mb-0">- Chèque</h3>
-              <h3 class="mb-0">- Chèque vacances</h3>
-              <div class="mb-1 text-muted"></div>
-              <p class="mb-auto">Le mardi c'est Cinéday, pour les abonnés Orange, une place achetée, une place offerte, voir conditions auprès de votre opérateur..</p>
-              <a href="tarifs.php" class="stretched-link">Cliquer ici pour aller à ala page des tarifs !</a>
-            </div>
-            <div class="col-auto d-none d-lg-block">
-              <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-            </div>
-          </div>
-        </div>
-        <!-- fin col -->
-    </div>
-    <!-- fin row -->
-</section>
+<main class="container">
+  <h2>Nos services</h2>
+    <div>
+      <p>Montjean cinéma n’a rien à envié du point de vue technique aux différentes salles d’un multiplex ou autre, elle est équipée de toutes les dernières technologies possible :
+        <ul>
+          - Vidéo :
+          o Projecteur numérique
+          o 2D (24 images par seconde)
+          o 3D avec lunette active (144 images par seconde)
+          - Audio :
+        </ul>
 
-
-      
-        Montjean cinéma est une grande famille créé en 1963 par George VIAU. <br>
-          Aujourd'hui, une équipe de 77 bénévoles est à votre service pour vous assurer une séance de qualité dans les meilleures conditions possibles et aux meilleurs
-          - Tarifs normal :
-o Adulte = 5.00€
-o Carte Cézam = 4.50€
-o Enfant (-16ans) = 3.50€
-- Tarifs 3D :
-o Adulte = 6.00€
-o Carte Cézam = 5.50€
-o Enfant (-16ans) = 4.50€
-- Tarifs du dimanche à 11h :
-o Adulte = 4.00€
-o Enfant (-16ans) = 3.00€
-- Le mardi c'est Cinéday, pour les abonnés Orange, une place achetée, une place offerte, voir conditions auprès de votre opérateur.
-- Mode de règlement
-o Carte bancaire
-o Espèces
-o Chèques
-o Chèques vacance
-o Carte de fidélité gratuite (la 12ème séance est gratuite)
-- Carte d'abonnement : (à 7€ pour les adultes et 3.5€ pour les enfants)
-o Adulte = Donne droit à une réduction de 1€ par place pendant un an.
-o enfant = Donne droit à une réduction de 0.50€ par place pendant un an.
-La carte d'abonnement et la carte de fidélité sont cumulable.
-Montjean cinéma n’a rien à envié du point de vue technique aux différentes salles d’un multiplex ou autre, elle est équipée de toutes les dernières technologies possible :
-- Vidéo :
-o Projecteur numérique
-o 2D (24 images par seconde)
-o 3D avec lunette active (144 images par seconde)
+<ul>
 - Audio :
 o Analogique (2.1)
 o Sons Dolby (numérique 2.1)
@@ -163,13 +88,154 @@ o Sons Dolby Digital (Numérique 7.1)
 o Boucle magnétique pour personnes malentendantes
 o 11 enceintes avec ampli intégré
 o 2 Boomers
-- Salle :
+</ul>
+
+<ul>
+Salle :
 o 153 places assises
 o 3 places handicapées (pas de marche)
 o Climatisation
 o Caisse informatique
 o 1 distributeur de bonbons
-o Sanitaires femmes, hommes et handicapés Voir moins
+o Sanitaires femmes, hommes et handicapés Voir moins</p>
+</ul>
+
+      </div>      
+      <!-- fin col -->
+    </section>
+    <!-- fin row -->
+
+    <section class="row mx-auto mb-4 p-4">
+    <h2 class="p-4 mb-4 mt-4">Nos tarifs (euros)</h2>  
+      <div class="col-12 col-lg-4">
+        <ul>
+          <h3>Normal</h3>
+          <li>Adulte = 5,00</li>
+          <li>Carte Cézam = 4,50</li>
+          <li>Enfant (-16ans) = 3,50</li>
+        </ul>
+      </div>
+      <!-- fin col -->
+
+      <div class="col-12 col-lg-4">
+        <ul>
+          <h3>3D</h3>
+          <li>Adulte = 6,00</li>
+          <li>Carte Cézam = 5,50</li>
+          <li>Enfant (-16ans) = 4,50</li>
+        </ul>
+      </div>
+       <!-- fin col -->
+
+       <div class="col-12 col-lg-4">
+        <ul>
+          <h3>Dimanche - 11 h</h3>
+          <li>Adulte = 4,00</li>
+          <li>Enfant (-16ans) = 3,00</li>
+        </ul>
+      </div>
+       <!-- fin col -->
+    </section>
+    <!-- fin row -->
+
+    <section class="row p-4 mb-4 mt-4">
+      <div class="justify-content-center">
+        <h2 class="fw-light">Nous retrouver</h2>        
+        <div class="col-12">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10804.743787052914!2d-0.8622309!3d47.3888047!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3479c23dee996fa2!2sMontjean%20Cin%C3%A9ma!5e0!3m2!1sfr!2sfr!4v1648318885619!5m2!1sfr!2sfr" width="1200" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+      <!-- fin col -->
+    </section>
+    <!-- fin row -->
+
+    <section class="col-lg-12 col-md-8 mb-4 p-4">
+    <div class="container px-4 py-5" id="featured-3">
+    <h2 class="pb-2 border-bottom">Columns with icons</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="feature col">
+        <div class="feature-icon bg-primary bg-gradient">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"/></svg>
+        </div>
+        <h2>Featured title</h2>
+        <p>Paragraphe</p>
+        <a href="#" class="icon-link">
+          Call to action
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+        </a>
+      </div>
+      <div class="feature col">
+        <div class="feature-icon bg-primary bg-gradient">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#people-circle"/></svg>
+        </div>
+        <h2>Featured title</h2>
+        <p>Paragraphe</p>
+        <a href="#" class="icon-link">
+          Call to action
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+        </a>
+      </div>
+      <div class="feature col">
+        <div class="feature-icon bg-primary bg-gradient">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"/></svg>
+        </div>
+        <h2>Featured title</h2>
+        <p>Paragraphe</p>
+        <a href="#" class="icon-link">
+          Call to action
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+<div class="b-example-divider"></div>
+
+<div class="container px-4 py-5" id="hanging-icons">
+  <h2 class="pb-2 border-bottom">Hanging icons</h2>
+  <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+    <div class="col d-flex align-items-start">
+      <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
+        <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"/></svg>
+      </div>
+      <div>
+        <h2>Featured title</h2>
+        <p>Paragraphe</p>
+        <a href="#" class="btn btn-primary">
+          Primary button
+        </a>
+      </div>
+    </div>
+    <div class="col d-flex align-items-start">
+      <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
+        <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"/></svg>
+      </div>
+      <div>
+        <h2>Featured title</h2>
+        <p>Paragraphe</p>
+        <a href="#" class="btn btn-primary">
+          Primary button
+        </a>
+      </div>
+    </div>
+    <div class="col d-flex align-items-start">
+      <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
+        <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"/></svg>
+      </div>
+      <div>
+        <h2>Featured title</h2>
+        <p>Paragraphe</p>
+        <a href="#" class="btn btn-primary">
+          Primary button
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+    
   </div>
   <!-- fin row -->
   </section>

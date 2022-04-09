@@ -56,28 +56,25 @@ require_once 'inc/init.inc.php';
     <!--              EN-TETE : header avec carousel            --> 
     <!-- ====================================================== --> 
     
-  <header class="container-fluid f-header p-2 mb-4 bg-light col-12 text-center"><div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-        <!-- passage PHP pour tester s'il fonctionne avant de poursuivre -->
-       <?php
-          // $positiva = "Bon ciné !";
-          // echo "<p class=\"text-green\">$positiva</p>";
-        ?>
-
-    <div class="container rounded mt-5">
-      <h1>Bienvenue au Montjean Cinéma !</h1>
-
-      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="img/printemps_du_cinema_Capture d’écran 2022-03-26 184832.png" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="img/batman_686_356.png" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="img/box_office.png" class="d-block w-100" alt="...">
-          </div>
+<header class="container-fluid f-header p-4 mb-4 bt-4 col-12 text-center">
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <h1 class="p-2 m-2">Bienvenue au Montjean Cinéma !</h1>
+  <div class="container p-3 mb-5">
+    <div id="carouselExampleControls" class="carousel slide shadow-lg" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <a href="https://video.wbdsta.net/ops/allocine/PrintempsDuCinema/PrintempsDuCinema_2.mp4"><img src="img/printemps_du_cinema_1920_1080.png" class="d-block w-100" alt="Affiche du Printemps du cinéma 2022"></a>
         </div>
+        <div class="carousel-item">
+          <a href="https://www.allocine.fr/article/fichearticle_gen_carticle=18708133.html"><img src="img/box_office_carousel.png" class="d-block w-100" alt="Affiche du box office - film Batman 2022"></a>         
+        </div>
+        <div class="carousel-item">
+          <a href="https://www.allocine.fr/video/player_gen_cmedia=19586202&cfilm=248481.html?jwsource=cl"><img src="img/minions_carousel.png" class="d-block w-100" alt="Affiche du box office - film Batman 2022"></a>         
+        </div>
+        <div class="carousel-item">
+          <a href="evenements.php"><img src="img/avant_premieres_montjean_1920_1080.png" class="d-block w-100" alt="Affiche avant-premieres du Montjean"></a>         
+        </div>
+      </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
@@ -88,8 +85,10 @@ require_once 'inc/init.inc.php';
       </button>
     </div>
     <!-- fin carousel -->
-  </header>
-      <!-- fin container-fluid header -->
+  </div>
+  <!-- fin container du carousel -->
+</header>
+  <!-- fin container-fluid header -->
     
     <!-- ====================================================== -->
     <!--                CONTAINER : contenu principal           --> 
@@ -99,61 +98,53 @@ require_once 'inc/init.inc.php';
     <section class="py-5 text-center">
         <h2 class="fw-light">A l'affiche</h2>
         <div class="album py-5">
-            <div class="galerie justify-content-evenly">
+            <div class="galerie justify-content-around">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
 
                   <!-- debut div col de la galerie -->
-                    <div class="col">
-                        <div class="card shadow-sm m-4" style="width: 18rem;">
-                            <img src="affiches/goliath.jpg" class="card-img-top rounded-3" alt="...">
+
+                  <div class="col">
+                        <div class="card shadow-lg m-4" style="width: 18rem;">
+                            <img src="affiches/sonic.jpg" class="card-img-top rounded-3" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Sonic</h5>
+                                <p class="card-text"></p>
+                                <a href="https://youtu.be/NCZTYdAP6w0" class="btn" style="color: rgba(17,13,44,1);">Voir la bande d'annonce</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- fin col -->
+                    <div class="col rounded-4">
+                        <div class="card shadow-lg m-4" style="width: 18rem;">
+                            <img src="affiches/goliath.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Goliath</h5>
                                 <p class="card-text"></p>
-                                <a href="https://youtu.be/I3gZ6Iz6yQI" class="btn btn-light">Voir la bande d'annonce</a>
-                                <!-- code d'integration :
-                                <iframe width="853" height="480" src="https://www.youtube.com/embed/I3gZ6Iz6yQI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                                <a href="https://youtu.be/I3gZ6Iz6yQI" class="btn" style="color: rgba(17,13,44,1);">Voir la bande d'annonce</a>
                             </div>
                         </div>
                     </div>
                     <!-- fin col -->
                     
                     <div class="col">
-                        <div class="card shadow-sm m-4" style="width: 18rem;">
+                        <div class="card shadow-lg m-4" style="width: 18rem;">
                             <img src="affiches/notre_dame_brule.jpg" class="card-img-top rounded-3" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Notre-Dame brûle</h5>
                                 <p class="card-text"></p>
-                                <a href="https://youtu.be/YlDXdPSEtgk" class="btn">Voir la bande d'annonce</a>
-                                <!-- code d'integration :
-                                <iframe width="853" height="480" src="https://www.youtube.com/embed/YlDXdPSEtgk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                                <a href="https://youtu.be/YlDXdPSEtgk" class="btn" style="color: rgba(17,13,44,1);">Voir la bande d'annonce</a>
                             </div>
                         </div>
                     </div>
                     <!-- fin col -->
             
                     <div class="col">
-                        <div class="card shadow-sm m-4" style="width: 18rem;">
+                        <div class="card  shadow-lg m-4" style="width: 18rem;">
                             <img src="affiches/en_meme_temps.jpg" class="card-img-top rounded-3" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">En même temps</h5>
                                 <p class="card-text"></p>
-                                <a href="https://youtu.be/M_ZsmTnkIPk" class="btn btn-light">Voir la bande d'annonce</a>
-                                <!-- code d'integration :
-                                <iframe width="853" height="480" src="https://www.youtube.com/embed/M_ZsmTnkIPk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-                            </div>
-                        </div>
-                    </div>
-                    <!-- fin col -->
-            
-                    <div class="col">
-                        <div class="card shadow-sm m-4" style="width: 18rem;">
-                            <img src="affiches/ogre.jpg" class="card-img-top rounded-3" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Ogre</h5>
-                                <p class="card-text"></p>
-                                <a href="https://youtu.be/1J2KnMxKkgQ" class="btn btn-light">Voir la bande d'annonce</a>
-                                <!-- code d'integration :
-                                <iframe width="853" height="480" src="https://www.youtube.com/embed/1J2KnMxKkgQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                                <a href="https://youtu.be/M_ZsmTnkIPk"  class="btn" style="color: rgba(17,13,44,1);">Voir la bande d'annonce</a>
                             </div>
                         </div>
                     </div>
@@ -162,7 +153,7 @@ require_once 'inc/init.inc.php';
                 <!-- fin row -->
             </div>
            <!--  fin container -->
-        </div class="album py-5 bg-light">
+        </div class="album py-5">
     </section>
     <!-- FIN SECTION : A L AFFICHE -->
   </main>

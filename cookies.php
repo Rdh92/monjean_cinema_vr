@@ -50,9 +50,9 @@ require_once 'inc/init.inc.php';
     
     <?php require_once 'inc/navbar.inc.php'; ?> 
   
-  <header class="container-fluid f-header p-2 mb-4 bg-light">
+  <header class="container-fluid f-header p-2 mb-4">
     <div class="col-12 text-center">
-        <a class="navbar-brand" href="accueil.php"><h1 class="display-4">Cookies</h1></a>
+        <a class="navbar-brand" href="accueil.php"><h1 class="">Cookies</h1></a>
         <p class="lead"></p>
         <!-- passage PHP pour tester s'il fonctionne avant de poursuivre -->
           <?php

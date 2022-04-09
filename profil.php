@@ -2,9 +2,40 @@
 // require connexion, session etc.
 require_once 'inc/init.inc.php';
 
+// debug( $_SESSION['membre']['id_membre']);
+$adresse = $_SESSION['membre']['adresse'];
 
+// 1 - TRAITEMENT DE MISE À JOUR DU PROFIL
+if ( !empty($_POST) ) {//not empty
+    debug($_POST);
+  
+  $_POST['pseudo'] = htmlspecialchars($_POST['pseudo']);
+  $_POST['nom'] = htmlspecialchars($_POST['nom']);
+  $_POST['prenom'] =htmlspecialchars($_POST['prenom']);
+  $_POST['email'] = htmlspecialchars($_POST['email']);
+  $_POST['civilite'] = htmlspecialchars($_POST['civilite']);
+  $_POST['ville'] = htmlspecialchars($_POST['ville']);
+  $_POST['code_postal'] = htmlspecialchars($_POST['code_postal']);
+  $_POST['adresse'] = htmlspecialchars($_POST['adresse']);
+  
+  $resultat = $pdoMJC->prepare( " UPDATE membres SET pseudo = :pseudo, nom = :nom, prenom = :prenom, email = :email, civilite = :civilite, ville = :ville, code_postal = :code_postal, adresse = :adresse WHERE id_membre = :id_membre " );// requete préparée avec des marqueurs
+  
+  $resultat->execute( array(
+    ':pseudo' => $_POST['pseudo'],
+    ':nom' => $_POST['nom'],
+    ':prenom' => $_POST['prenom'],
+    ':email' => $_POST['email'],
+    ':civilite' => $_POST['civilite'],
+    ':ville' => $_POST['ville'],
+    ':code_postal' => $_POST['code_postal'],
+    ':adresse' => $_POST['adresse'],
+    ':id_membre' => $_SESSION['membre']['id_membre']
+  ));
+  header('location:profil.php');
+  exit();
+  }
 
-// 2 SUPPRESSION D'UN FILM
+// 2 - SUPPRESSION D'UN FILM
 
 // debug($_GET);
 if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_film'])) {
@@ -66,7 +97,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
   
     <header class="container-fluid f-header p-2 mb-4 col-12 text-center">
         <div class="p-4 m-4 text-center">
-            <a class="navbar-brand" href="profil.php"><h1 class="display-4">Espace Admin</h1></a>
+            <!-- <a class="navbar-brand" href="profil.php"><h1 class="display-4">Espace Admin</h1></a> -->
                
         <!-- passage PHP pour tester s'il fonctionne avant de poursuivre -->
                 <?php
@@ -81,8 +112,8 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
       <?php require_once 'inc/navbar.inc.php'; ?>
 
     <header class="container-fluid bg-warning p-4">
-            <h1 class="display-4">Votre Espace</h1>
-            <p class="lead">Bonjour <?php echo $_SESSION['membre']['prenom']; ?>
+            <h1 class="display-4">Bonjour <?php echo $_SESSION['membre']['prenom']; ?></h1>
+            <p class="lead">
             <?php
             if(estAdmin()) { // si le membre est 'admin' il n'a pas les mêmes accès qu'un membre 'client'
                 echo ' -- Vous êtes l\'administrateur !</p>';
@@ -105,7 +136,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
     </header>
     <div class="container-fluid">
     <section class="row justify-content-start">
-        <div class="col-md-5">
+        <div class="col-md-6">
             <form method="POST" action="" class="shadow p-3 mb-5 bg-body rounded">
                 <h2>Mise à jour de vos informations</h2>
                 <div class="row">
@@ -134,13 +165,12 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
                 <div class="row">
                 <div class="form-group mt-2">
                     <label for="civilite">Civilité *</label>
-                    
                     <input type="radio" name="civilite" value="m" checked> Homme
                     <input type="radio" name="civilite" value="f"<?php if (isset($_SESSION['membre']['civilite']) && $_SESSION['membre']['civilite'] =='f') echo 'checked';?>> Femme            
                 </div>
                 <div class="col-4 form-group mt-2">
                     <label for="adresse">Adresse</label>
-                    <textarea name="adresse" id="adresse" class="form-control"><?php echo $_SESSION['membre']['adresse']; ?></textarea>
+                    <textarea name="adresse" id="adresse" class="form-control"><?php echo $adresse ?? '' ; ?></textarea>
                 </div>
                 <div class="col-4 form-group mt-2">
                     <label for="code_postal">Code postal</label>
@@ -158,7 +188,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
         </div>
         <a href="profil.php"></a>
 
-        <div class="col-12">
+        <div class="col-md-6">
             <!-- action vide car nous envoyons les données avec cette même page et POST va envoyer dans la superglobale $_POST -->
 			   <form method="POST" action="" class="shadow p-3 mb-5 bg-body rounded">
                   <h2>Ajout d'un Nouveau Film</h2>  

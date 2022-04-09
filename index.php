@@ -58,7 +58,6 @@ require_once 'inc/init.inc.php';
     
 <header class="container-fluid f-header p-4 mb-4 bt-4 col-12 text-center">
   <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-  <h1 class="p-2 m-2">Bienvenue au Montjean Cinéma !</h1>
   <div class="container p-3 mb-5">
     <div id="carouselExampleControls" class="carousel slide shadow-lg" data-bs-ride="carousel">
       <div class="carousel-inner">
@@ -96,6 +95,7 @@ require_once 'inc/init.inc.php';
   <main class="container">
     <!-- DEBUT SECTION : A L AFFICHE -->
     <section class="py-5 text-center">
+    <h1 class="p-1 m-1">Bienvenue au Montjean Cinéma !</h1>
         <h2 class="fw-light">A l'affiche</h2>
         <div class="album py-5">
             <div class="galerie justify-content-around">
@@ -116,7 +116,7 @@ require_once 'inc/init.inc.php';
                     <!-- fin col -->
                     <div class="col rounded-4">
                         <div class="card shadow-lg m-4" style="width: 18rem;">
-                            <img src="affiches/goliath.jpg" class="card-img-top rounded-3" alt="...">
+                            <img src="affiches/goliath.jpg" class="card-img-top " alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Goliath</h5>
                                 <p class="card-text"></p>

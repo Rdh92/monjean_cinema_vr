@@ -17,7 +17,7 @@
 body {
     font-family: 'Michroma', sans-serif;
     color: #110D2C;
-    font-size: 1.5em;
+    font-size: 1em;
 }
 
 h1, h2, h3, h4, h5 {
@@ -44,7 +44,6 @@ a:link {
     text-decoration: none;
 }
 
-
 /* ANIMATION page Accueil */
 .battement {
     margin: 50px;
@@ -66,4 +65,11 @@ a:link {
     to {
         box-shadow: 0 0 5px 10px rgba(224,228,239,1), 0 0 5px 15px rgba(224,228,239,1);
     }   
+}
+
+/* Styles des liens dans la navbar */
+
+.nav-link {
+    font-size: 0.9em;
+    letter-spacing: 2px;
 }

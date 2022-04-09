@@ -99,41 +99,7 @@ $requete = $pdoMJC->query( " SELECT * FROM films WHERE categorie = 'Films à l\'
     <!--                CONTAINER : contenu principal           --> 
     <!-- ====================================================== -->
   <main class="container">
-    <!-- DEBUT SECTION en affichage de données en PHP : A L AFFICHE -->
-    <section class="text-center">
-      <!-- Ici les 2 classes pour l'animation du h1 de la page accueil -->
-        <h1 class="battement bouton">A l'affiche au Montjean Cinéma</h1>
-        <div class="album">
-          <div class="galerie justify-content-around">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
-
-              <!-- boucle while -->
-              <?php while ( $ligne = $requete->fetch( PDO::FETCH_ASSOC )) { ?>
-                                  
-              <!-- debut div col de la galerie -->
-              <div class="col-md-4">
-                <div class="card shadow-lg m-4" style="width: 18rem;">
-                  <img src="<?php echo $ligne['photo']; ?>" class="card-img-top rounded-3" alt="affiche du film Sonic 2022">
-                  <div class="card-body">
-                    <h5 class="card-title">"<?php echo $ligne['titre']; ?>"</h5>
-                    <p class="card-text">"<?php echo $ligne['description']; ?>" .</p>
-                    <a href="https://youtu.be/NCZTYdAP6w0" class="btn btn-light" style="color: rgba(17,13,44,1);">Voir la bande d'annonce</a>
-                  </div>
-                  <!-- fin div card-body -->
-                </div>
-                <!-- fin div card shadow -->
-              </div>
-              <!-- fin col -->
-            </div>
-            <!-- fin div row de la galerie -->
-            <?php } ?>
-          </div>
-          <!-- fin div galerie -->
-        </div>
-        <!-- fin div album -->     
-    </section>
-    
-    <!-- DEBUT SECTION HTML : A L AFFICHE -->
+    <!-- DEBUT SECTION : A L AFFICHE -->
     <section class="text-center">
       <!-- Ici les 2 classes pour l'animation du h1 de la page accueil -->
         <h1 class="battement bouton">A l'affiche au Montjean Cinéma</h1>
@@ -191,7 +157,7 @@ $requete = $pdoMJC->query( " SELECT * FROM films WHERE categorie = 'Films à l\'
            <!--  fin container -->
         </div class="album py-5">
     </section>
-    <!-- FIN SECTION : A L AFFICHE DE L'ACCUEIL -->
+    <!-- FIN SECTION : A L AFFICHE -->
   </main>
   <!-- fin container  -->
 
@@ -201,6 +167,7 @@ $requete = $pdoMJC->query( " SELECT * FROM films WHERE categorie = 'Films à l\'
     <!--                  FOOTER : en require                   --> 
     <!-- ====================================================== -->  
     <?php require_once 'inc/footer.inc.php';?> 
+
 
     <!-- ====================================================== -->
     <!--              Bootstrap Bundle with Popper              --> 

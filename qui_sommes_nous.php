@@ -51,13 +51,8 @@ require_once 'inc/init.inc.php';
   
     <header class="container-fluid f-header p-2 mb-4 col-12 text-center">
       <div class="col-12 text-center">
-        <a class="navbar-brand" href="qui_sommes_nous.php"><h1 class="">Qui sommes-nous ?</h1></a>
+        <h1 class="">Qui sommes-nous ?</h1></a>
         <p class="lead"></p>
-       <!-- passage PHP pour tester s'il fonctionne avant de poursuivre -->
-          <?php
-          // $positiva = "Bon ciné !";
-          // echo "<p class=\"text-green\">$positiva</p>";
-        ?>
     </header>
     <!-- fin container-fluid header -->
     

@@ -9,7 +9,7 @@
     </div>
     <!-- fin col -->
 
-    <div class="col-12 p-5">  
+    <div class="col-12 p-4">  
       <a class="p-4" href="https://fr-fr.facebook.com/Montjean.cinema/"><i class="bi bi-facebook"></i></a>
       <a class="p-4" href="https://www.anjou-tourisme.com/fr/diffusio/loisirs/montjean-cinema-mauges-sur-loire_TFOLOIPDL049V50E71W"><i class="bi bi-instagram"></i></a>
       <a class="p-4" href="https://twitter.com/MontjeanCinema/status/301772075394269184"><i class="bi bi-twitter"></i></a>           
@@ -18,7 +18,7 @@
   </div>
   <!-- fin row -->
 
-  <div class="text-white">
+  <div class="">
     <small>Copyright &copy; Vanusa Santos & Redha Talamine - Soutenance Colombbus 2022</small>
   </div>
   <!-- fin div copyright -->      

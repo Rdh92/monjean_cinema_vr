@@ -180,7 +180,7 @@ require_once 'inc/init.inc.php';
 </header>
 <!-- fin container-fluid header -->
 
-<main class="container bg-image">
+<main class="container">
     <div>
        <!-- <div class="row pt-2 justify-content-center">
           <div class="col-6 text-center">

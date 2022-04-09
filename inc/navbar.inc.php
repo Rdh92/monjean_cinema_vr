@@ -1,4 +1,3 @@
-
 <div class="row justify-content-center">
     <div class="col-sm-6 col-lg-2">
         <a class="navbar-brand" href="index.php">           

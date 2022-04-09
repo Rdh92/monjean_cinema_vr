@@ -96,35 +96,41 @@ require_once 'inc/init.inc.php';
     <title>Connectez-vous</title>
   </head>
   <body>
-   <header class="container bg-success bg-gradient text-white p-2 ">
-        <h1 class="">Connexion à votre espace </h1>
-        <p class="lead">Equipe Montjean Cinéma</p>
+      
+    <?php require_once 'inc/navbar.inc.php'; ?> 
+
+   <header class="container-fluid bg-primary bg-gradient text-white p-2 ">
+        <h1 class="text-center">Connexion à votre espace </h1>
+        <p class="lead text-center">Equipe Montjean Cinéma</p>
    </header>
    <div class="container">      
         <section class="row m-4 justify-content-center">
             
-        <?php echo $message; ?>            
-            <div class="col-md-9 p-4 text-white bg-success bg-gradient border border-warning">
-                <p class="lead text-color-white">Rentrez vos identifiants pour vous connecter</p> 
-                <!-- 1- FORMULAIRE DE CONNEXION   -->
-                <form action="" method="POST" class="">
-                    <?php echo $contenu; ?>
-                    <div class="form-group mt-2">
-                        <label for="pseudo">Pseudo *</label>
-                        <input type="text" name="pseudo" id="pseudo" class="form-control"> 
-                    </div>
-                    <div class="form-group mt-2">
-                        <label for="mdp">Mot de passe *</label>
-                        <input type="password" name="mdp" id="mdp" class="form-control">
-                    </div>
+            <?php echo $message; ?>            
+                <div class="col-md-9 p-4 text-primary bg-light bg-gradient border border-primary">
+                    <p class="lead">Rentrez vos identifiants pour vous connecter</p> 
+                    <!-- 1- FORMULAIRE DE CONNEXION   -->
+                    <form action="" method="POST" class="">
+                        <?php echo $contenu; ?>
                         <div class="form-group mt-2">
-                        <input type="submit" value="Connectez-vous" class="btn btn-sm btn-warning"> 
-                    </div>
-                </form>
+                            <label for="pseudo">Pseudo *</label>
+                            <input type="text" name="pseudo" id="pseudo" class="form-control"> 
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="mdp">Mot de passe *</label>
+                            <input type="password" name="mdp" id="mdp" class="form-control">
+                        </div>
+                        <div class="form-group mt-3 ">
+                            <input type="submit" value="Connectez-vous" class="btn btn-sm btn-success"> 
+                        </div>
+                    </form>
+                </div>
 
-                <button class="btn btn-primary" a="">Retour à l'Accueil</button>
-            </div>
-        <!-- fin col -->
+                <!-- Register buttons -->
+                <div class="text-center">
+                    <p>Pas encore bénévole ? Inscrivez-vous ! <a href="inscription.php">S'inscrire</a></p>
+                </div>
+                <!-- fin col -->
         </section>
         <!-- fin row -->
    </div>

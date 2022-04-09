@@ -12,7 +12,7 @@ if (!estAdmin()) { // accès non autorisé si on n'est pas admin (et pas connect
 //debug($_GET);
 if ( isset($_GET['id_film']) ) {
     //debug($_GET);
-    $resultat = $pdoMJC->prepare( " SELECT * FROM films " );
+    $resultat = $pdoMJC->prepare( " SELECT * FROM films WHERE id_film = :id_film " );
     $resultat->execute(array(
       ':id_film' => $_GET['id_film']
     ));
@@ -37,6 +37,7 @@ $_POST['titre'] = htmlspecialchars($_POST['titre']);
 $_POST['description'] = $_POST['description'];
 $_POST['realisateur'] = htmlspecialchars($_POST['realisateur']);
 $_POST['acteurs'] = htmlspecialchars($_POST['acteurs']);
+$_POST['pays'] = htmlspecialchars($_POST['pays']);
 
 // traitement du fichier image, de la photo
 
@@ -77,10 +78,13 @@ exit();
     <title> Mise à jour film - Admin</title>
 
   </head>
-  <body class="m-2">
+  <body>
+    
+  <!-- Navbar  -->
     <?php require_once '../inc/navbar.inc.php'; ?>
-      
-  <header class="container-fluid bg-warning text-white p-4 ">
+  
+  <!-- En-tête  -->
+  <header class="container-fluid bg-primary bg-gradient text-white p-4 ">
         <div class="row">
           <div class="col-5">
             <h1 class="display-4">Admin</h1>
@@ -88,7 +92,7 @@ exit();
           </div>         
         </div>
    </header>
-
+  <!-- fin en-tête  -->
      <br>
 
    <div class="container">      
@@ -122,24 +126,24 @@ exit();
                     <!-- l'attribut entype spécifie que le formulaire envoie des fichiers en plus de données texte ; il va nous permettre de télécharger un fichier ici une photo -->
 
                     <label for="categorie" class="form-label">Catégorie *</label>
-                    <select name="categorie" id="categorie" class="form-select">
+                    <select name="categorie" id="categorie" class="form-select"> 
+                     
                                 <option value="">Choisissez une catégorie</option>
-                                <option value="Films à l'affiche">Films à l'affiche</option>
-                                <option value="Films à venir">Films à venir</option>
+                                <option value="Films à l'affiche"<?php if (!strcmp("Films à l'affiche", $fiche['categorie'])) { echo " selected"; }?>>Films à l'affiche</option>
+                                <option value="Films à venir"<?php if (!strcmp("Films à venir", $fiche['categorie'])) { echo " selected"; }?>>Films à venir</option>
                     </select>
 
                     <br>
 
                     <label for="pays" class="form-label">Pays d'origine</label>
-                    <select name="pays" id="pays">
-                        <option value="">Choisissez le pays</option>
-                        <option value="FRANCE">FRANCE</option>
-                        <option value="ETATS-UNIS">ETATS-UNIS</option>
-                        <option value="ANGLETERRE">ANGLETERRE</option>
-                        <option value="COREE">COREE</option>
-                        <option value="AFRIQUE DU SUD">AFRIQUE DU SUD</option>
-                        <option value="ITALIE">ITALIE</option>
-                        <option value="ESPAGNE">ESPAGNE</option>
+                    <select name="pays" id="pays" class="form-select">
+                        <option value="France"<?php if (!strcmp("France", $fiche['pays'])) { echo " selected"; }?>>France</option>
+                        <option value="Etats-Unis" <?php if (!strcmp("Etats-Unis", $fiche['pays'])) { echo " selected"; }?>>Etats-Unis</option>
+                        <option value="Angleterre"<?php if (!strcmp("Angleterre", $fiche['pays'])) { echo " selected"; }?>>Angleterre</option>
+                        <option value="Corée"<?php if (!strcmp("Corée", $fiche['pays'])) { echo " selected"; }?>>Corée</option>
+                        <option value="Afrique du Sud"<?php if (!strcmp("Afrique du Sud", $fiche['pays'])) { echo " selected"; }?>>Afrique du Sud</option>
+                        <option value="Italie"<?php if (!strcmp("Italie", $fiche['pays'])) { echo " selected"; }?>>Italie</option>
+                        <option value="Espagne"<?php if (!strcmp("Espagne", $fiche['pays'])) { echo " selected"; }?>>Espagne</option>
                     </select>
 
                     <br>

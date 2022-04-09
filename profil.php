@@ -88,31 +88,11 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
     <title>Espace Admin</title>
 </head>
 
-<body>
-    <!-- ====================================================== -->
-    <!--  EN-TETE : navbar en require et header                 --> 
-    <!-- ====================================================== --> 
-    
-    <?php require_once 'inc/navbar.inc.php'; ?> 
-  
-    <header class="container-fluid f-header p-2 mb-4 col-12 text-center">
-        <div class="p-4 m-4 text-center">
-            <!-- <a class="navbar-brand" href="profil.php"><h1 class="display-4">Espace Admin</h1></a> -->
-               
-        <!-- passage PHP pour tester s'il fonctionne avant de poursuivre -->
-                <?php
-                // $positiva = "Bon ciné !";
-                // echo "<p class=\"text-green\">$positiva</p>";
-                ?>
-        </div>
-    </header>
-    <!-- fin container-fluid header -->
-
-  <body>      
+<body>    
       <?php require_once 'inc/navbar.inc.php'; ?>
 
-    <header class="container-fluid bg-warning p-4">
-            <h1 class="display-4">Bonjour <?php echo $_SESSION['membre']['prenom']; ?></h1>
+    <header class="container-fluid text-white bg-primary bg-gradient p-4">
+            <h1 class="display-4 text-white ">Bonjour <?php echo $_SESSION['membre']['prenom']; ?></h1>
             <p class="lead">
             <?php
             if(estAdmin()) { // si le membre est 'admin' il n'a pas les mêmes accès qu'un membre 'client'
@@ -125,13 +105,13 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
             <ul class="nav nav-pills nav-fill">
             <?php 
                 if(estAdmin()) { 
-                    echo '<li class="nav-item"><a class="btn btn-success" href="index.php">Aller à l\'Accueil </a></li>';
-                    // echo 'coucou';
+                    echo '<li class="nav-item"><a class="btn btn-success shadow" href="admin/gestion_film.php">Ajouter un nouveau film </a></li>';
+                    
+                    echo '<li class="nav-item"><a class="btn btn-warning shadow" href="admin/benevoles.php">Liste des bénévoles</a></li>';
                 } 
                 
                 if (estConnecte()) {
-                    //  echo 'coucou';
-                    echo '<li class="nav-item"><a class="btn btn-secondary" href="connexion.php?action=deconnexion">Se déconnecter</a></li>';
+                    echo '<li class="nav-item"><a class="btn btn-danger shadow" href="connexion.php?action=deconnexion">Se déconnecter</a></li>';
                 }
             ?>
             </ul>
@@ -146,8 +126,6 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
                     <label for="pseudo">Votre pseudo *</label>
                     <input type="text" name="pseudo" id="pseudo" value="<?php echo $_SESSION['membre']['pseudo']; ?>" class="form-control"> 
                 </div>
-
-                 <hr>
 
                 <div class="row">
                 <div class="col-md-6 form-group mt-2">
@@ -189,10 +167,6 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
             </form>
         </div>
         <a href="profil.php"></a>
-
-        <div class="col-md-6 shadow p-3 mb-5 bg-body rounded">
-            <a href="admin/gestion_film.php"><h2 >Ajout d'un Nouveau Film</h2> </a> 
-        </div>
           <!-- fin col -->
     </section>
         <!-- fin row -->  
@@ -200,6 +174,8 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
         <div class="col-12">
             <section>
                 <div class="col-9">
+                    <h2>Liste des films :</h2>
+                    <br>
                     <?php
                     // 3 affichage de données 
                     $requete = $pdoMJC->query( " SELECT * FROM films ORDER BY id_film ASC " );
@@ -214,7 +190,6 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th>Id</th>
                                 <th>Titre</th>
                                 <th>Réalisateurs</th>
                                 <th>Acteurs</th>
@@ -228,8 +203,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
                         <tbody>
                             <!-- ouverture de la boucle while -->
                             <?php while ( $ligne = $requete->fetch( PDO::FETCH_ASSOC )) { ?>
-                            <tr>
-                                <td><?php echo $ligne['id_film']; ?></td>                   
+                            <tr>                  
                                 <td><?php echo $ligne['titre']; ?></td>
                                 <td><?php echo $ligne['realisateur']; ?></td>
                                 <td><?php echo $ligne['acteurs']; ?></td>
@@ -237,7 +211,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
                                 <td><?php echo $ligne['description']; ?></td>
                                 <td><?php echo $ligne['categorie']; ?></td>
                                 <td><?php echo $ligne['photo']; ?></td>
-                                <td><a href="admin/fiche_film_maj.php?id_film=<?php echo $ligne['id_film']; ?>">Mise à jour</a></td>
+                                <td><a href="admin/maj_film.php?id_film=<?php echo $ligne['id_film']; ?>">MAJ</a></td>
                                 <td><a href="?action=supprimer&id_film=<?php echo $ligne['id_film']; ?>" onclick="return(confirm('Voulez-vous supprimer le film ? '))">Supprimer le film</a></td>
                             </tr>
                             <!-- fermeture de la boucle -->

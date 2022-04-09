@@ -24,12 +24,12 @@
                                     <a class="nav-link" style="color: rgba(17,13,44,1);" href="evenements.php">EVENEMENTS</a>
                                 </li>                 
                                 <li class="nav-item m-4">
-                                    <a class="nav-link" style="color: rgba(17,13,44,1);" href="inscription.php">INSCRIPTION BENEVOLAT</a>
+                                    <a class="nav-link" style="color: rgba(17,13,44,1);" href="inscription.php">INSCRIPTION BENEVOLE</a>
                                 </li>
                                 <!-- Connexion a  l'espace Admin : commenter ce code -->
-                                <li class="nav-item m-4">
+                                <!-- <li class="nav-item m-4">
                                     <a class="nav-link" href="connexion.php"><i class="bi bi-person-fill p-2"></i></a>
-                                </li>
+                                </li> -->
 
                                 <!-- <li class="nav-item m-4">
                                     <a class="nav-link" href="panier.php"><i class="bi bi-handbag-fill p-2"></i></a>

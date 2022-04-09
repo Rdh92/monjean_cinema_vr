@@ -116,7 +116,7 @@ require_once 'inc/init.inc.php';
                     <!-- fin col -->
                     <div class="col rounded-4">
                         <div class="card shadow-lg m-4" style="width: 18rem;">
-                            <img src="affiches/goliath.jpg" class="card-img-top" alt="...">
+                            <img src="affiches/goliath.jpg" class="card-img-top rounded-3" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Goliath</h5>
                                 <p class="card-text"></p>

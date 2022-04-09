@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 08 avr. 2022 à 16:03
+-- Généré le : sam. 09 avr. 2022 à 11:42
 -- Version du serveur : 10.4.24-MariaDB
 -- Version de PHP : 7.4.28
 
@@ -59,9 +59,13 @@ CREATE TABLE `films` (
 
 INSERT INTO `films` (`id_film`, `titre`, `categorie`, `acteurs`, `realisateur`, `pays`, `description`, `photo`) VALUES
 (1, 'Batman', 'Films à l\'affiche', 'Robert Pattinson', 'Matt Reeves', 'Etats-Unis', 'Dans sa deuxième année de lutte contre le crime, le milliardaire et justicier masqué Batman...', 'affiches/batman.jpg'),
-(2, 'Goliath', 'Films à l\'affiche', 'Gilles Lellouche', 'Frédéric Tellier', 'France', 'France, professeure de sport de jour, ouvrière la nuit, milite activement contre l\'usage des pesticides', 'C:\\xampp\\htdocs\\monjean_cinema_vr\\affiches\\goliath'),
-(3, 'Notre-Dame Brûle', 'Films à l\'affiche', 'Jean-Paul Bordes', 'Jean-Jacques Annaud', 'France', 'Le long métrage de Jean-Jacques Annaud reconstitue heure par heure l\'invraissemblable réalité...', 'C:\\xampp\\htdocs\\monjean_cinema_vr\\affiches\\notre_d'),
-(4, 'Morbius', 'Films à l\'affiche', 'Jared Leto, Adria Arjona', 'Daniel Espinosa', 'Etats-Unis', 'Gravement atteint d\'une rare maladie sanguine, le Dr Morbius tent un pari désespéré', 'C:\\xampp\\htdocs\\monjean_cinema_vr\\affiches\\morbius');
+(2, 'Goliath', 'Films à l\'affiche', 'Gilles Lellouche', 'Frédéric Tellier', 'France', 'France, professeure de sport de jour, ouvrière la nuit, milite activement contre l\'usage des pesticides', 'affiches/goliath.jpg'),
+(3, 'Notre-Dame Brûle', 'Films à l\'affiche', 'Jean-Paul Bordes', 'Jean-Jacques Annaud', 'France', 'Le long métrage de Jean-Jacques Annaud reconstitue heure par heure l\'invraissemblable réalité...', 'affiches/notre_dame_brule.jpg'),
+(4, 'Morbius', 'Films à l\'affiche', 'Jared Leto, Adria Arjona', 'Daniel Espinosa', 'Etats-Unis', 'Gravement atteint d\'une rare maladie sanguine, le Dr Morbius tent un pari désespéré', 'affiches/morbius.jpg'),
+(5, 'Le Seigneur des Anne', 'on', 'Elijah Wood', 'Peter Jackson', 'pays', 'La comté, Isengard, Rohan, Gondor, Mordor', 'affiches/batman.jpg'),
+(6, 'Casablanca', 'on', 'Humphrey Bogart', 'Peter Jackson', 'pays', 'Film Maroc', 'affiches/goliath.jpg'),
+(7, 'Les Indestructibles', 'Films à l\'affiche', 'Bob Paar', 'Disney Pixar', 'ETATS-UNIS', 'Film animé', 'affiches/morbius.jpg'),
+(8, 'James Bond', 'Films à venir', 'Sean Connery', 'Peter Jackson', 'ETATS-UNIS', '007', 'affiches/le_temps_des_secrets.jpg');
 
 -- --------------------------------------------------------
 
@@ -126,7 +130,7 @@ ALTER TABLE `contact`
 -- AUTO_INCREMENT pour la table `films`
 --
 ALTER TABLE `films`
-  MODIFY `id_film` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_film` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT pour la table `membres`

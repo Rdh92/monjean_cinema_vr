@@ -1,7 +1,7 @@
 
 <footer class="container-fluid p-4 m-4 col-12 text-center bg-image" style="background-image: url('img/background_peliculle_bleu_royal.png'); rgba(17,13,44,1);"> 
   <div class="row d-flex text-center justify-content-center">
-    <div class="col-12">
+    <div class="col-12 ">
       <a class="p-4" href="qui_sommes_nous.php">Qui sommes-nous ?</a>
       <a class="p-4" href="inscription.php">S'inscrire</a>
       <a class="p-4" href="contact.php">Restons en contact !</a>
@@ -18,7 +18,7 @@
   </div>
   <!-- fin row -->
 
-  <div class="">
+  <div class="text-white">
     <small>Copyright &copy; Vanusa Santos & Redha Talamine - Soutenance Colombbus 2022</small>
   </div>
   <!-- fin div copyright -->      

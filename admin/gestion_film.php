@@ -95,7 +95,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
     <main>
     <div class="col-12">
             <!-- action vide car nous envoyons les données avec cette même page et POST va envoyer dans la superglobale $_POST -->
-            <?php echo $contenu ?>;
+            <?php echo $contenu ?>
 			   <form method="POST" action="" enctype="multipart/form-data" class="shadow p-3 mb-5 bg-body rounded">
                   <h2>Ajout d'un Nouveau Film</h2>  
                     <div class="mb-3">

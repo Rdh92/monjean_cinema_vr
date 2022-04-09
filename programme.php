@@ -84,8 +84,8 @@
                         
                     ?>
                     
-                    <div class="col-md-4"> 
-                            <div class="card shadow-sm m-4" style="width: 18rem;">
+                    <div class="col-md-3"> 
+                            <div class="card shadow-sm m-4">
                                 <img src="<?php echo $ligne['photo']; ?>" class="figure-img img-fluid rounded img-admin">
                                 <div class="card-body">
                                     <h5 class="card-title">"<?php echo $ligne['titre']; ?>" </h5>

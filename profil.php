@@ -46,9 +46,9 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
   ));
 
   if ($resultat->rowCount() == 0) {
-    $contenu02 .= '<div class="alert alert-danger"> Erreur de suppression</div>';
+    $suppression .= '<div class="alert alert-danger"> Erreur de suppression</div>';
   } else {
-    $contenu02 .= '<div class="alert alert-success"> Film supprimé</div>';
+    $suppression .= '<div class="alert alert-success"> Film supprimé</div>';
   }
 }
 ?> 
@@ -108,7 +108,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
     </header>
     <!-- fin container-fluid header -->
 
-  <body class="m-2">      
+  <body>      
       <?php require_once 'inc/navbar.inc.php'; ?>
 
     <header class="container-fluid bg-warning p-4">
@@ -116,7 +116,9 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
             <p class="lead">
             <?php
             if(estAdmin()) { // si le membre est 'admin' il n'a pas les mêmes accès qu'un membre 'client'
-                echo ' -- Vous êtes l\'administrateur !</p>';
+                echo ' -- Vous êtes administrateur</p>';
+            } else {
+                echo ' --  Bienvenue dans votre espace Bénévole !</p>';
             }
             ?>
 
@@ -136,11 +138,11 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
     </header>
     <div class="container-fluid">
     <section class="row justify-content-start">
-        <div class="col-md-6">
+        <div class="col-12">
             <form method="POST" action="" class="shadow p-3 mb-5 bg-body rounded">
                 <h2>Mise à jour de vos informations</h2>
                 <div class="row">
-                <div class="col-4 form-group mt-2">
+                <div class="col-md-6 form-group mt-2">
                     <label for="pseudo">Votre pseudo *</label>
                     <input type="text" name="pseudo" id="pseudo" value="<?php echo $_SESSION['membre']['pseudo']; ?>" class="form-control"> 
                 </div>
@@ -148,15 +150,15 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
                  <hr>
 
                 <div class="row">
-                <div class="col-4 form-group mt-2">
+                <div class="col-md-6 form-group mt-2">
                     <label for="nom">Nom *</label>
                     <input type="text" name="nom" id="nom" value="<?php echo $_SESSION['membre']['nom']; ?>" class="form-control">
                 </div>
-                <div class="col-4 form-group mt-2">
+                <div class="col-md-6  form-group mt-2">
                     <label for="prenom">Prénom *</label>
                     <input type="text" name="prenom" id="prenom" value="<?php echo $_SESSION['membre']['prenom']; ?>" class="form-control"> 
                 </div>
-                <div class="col-4 form-group mt-2">
+                <div class="col-md-6  form-group mt-2">
                     <label for="email">Email *</label>
                     <input type="email" name="email" id="email" value="<?php echo $_SESSION['membre']['email']; ?>" class="form-control">
                 </div>
@@ -176,7 +178,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
                     <label for="code_postal">Code postal</label>
                     <input type="text" name="code_postal" id="code_postal" value="<?php echo $_SESSION['membre']['code_postal']; ?>" class="form-c²ontrol"> 
                 </div>
-                <div class="col-4 form-group mt-2">        
+                <div class="col-7 form-group mt-2">        
                     <label for="ville">Ville</label>
                     <input type="text" name="ville" id="ville" value="<?php echo $_SESSION['membre']['ville']; ?>" class="form-control"> 
                 </div>
@@ -188,114 +190,64 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
         </div>
         <a href="profil.php"></a>
 
-        <div class="col-md-6">
-            <!-- action vide car nous envoyons les données avec cette même page et POST va envoyer dans la superglobale $_POST -->
-			   <form method="POST" action="" class="shadow p-3 mb-5 bg-body rounded">
-                  <h2>Ajout d'un Nouveau Film</h2>  
-                    <div class="mb-3">
-                        <label for="titre" class="form-label">Titre du film</label>
-                        <input type="text" name="titre" id="titre" class="form-control" required>
-                    </div>
-
-                    <div class="mb-7">
-                        <label for="description" class="form-label">Description</label>
-                        <input type="text" name="description" id="description" class="form-control" required>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="realisateur" class="form-label">Réalisateur(s)</label>
-                        <input type="text" name="realisateur" id="realisateur" class="form-control" required>
-                    </div>
-
-                    <div class="mb-3 col-12">
-                        <label for="Catégorie" class="form-label"> Catégorie : </label> <br>
-                        <input type="radio" name="categorie" value="categorie" id="categorie" checked> Films à l'affiche
-                        <input type="radio" name="categorie" value="categorie" id="categorie"> Films à venir
-                        
-                    </div>
-                    <br>
-                    <div class="mb-3">
-                
-                        <label for="pays" class="form-label">Pays d'origine</label>
-                            <select name="pays" id="pays">
-                                <option value="pays">----</option>
-                                <option value="pays">FRANCE</option>
-                                <option value="pays">ETATS-UNIS</option>
-                                <option value="pays">ANGLETERRE</option>
-                                <option value="pays">COREE</option>
-                                <option value="pays">AFRIQUE DU SUD</option>
-                                <option value="pays">ITALIE</option>
-                                <option value="pays">ESPAGNE</option>
-                            </select>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="acteurs" class="form-label">Acteurs Principaux</label>
-                        <input type="text" name="acteurs" id="acteurs" class="form-control">
-                    </div>
-
-                    <button type="submit" class="btn btn-primary position-relative">Ajouter le nouveau film</button> 
-                </form>
-
+        <div class="col-md-6 shadow p-3 mb-5 bg-body rounded">
+            <a href="admin/gestion_film.php"><h2 >Ajout d'un Nouveau Film</h2> </a> 
         </div>
           <!-- fin col -->
     </section>
         <!-- fin row -->  
 
-        <div class="container-fluid bg-white col-12 d-flex">
-  
-        <section class="row">
-  
-          <div class="col-5">
-            <?php
-			// 3 affichage de données 
-              $requete = $pdoMJC->query( " SELECT * FROM films ORDER BY id_film ASC " );
-              // debug($resultat);
-              $nbr_films = $requete->rowCount();
-              // debug($nbr_commentaires);
-            ?>
-            <h5>Il y a <?php echo $nbr_films; ?> films </h5>
-            <?php echo $contenu; ?>
+        <div class="col-12">
+            <section>
+                <div class="col-9">
+                    <?php
+                    // 3 affichage de données 
+                    $requete = $pdoMJC->query( " SELECT * FROM films ORDER BY id_film ASC " );
+                    // debug($resultat);
+                    $nbr_films = $requete->rowCount();
+                    // debug($nbr_commentaires);
+                    ?>
 
-            <table class="table table-striped">
-             <thead>
-               <tr>
-                 <th>Id</th>
-                 <th>Titre</th>
-                 <th>Réalisateurs</th>
-                 <th>Acteurs</th>
-                 <th>Pays</th>
-                 <th>Description</th>
-                 <th>Catégorie</th>
-                 <th>Photo</th>
-                 <th>Prix</th>
-               </tr>
-             </thead>
-             <tbody>
-				 <!-- ouverture de la boucle while -->
-               <?php while ( $ligne = $requete->fetch( PDO::FETCH_ASSOC )) { ?>
-			   <tr>
-				   <td><?php echo $ligne['id_film']; ?></td>                   
-				   <td><?php echo $ligne['titre']; ?></td>
-				   <td><?php echo $ligne['realisateur']; ?></td>
-				   <td><?php echo $ligne['acteurs']; ?></td>
-				   <td><?php echo $ligne['pays']; ?></td>
-				   <td><?php echo $ligne['description']; ?></td>
-                   <td><?php echo $ligne['categorie']; ?></td>
-                   <td><?php echo $ligne['photo']; ?></td>
-                   <td><?php echo $ligne['prix']; ?></td>
-          <td><a href="
-          fiche_film_maj.php?id_film=<?php echo $ligne['id_film']; ?>">Mise à jour</a></td>
-          <td><a href="?action=supprimer&id_film=<?php echo $ligne['id_film']; ?>" onclick="return(confirm('Voulez-vous supprimer le film ? '))">Supprimer le film</a></td>
-			   </tr>
-			   <!-- fermeture de la boucle -->
-			   <?php } ?>
-             </tbody>
-            </table>
-          </div>
+                    <h5>Il y a <?php echo $nbr_films; ?> films </h5>
+                    <?php echo $contenu; ?>
 
-      </div>
-    </section>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Titre</th>
+                                <th>Réalisateurs</th>
+                                <th>Acteurs</th>
+                                <th>Pays</th>
+                                <th>Description</th>
+                                <th>Catégorie</th>
+                                <th>Photo</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- ouverture de la boucle while -->
+                            <?php while ( $ligne = $requete->fetch( PDO::FETCH_ASSOC )) { ?>
+                            <tr>
+                                <td><?php echo $ligne['id_film']; ?></td>                   
+                                <td><?php echo $ligne['titre']; ?></td>
+                                <td><?php echo $ligne['realisateur']; ?></td>
+                                <td><?php echo $ligne['acteurs']; ?></td>
+                                <td><?php echo $ligne['pays']; ?></td>
+                                <td><?php echo $ligne['description']; ?></td>
+                                <td><?php echo $ligne['categorie']; ?></td>
+                                <td><?php echo $ligne['photo']; ?></td>
+                                <td><a href="admin/fiche_film_maj.php?id_film=<?php echo $ligne['id_film']; ?>">Mise à jour</a></td>
+                                <td><a href="?action=supprimer&id_film=<?php echo $ligne['id_film']; ?>" onclick="return(confirm('Voulez-vous supprimer le film ? '))">Supprimer le film</a></td>
+                            </tr>
+                            <!-- fermeture de la boucle -->
+                            <?php } ?>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+   
     </div>
    <!-- ====================================================== -->
     <!--                  FOOTER : en require                   --> 

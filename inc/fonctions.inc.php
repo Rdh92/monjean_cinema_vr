@@ -26,7 +26,7 @@ function executeRequete( $requete, $parametres = array ()) { // utile pour toute
 } // fin fonction
 
 
-// 3 - FONCTION POUR VERIFIER QUE LE MEMBRE EST CONNECTE
+// 3 - FONCTION POUR VERIFIER QUE LE BENEVOLE EST CONNECTE
 function estConnecte() {
     if (isset($_SESSION['membre'])) { // s'il y a un indice membre, le membre est passé par la page de connexion
         return true; // true = il est connecté

@@ -1,16 +1,18 @@
 <?php 
 // require connexion, session etc.
 require_once '../inc/init.inc.php';
+require_once '../inc/head.inc.php';
+
 
 if (!estAdmin()) { // accès non autorisé si on n'est pas admin (et pas connecté)
     header('location:../connexion.php');
 }
 
 // 3 RÉCEPTION DES INFORMATIONS D'UN FILM AVEC $_GET
-debug($_GET);
+//debug($_GET);
 if ( isset($_GET['id_film']) ) {
-    debug($_GET);
-    $resultat = $pdoMJC->prepare( " SELECT * FROM films, categories WHERE films.id_categorie = categorie.id_categorie AND film = :id_film " );
+    //debug($_GET);
+    $resultat = $pdoMJC->prepare( " SELECT * FROM films " );
     $resultat->execute(array(
       ':id_film' => $_GET['id_film']
     ));
@@ -28,7 +30,7 @@ if ( isset($_GET['id_film']) ) {
 
 //4 TRAITEMENT DE MISE À JOUR D'UN FILM
 if ( !empty($_POST) ) {//not empty
-  debug($_POST);
+  //debug($_POST);
 
 $_POST['categorie'] = htmlspecialchars($_POST['categorie']);
 $_POST['titre'] = htmlspecialchars($_POST['titre']);
@@ -36,7 +38,15 @@ $_POST['description'] = $_POST['description'];
 $_POST['realisateur'] = htmlspecialchars($_POST['realisateur']);
 $_POST['acteurs'] = htmlspecialchars($_POST['acteurs']);
 
-$resultat = $pdoMJC->prepare( " UPDATE films SET  categorie = :categorie, titre = :titre, description = :description, realisateur = :realisateur, acteurs = :acteurs WHERE id_film = :id_film " );// requete préparée avec des marqueurs
+// traitement du fichier image, de la photo
+
+$photo_bdd = '';
+if (!empty($_FILES['photo']['name'])) {
+    $photo_bdd = 'affiches/' .$_FILES['photo']['name'];
+    copy($_FILES['photo']['tmp_name'], '../' .$photo_bdd);
+}//fin du traitement photo
+
+$resultat = $pdoMJC->prepare( " UPDATE films SET  categorie = :categorie, titre = :titre, description = :description, realisateur = :realisateur, acteurs = :acteurs, pays = :pays, photo = :photo WHERE id_film = :id_film " );// requete préparée avec des marqueurs
 
 $resultat->execute( array(
   ':categorie' => $_POST['categorie'],
@@ -44,10 +54,12 @@ $resultat->execute( array(
   ':description' => $_POST['description'],
   ':realisateur' => $_POST['realisateur'],
   ':acteurs' => $_POST['acteurs'],
-  ':id_film' => $_GET['id_film']
+  ':id_film' => $_GET['id_film'],
+  ':pays' => $_POST['pays'],
+  ':photo' => $photo_bdd,
 
 ));
-header('location:index.php');
+header('location:../profil.php');
 exit();
 }
 
@@ -66,31 +78,34 @@ exit();
 
   </head>
   <body class="m-2">
+    <?php require_once '../inc/navbar.inc.php'; ?>
       
-  <?php require_once 'inc/navbar.inc.php'; ?>
-
-  <header class="container bg-warning text-white p-4 ">
+  <header class="container-fluid bg-warning text-white p-4 ">
         <div class="row">
           <div class="col-5">
             <h1 class="display-4">Admin</h1>
-            <p class="lead">Mise à jour - Fiche du film ID <?php echo $fiche['id_film']; ?> </p>
+            <p class="lead">Mise à jour - Fiche du film <?php echo $fiche['titre']; ?> </p>
           </div>         
-          <?php require_once '../inc/navbis.inc.php'; ?>
         </div>
    </header>
 
+     <br>
+
    <div class="container">      
-        <section class="row m-4 justify-content-center">
+        <section class="row justify-content-center">
             <h2>Le Film : <?php echo $fiche['titre']; ?></h2>           
-            <div class="col-md-8 p-2 bg-light border border-primary">
+            <div class="col-md-9 p-2 fw-bold bg-light border border-primary">
                 <table class="table table-striped">
                 <tr>
                     <td> <img src="../<?php echo $fiche['photo']; ?>" class="figure-img img-fluid rounded img-admin"></td>
-                    <td> ID <?php echo $fiche['id_film']; ?></td>                 
-                    <td><?php echo $fiche['titre']. ' ' .$fiche['categorie']; ?></td>
-                    <td><?php echo $fiche['description']; ?></td>
-                    <td><?php echo $fiche['realisateur']; ?></td>
-                    <td><?php echo $fiche['acteurs']; ?></td>
+                    <td>ID : <?php echo $fiche['id_film']; ?></td>                 
+                    <td>Titre : <?php echo $fiche['titre']; ?></td>
+                    <td>Catégorie : <?php echo $fiche['categorie']; ?></td>
+                    <td>Pays : <?php echo $fiche['pays']; ?></td>
+                    <td>Description : <br> <?php echo $fiche['description']; ?></td>
+                    <td>Réalisateurs : <?php echo $fiche['realisateur']; ?></td>
+                    <td>Acteurs : <?php echo $fiche['acteurs']; ?></td>
+                    
                 </tr>
                 <!-- fermeture de la boucle -->
             </table>
@@ -99,24 +114,35 @@ exit();
         </section>
         <!-- fin row -->
 
-        <section class="row m-4 justify-content-center"> 
-            <h2>Mise à jour</h2>          
-            <div class="col-md-8 p-2 bg-light border border-primary">
+        <section class="row m-5 justify-content-center"> 
+            <h2>Mise à jour du film <?php echo $fiche['titre']; ?></h2>          
+            <div class="col-md-9 p-2 bg-light border border-primary">
                 <?php echo $contenu; ?>
                 <form action="" method="POST" enctype="multipart/form-data" class="p-2">
                     <!-- l'attribut entype spécifie que le formulaire envoie des fichiers en plus de données texte ; il va nous permettre de télécharger un fichier ici une photo -->
 
-                    <label for="id_categorie" class="form-label">Catégorie *</label>
-                    <select name="id_categorie" id="id_categorie" class="form-select">
-                    <?php
-                      foreach ($pdoMJC->query( " SELECT * FROM categories ORDER BY categorie ASC ") as $ligne_categorie) {
-                        echo '<option value="' .$ligne_categorie['id_categorie']. '"';
-                        if ($ligne_categorie['id_categorie'] == $fiche['id_categorie']) {
-                          echo 'selected';
-                        }
-                        echo '>' .$ligne_categorie['categorie']. '</option>';
-                      }
-                    ?>
+                    <label for="categorie" class="form-label">Catégorie *</label>
+                    <select name="categorie" id="categorie" class="form-select">
+                                <option value="">Choisissez une catégorie</option>
+                                <option value="Films à l'affiche">Films à l'affiche</option>
+                                <option value="Films à venir">Films à venir</option>
+                    </select>
+
+                    <br>
+
+                    <label for="pays" class="form-label">Pays d'origine</label>
+                    <select name="pays" id="pays">
+                        <option value="">Choisissez le pays</option>
+                        <option value="FRANCE">FRANCE</option>
+                        <option value="ETATS-UNIS">ETATS-UNIS</option>
+                        <option value="ANGLETERRE">ANGLETERRE</option>
+                        <option value="COREE">COREE</option>
+                        <option value="AFRIQUE DU SUD">AFRIQUE DU SUD</option>
+                        <option value="ITALIE">ITALIE</option>
+                        <option value="ESPAGNE">ESPAGNE</option>
+                    </select>
+
+                    <br>
 
                     <label for="titre" class="form-label">Titre *</label>
                     <input type="text" name="titre" id="titre" class="form-control" value="<?php echo $fiche['titre'] ?? ''; ?>">
@@ -128,14 +154,12 @@ exit();
                     <textarea name="realisateur" id="realisateur" cols="30" rows="3" class="form-control"><?php echo $fiche['realisateur']; ?></textarea>
 
                     <label for="acteurs" class="form-label">Acteurs principaux</label>
-                    <textarea name="acteurs" id="acteurs" cols="30" rows="3" class="form-control"><?php echo $fiche['description']; ?></textarea>
+                    <textarea name="acteurs" id="acteurs" cols="30" rows="3" class="form-control"><?php echo $fiche['acteurs']; ?></textarea>
 
-                  
-                    <!-- <label for="photo" class="form-label">Photographie *</label>
-                    <input type="file" name="photo" id="photo" class="form-control"> -->
-                    <!-- pour pouvoir utiliser le type="file" il FAUT ABSOLUMENT l'attribut enctype="multipart/form-data" dans la balise form-->
-
-                  
+                    <div class="mb-3">
+                        <label for="photo" class="form-label">Photo</label>
+                        <input type="file" name="photo" id="photo" value="<?php echo $_FILES['photo']['name']?? '' ;?>" class="form-control">
+                    </div>
 
                     <button class="btn btn-outline-success" type="submit">Mise à jour</button>
 

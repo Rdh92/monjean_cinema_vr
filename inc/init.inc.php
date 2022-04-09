@@ -31,6 +31,7 @@ define('RACINE_SITE', '/montjean_cinema_vr/');
 
 //4- UNE VARIABLE POUR LES MESSAGES, CETTE PAGE DOIT ETRE INITIALISEE VIDE, SANS ESPACES ENTRE LES QUOTES SIMPLES
 $contenu = '';
+$suppression = '';
 
 //5- INCLUSION DES FONCTIONS
 require_once 'fonctions.inc.php';

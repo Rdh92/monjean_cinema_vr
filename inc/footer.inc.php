@@ -1,5 +1,5 @@
 
-<footer class="container-fluid p-2 m-2 col-12 text-center bg-image" style="background-image: url('img/background_peliculle_bleu_royal.png'); rgba(17,13,44,1);"> 
+<footer class="container-fluid col-12 text-center bg-image" style="background-image: url('img/background_peliculle_bleu_royal.png'); rgba(17,13,44,1);"> 
   <div class="row d-flex text-center justify-content-center">
     <div class="col-12">
       <a class="p-4" href="qui_sommes_nous.php">Qui sommes-nous ?</a>
@@ -8,7 +8,6 @@
       <a class="p-4" href="infos_pratiques.php">Informations pratiques</a>
     </div>
     <!-- fin col -->
-
     <div class="col-12 p-5">  
       <a class="p-4" href="https://fr-fr.facebook.com/Montjean.cinema/"><i class="bi bi-facebook"></i></a>
       <a class="p-4" href="https://www.anjou-tourisme.com/fr/diffusio/loisirs/montjean-cinema-mauges-sur-loire_TFOLOIPDL049V50E71W"><i class="bi bi-instagram"></i></a>

@@ -2,11 +2,10 @@
 <div class="row justify-content-center">
     <div class="col-sm-6 col-lg-2">
         <a class="navbar-brand" href="index.php">           
-            <img src="img/logo_montjean_horizontal_bleu_marine_canvas_PS_252_70.png" class="m-4" alt="logo du cinéma Montjean">
+            <img src="img/logo_montjean_horizontal_bleu_marine_canvas_PS_252_70.png" class="p-1" alt="logo du cinéma Montjean">
         </a>
     </div>
     <!-- fin col -->
-    
     <div class="shadow-lg">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid justify-content-center">

@@ -20,7 +20,6 @@ require_once 'inc/init.inc.php';
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,800;1,300;1,400&family=Michroma&display=swap" rel="stylesheet">
 
-
     <!-- favicon -->
     <link rel="shortcut icon" type="image/png" href="img/favicon.ico"/>
 
@@ -57,6 +56,7 @@ require_once 'inc/init.inc.php';
     <!-- ====================================================== --> 
     
 <header class="container-fluid f-header p-4 mb-4 bt-4 col-12 text-center">
+  <h1 class="p-1 m-1">Venez passer un bon moment avec nous !</h1>
   <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
   <div class="container p-3 mb-5">
     <div id="carouselExampleControls" class="carousel slide shadow-lg" data-bs-ride="carousel">
@@ -94,18 +94,15 @@ require_once 'inc/init.inc.php';
     <!-- ====================================================== -->
   <main class="container">
     <!-- DEBUT SECTION : A L AFFICHE -->
-    <section class="py-5 text-center">
-    <h1 class="p-1 m-1">Bienvenue au Montjean Cinéma !</h1>
-        <h2 class="fw-light">A l'affiche</h2>
+    <section class="text-center">
+        <h2 class="fw-light">A L'AFFICHE</h2>
         <div class="album py-5">
             <div class="galerie justify-content-around">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
-
                   <!-- debut div col de la galerie -->
-
                   <div class="col">
                         <div class="card shadow-lg m-4" style="width: 18rem;">
-                            <img src="affiches/sonic.jpg" class="card-img-top rounded-3" alt="...">
+                            <img src="affiches/sonic.jpg" class="card-img-top rounded-3" alt="affiche du film Sonic 2022">
                             <div class="card-body">
                                 <h5 class="card-title">Sonic</h5>
                                 <p class="card-text"></p>
@@ -116,7 +113,7 @@ require_once 'inc/init.inc.php';
                     <!-- fin col -->
                     <div class="col rounded-4">
                         <div class="card shadow-lg m-4" style="width: 18rem;">
-                            <img src="affiches/goliath.jpg" class="card-img-top " alt="...">
+                            <img src="affiches/goliath.jpg" class="card-img-top " alt="affiche du filme Goliath 2022">
                             <div class="card-body">
                                 <h5 class="card-title">Goliath</h5>
                                 <p class="card-text"></p>
@@ -124,11 +121,10 @@ require_once 'inc/init.inc.php';
                             </div>
                         </div>
                     </div>
-                    <!-- fin col -->
-                    
+                    <!-- fin col -->                  
                     <div class="col">
                         <div class="card shadow-lg m-4" style="width: 18rem;">
-                            <img src="affiches/notre_dame_brule.jpg" class="card-img-top rounded-3" alt="...">
+                            <img src="affiches/notre_dame_brule.jpg" class="card-img-top rounded-3" alt="affiche du film Notre Dame brûle">
                             <div class="card-body">
                                 <h5 class="card-title">Notre-Dame brûle</h5>
                                 <p class="card-text"></p>
@@ -136,11 +132,10 @@ require_once 'inc/init.inc.php';
                             </div>
                         </div>
                     </div>
-                    <!-- fin col -->
-            
+                    <!-- fin col -->         
                     <div class="col">
                         <div class="card  shadow-lg m-4" style="width: 18rem;">
-                            <img src="affiches/en_meme_temps.jpg" class="card-img-top rounded-3" alt="...">
+                            <img src="affiches/en_meme_temps.jpg" class="card-img-top rounded-3" alt="affiche du film En même temps">
                             <div class="card-body">
                                 <h5 class="card-title">En même temps</h5>
                                 <p class="card-text"></p>

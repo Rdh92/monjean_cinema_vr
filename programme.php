@@ -58,13 +58,7 @@
   
     <header class="container-fluid f-header p-2 mb-4 col-12 text-center">
         <div class="p-4 m-4 text-center">
-            <a class="navbar-brand" href="programme.php"><h1 class="">Programme</h1></a>
-               
-            <!-- passage PHP pour tester s'il fonctionne avant de poursuivre -->
-                <?php
-                // $positiva = "Bon ciné !";
-                // echo "<p class=\"text-green\">$positiva</p>";
-                ?>
+           <h1 class="">Programme</h1>
         </div>
     </header>
     <!-- fin container-fluid header -->

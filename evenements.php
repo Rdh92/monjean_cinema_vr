@@ -51,7 +51,7 @@ require_once 'inc/init.inc.php';
   
     <header class="container-fluid f-header p-4 mb-4 bt-4 col-12 text-center">
       <div class="col-12 text-center">
-        <h1 class="" style="color: rgba(93,131,213,1);">Evenements</h1>
+        <h1 class="">Evenements</h1>
         <p class="lead"></p>
        <!-- passage PHP pour tester s'il fonctionne avant de poursuivre -->
           <?php

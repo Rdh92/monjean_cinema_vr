@@ -112,7 +112,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
       <?php require_once 'inc/navbar.inc.php'; ?>
 
     <header class="container-fluid bg-warning p-4">
-            <h1 class="display-4">Bonjour <?php echo $_SESSION['membre']['prenom']; ?></h1>
+            <h1 class="">Bonjour <?php echo $_SESSION['membre']['prenom']; ?></h1>
             <p class="lead">
             <?php
             if(estAdmin()) { // si le membre est 'admin' il n'a pas les mêmes accès qu'un membre 'client'

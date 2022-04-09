@@ -97,7 +97,7 @@ require_once 'inc/init.inc.php';
   </head>
   <body>
    <header class="container bg-success bg-gradient text-white p-2 ">
-        <h1 class="">Connexion à votre espace </h1>
+        <h1 class="">Connexion à votre espace</h1>
         <p class="lead">Equipe Montjean Cinéma</p>
    </header>
    <div class="container">      

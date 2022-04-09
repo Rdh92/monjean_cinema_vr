@@ -98,7 +98,7 @@ require_once 'inc/init.inc.php';
     <!-- DEBUT SECTION : A L AFFICHE -->
     <section class="text-center">
       <!-- Ici les 2 classes pour l'animation du h1 de la page accueil -->
-        <h1 class="fw-light battement bouton">A L'AFFICHE CHEZ MONTJEAN</h1>
+        <h1 class="battement bouton">A l'affiche au Montjean Cinéma</h1>
         <div class="album">
             <div class="galerie justify-content-around">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">

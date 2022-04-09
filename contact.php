@@ -49,7 +49,7 @@ require_once 'inc/init.inc.php';
     <!-- ====================================================== --> 
     <?php require_once 'inc/navbar.inc.php'; ?> 
   
-    <header class="container-fluid f-header p-2 m-2 col-12 text-center bg-image" style="background-image: url('img/background_peliculle_gris.png');">
+    <header class="container-fluid f-header p-2 m-2 col-12 text-center" style="background-image: url('img/background_peliculle_gris.png');">
       <div class="col-12 text-center">
         <h1 class="">Restons en contact !</h1>
         <p class="lead"></p>

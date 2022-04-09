@@ -1,6 +1,6 @@
 
-<footer class="container-fluid p-4 m-4 col-12 text-center bg-image" style="background-image: url('img/background_peliculle_bleu_royal.png'); rgba(17,13,44,1);"> 
-  <div class="row d-flex text-center justify-content-center">
+<footer class="container-fluid p-4 col-12 text-center justify-content-center fw-bold" style="background-image: url('img/background_peliculle_bleu_royal.png'); "color=rgba(17,13,44,1);"> 
+  <div class="row d-flex">
     <div class="col-12 ">
       <a class="p-4" href="qui_sommes_nous.php">Qui sommes-nous ?</a>
       <a class="p-4" href="inscription.php">S'inscrire</a>
@@ -9,7 +9,7 @@
     </div>
     <!-- fin col -->
 
-    <div class="col-12 p-5">  
+    <div class="col-12 p-4">  
       <a class="p-4" href="https://fr-fr.facebook.com/Montjean.cinema/"><i class="bi bi-facebook"></i></a>
       <a class="p-4" href="https://www.anjou-tourisme.com/fr/diffusio/loisirs/montjean-cinema-mauges-sur-loire_TFOLOIPDL049V50E71W"><i class="bi bi-instagram"></i></a>
       <a class="p-4" href="https://twitter.com/MontjeanCinema/status/301772075394269184"><i class="bi bi-twitter"></i></a>           
@@ -18,7 +18,7 @@
   </div>
   <!-- fin row -->
 
-  <div class="text-white">
+  <div class="">
     <small>Copyright &copy; Vanusa Santos & Redha Talamine - Soutenance Colombbus 2022</small>
   </div>
   <!-- fin div copyright -->      

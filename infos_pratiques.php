@@ -52,7 +52,7 @@ require_once 'inc/init.inc.php';
   
 <header class="container-fluid f-header p-2 mb-4">
   <div class="col-12 text-center">
-        <a class="navbar-brand" href="infos_pratiques.php"><h1 class="">Informations pratiques</h1></a>
+        <h1 class="">Informations pratiques</h1>
         <p class="lead"></p>
         <!-- passage PHP pour tester s'il fonctionne avant de poursuivre -->
           <?php

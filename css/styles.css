@@ -1,11 +1,12 @@
 /* STYLES POUR LE DOSSIER montjean_cinema_vr - PHP procdural */
 
 /* Liens pour conversion couleurs */
+/* http://hex2rgba.devoth.com/ */
 /* https://web-color.aliasdmc.fr/couleur-web-black-avec-transparence.html */
 /* https://cssgenerator.org/rgba-and-hex-color-generator.html */
 
 /* CODES COULEURS DE LA CHARTE GRAPHIQUE : 6 couleurs */
-/* TYPO : noir : #000000  */
+/* TYPO : noir : #000000  ; rgba(rgba(0, 0, 0, 1))  */
 /* TYPO : bleu nuit : #110D2C; rgba(17,13,44,1) */
 /* FOOTER : bleu marine : #3340A7; rgba(51,64,167,1) */
 /* BUTTONS : bleu royal : #3A3CDC;  rgba(58,60,220,1) */
@@ -23,7 +24,7 @@ body {
     font-size: 1em;
 }
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4 {
     font-family: 'Michroma', sans-serif;
     color: #110D2C;
     font-size: 1em;

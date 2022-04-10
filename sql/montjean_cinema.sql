@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : sam. 09 avr. 2022 à 17:59
+-- Généré le : dim. 10 avr. 2022 à 17:28
 -- Version du serveur : 10.4.22-MariaDB
 -- Version de PHP : 7.4.27
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `montjean_cinema`
 --
-CREATE DATABASE IF NOT EXISTS `montjean_cinema` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE `montjean_cinema`;
 
 -- --------------------------------------------------------
 
@@ -31,10 +29,19 @@ USE `montjean_cinema`;
 
 CREATE TABLE `contact` (
   `id_contact` int(3) NOT NULL,
-  `pseudo` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `contenu` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
+  `prenom` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `nom` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `message` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `contact`
+--
+
+INSERT INTO `contact` (`id_contact`, `prenom`, `nom`, `email`, `message`) VALUES
+(2, 'Fatima', 'Chine', 'fatima.chine@colombbus.org', 'Coucou, Vanusa et Redha !  Bonne chance !'),
+(3, 'Vanusa', 'Santos', 'vanusa.santos@colombbus.org', 'Bonjour, j\'aimerais être bénévole ;-)');
 
 -- --------------------------------------------------------
 
@@ -65,7 +72,8 @@ INSERT INTO `films` (`id_film`, `titre`, `categorie`, `acteurs`, `realisateur`, 
 (5, 'Le Seigneur des Anneaux', 'on', 'Elijah Wood', 'Peter Jackson', 'pays', 'La comté, Isengard, Rohan, Gondor, Mordor', 'affiches/batman.jpg'),
 (6, 'Casablanca', 'on', 'Humphrey Bogart', 'Peter Jackson', 'pays', 'Film Maroc', 'affiches/goliath.jpg'),
 (7, 'Les Indestructibles', 'Films à l\'affiche', 'Bob Paar', 'Disney Pixar', 'ETATS-UNIS', 'Film animé', 'affiches/morbius.jpg'),
-(8, 'James Bond', 'Films à venir', 'Sean Connery', 'Peter Jackson', 'ETATS-UNIS', '007', 'affiches/le_temps_des_secrets.jpg');
+(8, 'James Bond', 'Films à venir', 'Sean Connery', 'Peter Jackson', 'ETATS-UNIS', '007', 'affiches/le_temps_des_secrets.jpg'),
+(9, 'Sonic', 'Films à l\'affiche', 'NIMPORTE', 'AUCUN', 'FRANCE', 'Film pour enfants', 'affiches/sonic.jpg');
 
 -- --------------------------------------------------------
 
@@ -93,7 +101,8 @@ CREATE TABLE `membres` (
 
 INSERT INTO `membres` (`id_membre`, `pseudo`, `mdp`, `nom`, `prenom`, `email`, `civilite`, `ville`, `code_postal`, `adresse`, `statut`) VALUES
 (20, 'AdminRedha', '$2y$10$PIKpJIHzUTtOQ6MG8knTS.9siBhy3myKkskP6cp52ugBmCjr.4enu', 'Talamine', 'Redha', 'redha.talamine@colombbus.org', 'm', 'Suresnes', 92150, '8, Boulevard Louis Loucheur', 1),
-(21, 'aquamarinha', '$2y$10$bhca3txPq48K7aJdbrlQmOk.4vlmn.J44uLRg7ayEGOy8GdWVdJXu', 'Solar', 'Maria', 'vanusa.santos@colombbus.org', 'm', 'Saint-Cloud', 92210, 'Soleil azul', 0);
+(21, 'aguamarinha', '$2y$10$bhca3txPq48K7aJdbrlQmOk.4vlmn.J44uLRg7ayEGOy8GdWVdJXu', 'Mar', 'Mira', 'baianissima@gmail.com', 'f', 'Ramatuelle', 83350, 'Rue du Soleil Bleu', 0),
+(22, 'AdminVanusa', '$2y$10$/W5KTG2RgQqpe99sxfKzSuGDN8nnjN3VPYj1hfuE/RCzfFwvD4GLq', 'Santos', 'Vanusa', 'vanusa.santos@colombbus.org', 'f', 'Saint-Cloud', 92210, '12, Parc de la Bérengère', 1);
 
 --
 -- Index pour les tables déchargées
@@ -125,19 +134,19 @@ ALTER TABLE `membres`
 -- AUTO_INCREMENT pour la table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id_contact` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_contact` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `films`
 --
 ALTER TABLE `films`
-  MODIFY `id_film` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_film` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT pour la table `membres`
 --
 ALTER TABLE `membres`
-  MODIFY `id_membre` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_membre` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

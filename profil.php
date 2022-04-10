@@ -107,7 +107,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
                 if(estAdmin()) { 
                     echo '<li class="nav-item"><a class="btn btn-success shadow" href="admin/gestion_film.php">Ajouter un nouveau film </a></li>';
                     
-                    echo '<li class="nav-item"><a class="btn btn-warning shadow" href="admin/benevoles.php">Liste des bénévoles</a></li>';
+                    echo '<li class="nav-item"><a class="btn btn-warning shadow" href="admin/gestion_membre.php">Liste des bénévoles</a></li>';
                 } 
                 
                 if (estConnecte()) {

@@ -5,7 +5,48 @@
 require_once 'inc/init.inc.php';
 
 // debug($_SESSION);
+// TRAITEMENT DU FORMULAIRE : INSERTION D'UN MESSAGE - ENVOI DES INFORMATIONS A SCTOKER AVEC $_POST : 
 
+if ( !empty($_POST) ) {
+  // debug($_POST);
+
+  // les if qui suivent vérifient si les valeurs passées dans $_POST correspondent à ce qui est attendu et autorisé en BDD 
+  
+  if ( !isset($_POST['prenom']) || strlen($_POST['prenom']) < 5 || strlen($_POST['prenom']) > 30) {
+    $contenu .='<div class="alert alert-warning">Votre message doit être un peu plus court </div>';
+}
+
+if ( !isset($_POST['nom']) || strlen($_POST['nom']) < 5|| strlen($_POST['nom']) > 30) {
+  $contenu .='<div class="alert alert-warning">Votre message doit être un peu plus court </div>';
+}
+
+  if ( !isset($_POST['email']) || strlen($_POST['email']) > 50 || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+      // filter_var() fonction prédéfinie en PHP, qui filtre une variable, et dans ce filtre on passe la constante prédéfinie (NOM DE LA CONSTANTE EST EN MAJUSCULE) qui vérifie que c'est bien au format email
+      $contenu .='<div class="alert alert-warning">Votre email n\'est pas conforme !</div>';
+  }
+
+  if ( !isset($_POST['message']) || strlen($_POST['message']) < 20 || strlen($_POST['message']) > 2000) {
+      $contenu .='<div class="alert alert-warning">Votre message doit être un peu plus court </div>';
+  }
+  
+  if (empty($contenu)) {// si la variable qui affiche les avertissements est vide c'est qu'il n'y a aucune erreur dans $_POST
+     
+          $succes = executeRequete( " INSERT INTO contact (prenom, nom, email, message) VALUES (:prenom, :nom, :email, :message) ",
+          array(
+              ':prenom' => $_POST['prenom'],
+              ':nom' => $_POST['nom'],
+              ':email' => $_POST['email'],
+              ':message' => $_POST['message'],           
+          ));
+
+          // debug($succes);
+          if ($succes) {
+              $contenu .='<div class="alert alert-success">Merci pour votre message ! Montjean Cnéma vous répondra dans les plus brefs délas !<br> <a href="index.php">Rendez-vous à l\'accueil !</a></div>';
+          } else {
+              $contenu .='<div class="alert alert-danger">Il y a eu une petite erreur. Veuillez reessayer.</div>';
+          }
+      }
+  }
 ?>
 
 <!DOCTYPE html>
@@ -65,7 +106,7 @@ require_once 'inc/init.inc.php';
     <!--                CONTAINER : contenu principal           --> 
     <!-- ====================================================== -->
   <main class="container">
-    <section class="row text-center m-5 py-5">
+    <section class="row text-center m-5">
       <h3>Informations et service client</h3>
       <div class="col col-lg-12 col-md-8 mx-auto">      
           <h4>Au guichet du cinéma de mercredi à dimanche de 20 h à 23 h</h4>
@@ -75,19 +116,32 @@ require_once 'inc/init.inc.php';
       </div>
     </section>
 
-    <section class="row justify-content-evenly m-5 py-5">   
-      <div class="col-lg-6 col-md-8 mx-auto border border-light">
-        <h4 class="fw-light"></h4>        
-        <form action="">
+    <section class="row text-center m-5 py-5">
+      <h3><?php echo $contenu; ?>Que pouvons-nous faire pour vous ?</h3>
+      <h4 class="fw-light">Dites-nous tout en quelques mots !</h4>
+      <div class="col-lg-8 col-md-6 mx-auto p-4" >
+        <form action="" method="POST" class="form-control" style="background-color: rgba(0,0,0,1);">
           <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Que pouvons-nous faire pour vous ? Dites-nous tout en quelques mots !</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
-          </div>
+            <label for="exampleFormControlInput1" class="form-label">Votre prenom</label>
+            <input name="prenom" type="text" class="form-control" id="prenom" placeholder="Votre prenom">        
+          </div>     
+
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Votre nom</label>
+            <input name="nom" type="text" class="form-control" id="nom" placeholder="Votre nom">         
+          </div> 
+
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Votre e-mail</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-            <button type="submit" class="rounded-pill btn btn-sm p-2 m-2" style="background-color: rgba(58,60,220,1); color: rgba(224,228,239,1);">Envoyer votre message</button>         
-          </div>      
+            <input name="email" type="email" class="form-control" id="email" placeholder="Votre email">
+          </div>
+
+          <div>
+            <label for="exampleFormControlTextarea1" class="form-label">Votre message</label>
+            <textarea name="message" class="form-control" id="message" rows="4"  placeholder="Votre message"></textarea>
+          </div>
+
+          <button type="submit" class="rounded-pill btn btn-sm p-2 m-2" style="background-color: rgba(58,60,220,1); color: rgba(224,228,239,1);">Envoyer votre message</button>           
         </form>
       </div>
       <!-- fin col -->

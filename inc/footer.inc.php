@@ -1,5 +1,9 @@
 
+<<<<<<< Updated upstream
 <footer class="container-fluid p-4 m-4 col-12 text-center bg-image " style="background-image: url('img/background_peliculle_bleu_royal.png'); rgba(17,13,44,1);"> 
+=======
+<footer class="container-fluid text-center bg-image p-4" style="background-image: url('img/background_peliculle_bleu_royal.png'); color: rgba(17,13,44,1);"> 
+>>>>>>> Stashed changes
   <div class="row text-center justify-content-center">
     <div class="col-12 ">
       <a class="p-4" href="qui_sommes_nous.php">Qui sommes-nous ?</a>
@@ -18,7 +22,7 @@
   </div>
   <!-- fin row -->
 
-  <div class="">
+  <div class="" style="color: rgba(17,13,44,1);">
     <small>Copyright &copy; Vanusa Santos & Redha Talamine - Soutenance Colombbus 2022</small>
   </div>
   <!-- fin div copyright -->      

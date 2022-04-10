@@ -24,9 +24,12 @@
                                 <li class="nav-item m-4">
                                     <a class="nav-link" style="color: rgba(17,13,44,1);" href="inscription.php">Devenez bénévole</a>
                                 </li>
-                                <!-- Connexion a  l'espace Admin : commenter ce code -->
                                 <li class="nav-item m-4">
-                                    <a class="nav-link" href="connexion.php"><i class="bi bi-person-fill p-2"></i></a>
+                                    <a class="nav-link" style="color: rgba(17,13,44,1);" href="contact.php">Contact</a>
+                                </li>
+                                <!-- Icône de connexion -->
+                                <li class="nav-item m-4">
+                                    <a class="nav-link" href="connexion.php"><i class="bi bi-person-fill p-2"></i>Connexion</a>
                                 </li>
 
                                 <!-- <li class="nav-item m-4">

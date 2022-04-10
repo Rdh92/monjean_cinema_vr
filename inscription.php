@@ -1,14 +1,14 @@
 <?php
-// 1- POUR SE CONNECTER ET SE DECONNECTER avec fichier init, REQUIRE CONNEXION, SESSION, ETC :
+// SE CONNECTER ET SE DECONNECTER avec fichier init, REQUIRE CONNEXION, SESSION, ETC :
 
-// 2- (CONNEXION AU FICHIER INIT dans le dossier INC)
+// [1]- (CONNEXION AU FICHIER INIT dans le dossier INC)
 require_once 'inc/init.inc.php';
 
 
 // debug($_SESSION);
 
 
-// 3 - TRAITEMENT DU FORMULAIRE : INSERTION D'UN NOUVEAU MEMBRE - ENVOI DES INFORMATIONS A SCTOKER AVEC $_POST : 
+// [2] - ZONE DE TRAITEMENT DU FORMULAIRE : INSERTION D'UN NOUVEAU MEMBRE - ENVOI DES INFORMATIONS A SCTOKER AVEC $_POST : 
 
 if ( !empty($_POST) ) {
     // debug($_POST);
@@ -77,23 +77,15 @@ if ( !empty($_POST) ) {
             if ($succes) {
                 $contenu .='<div class="alert alert-success">Vous êtes bien inscrit.e à l\'équipe de bénévole du Montjean Cinéma !<br> <a href="connexion.php">Cliquez ici pour vous connecter</a></div>';
             } else {
-                $contenu .='<div class="alert alert-danger">Erreur lors de l\'inscription. Veuillez reessayer.</div>';
+                $contenu .='<div class="alert alert-danger">Erreur lors de l\'inscription ! Veuillez reessayer.</div>';
             }
         }
     }
 }
 
-// A FAIRE rajouter required sur les champs du form, puis rajouter un second champ mdp pour vérifier si le mdp saisi dans le 1er champ est identique dans le second 
+// A FAIRE rajouter required sur les champs du form, puis rajouter un second champ mdp pour vérifier avec JS si le mdp saisi dans le 1er champ est identique dans le second 
+
 ?> 
-<?php 
-// POUR SE CONNECTER ET SE DECONNECTER vec fichier init :
-
-// (CONNEXION AU FICHIER INIT dans le dossier INC)
-require_once 'inc/init.inc.php';
-
-// debug($_SESSION);
-
-?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -167,7 +159,7 @@ require_once 'inc/init.inc.php';
 <body>
 
     <!-- ====================================================== -->
-    <!--  EN-TETE : NAVBAR en require      --> 
+    <!--                  EN-TETE : NAVBAR en require           --> 
     <!-- ====================================================== --> 
     
     <?php require_once 'inc/navbar.inc.php'; ?> 
@@ -181,7 +173,7 @@ require_once 'inc/init.inc.php';
 <!-- fin container-fluid header -->
 
 <main class="container">
-    <div>
+    <div class="">
        <!-- <div class="row pt-2 justify-content-center">
           <div class="col-6 text-center">
                <?php echo $contenu; ?>
@@ -189,57 +181,59 @@ require_once 'inc/init.inc.php';
        </div> -->
         <section class="row m-4 justify-content-center" style="color:rgba(17,13,44,1);">          
             <div class="col-12 col-lg-8 p-4" style="background-color: rgba(93,131,213,1); color: rgba(224,228,239,1)">             
-             <form action="" method="POST">
-                <div class="form-group mt-2">
-                    <label for="civilite">Civilité *</label>
-                    <input type="radio" name="civilite" value="m" checked> Homme
-                    <input type="radio" name="civilite" value="f"> Femme            
-                </div>
-                <div class="row">
-                    <div class="col form-group mt-2">
-                        <label for="prenom">Prénom *</label>
-                        <input type="text" name="prenom" id="prenom" value="" class="form-control" required> 
+                <form action="" method="POST">
+                    <div class="form-group mt-2">
+                        <label for="civilite">Civilité *</label>
+                        <input type="radio" name="civilite" value="m" checked> Homme
+                        <input type="radio" name="civilite" value="f"> Femme            
                     </div>
-                    <div class="col form-group mt-2">
-                        <label for="nom">Nom *</label>
-                        <input type="text" name="nom" id="nom" value="" class="form-control" required>
+                    <div class="row">
+                        <div class="col form-group mt-2">
+                            <label for="prenom">Prénom *</label>
+                            <input type="text" name="prenom" id="prenom" value="" class="form-control" required> 
+                        </div>
+                        <div class="col form-group mt-2">
+                            <label for="nom">Nom *</label>
+                            <input type="text" name="nom" id="nom" value="" class="form-control" required>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group mt-2">
-                    <label for="email">Email *</label>
-                    <input type="text" name="email" id="email" value="" class="form-control" required>
-                </div>
-                <div class="form-group mt-2">
-                <label for="pseudo">Choisissez un pseudo *</label>
-                <input type="text" name="pseudo" id="pseudo" value="" class="form-control" required> 
-            </div>
-            <div class="form-group mt-2">
-                <label for="mdp">Mot de passe *</label>
-                <input type="password" name="mdp" id="mdp" value="" class="form-control">
-            </div>
-            <div class="form-group mt-2">
-                <label for="adresse">Adresse</label>
-                <textarea name="adresse" id="adresse" class="form-control"></textarea>
-            </div>
-            <div class="row">
-                <div class="col form-group mt-2">
-                    <label for="code_postal">Code postal</label>
-                    <input type="text" name="code_postal" id="code_postal" value="" class="form-control"> 
-                </div>
-                <div class="col form-group mt-2">        
-                    <label for="ville">Ville</label>
-                    <input type="text" name="ville" id="ville" value="" class="form-control"> 
-                </div>
-            </div>
-            <div class="form-group mt-4 text-center">
-                <input type="submit" value="Inscription" class="rounded-pill btn btn-sm p-2 m-4 w-50" style="background-color: rgba(58,60,220,1); color: rgba(224,228,239,1);"> 
-            </div>
+                    <div class="form-group mt-2">
+                        <label for="email">Email *</label>
+                        <input type="text" name="email" id="email" value="" class="form-control" required>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="pseudo">Choisissez un pseudo *</label>
+                        <input type="text" name="pseudo" id="pseudo" value="" class="form-control" required> 
+                   </div>
+                    <div class="form-group mt-2">
+                        <label for="mdp">Mot de passe *</label>
+                        <input type="password" name="mdp" id="mdp" value="" class="form-control" required>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="adresse">Adresse *</label>
+                        <textarea name="adresse" id="adresse" class="form-control"></textarea>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group mt-2">
+                            <label for="code_postal">Code postal *</label>
+                            <input type="text" name="code_postal" id="code_postal" value="" class="form-control" required> 
+                        </div>
+                        <div class="col form-group mt-2">        
+                            <label for="ville">Ville *</label>
+                            <input type="text" name="ville" id="ville" value="" class="form-control" required> 
+                        </div>
+                    </div>
+                    <div class="form-group mt-4 text-center">
+                        <input type="submit" value="Inscription" class="rounded-pill btn btn-sm p-2 m-4 w-50" style="background-color: rgba(58,60,220,1); color: rgba(224,228,239,1);"> 
+                    </div>
                 </form>
+                <!-- fin col -->
             </div>
-        <!-- fin col -->
+            <!-- fin div qui contient le form -->
         </section>
         <!-- fin row -->
    </div>
+   <!-- fin div qui contient la session -->
 </main>
 <!-- fin -->
   

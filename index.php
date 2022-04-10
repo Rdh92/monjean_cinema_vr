@@ -60,6 +60,13 @@ $requete = $pdoMJC->query( " SELECT * FROM films WHERE categorie = 'Films à l\'
     <!-- ====================================================== --> 
     
 <header class="container-fluid f-header p-4 mb-4 bt-4 col-12 text-center">
+
+  <!-- test avec passage PHP sur le carousel -->
+  <?php
+    // $positiva = "Bon ciné !";
+    // echo "<p class=\"text-green\">$positiva</p>";
+    ?>
+
   <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
   <div class="container p-3 mb-5 rounded">
     <div id="carouselExampleControls" class="carousel slide shadow-lg" data-bs-ride="carousel">

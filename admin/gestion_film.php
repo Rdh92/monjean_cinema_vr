@@ -3,7 +3,7 @@
 // require connexion, session etc.
 require_once '../inc/init.inc.php';
 require_once '../inc/head.inc.php';
-require_once '../inc/navbar.inc.php';
+
 
 // 1 INSERTION D'UN FILM 
 
@@ -92,6 +92,9 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
 
 
 <body>
+    
+   <?php require_once '../inc/navbar.inc.php'; ?>
+
     <header class="container-fluid text-white bg-primary bg-gradient p-4">
         <h2>Ajout d'un Nouveau Film</h2> 
     </header>
@@ -127,13 +130,13 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
                                 <label for="pays" class="form-label">Pays d'origine</label>
                                     <select name="pays" id="pays">
                                         <option value="">Choisissez le pays</option>
-                                        <option value="FRANCE">FRANCE</option>
-                                        <option value="ETATS-UNIS">ETATS-UNIS</option>
-                                        <option value="ANGLETERRE">ANGLETERRE</option>
-                                        <option value="COREE">COREE</option>
-                                        <option value="AFRIQUE DU SUD">AFRIQUE DU SUD</option>
-                                        <option value="ITALIE">ITALIE</option>
-                                        <option value="ESPAGNE">ESPAGNE</option>
+                                        <option value="France">France</option>
+                                        <option value="Etats-Unis">Etats-Unis</option>
+                                        <option value="Angleterre">Angleterre</option>
+                                        <option value="Corée">Corée</option>
+                                        <option value="Afrique du Sud">Afrique du Sud</option>
+                                        <option value="Italie">Italie</option>
+                                        <option value="Espagne">Espagne</option>
                                     </select>
                             </div>
 

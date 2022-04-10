@@ -167,7 +167,7 @@ if ( !empty($_POST) ) {
 <header class="container-fluid f-header col-12 text-center">
     <div class="text-center">
         <h1 class="p-2">Inscrivez-vous !</h1>
-        <a class="navbar-brand" href="contact.php"><p class="lead">Déjà bénévole ? Restons en contact !</p></a>          
+        <a class="navbar-brand" href="contact.php"><p class="lead">Une question ? Ecrivez-nous !</p></a>          
     </div>
 </header>
 <!-- fin container-fluid header -->

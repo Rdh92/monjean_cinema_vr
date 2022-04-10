@@ -107,7 +107,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
                 if(estAdmin()) { 
                     echo '<li class="nav-item"><a class="btn btn-success shadow" href="admin/gestion_film.php">Ajouter un nouveau film </a></li>';
                     
-                    echo '<li class="nav-item"><a class="btn btn-warning shadow" href="admin/gestion_membre.php">Liste des bénévoles</a></li>';
+                    echo '<li class="nav-item"><a class="btn btn-warning shadow" href="admin/gestion_membres.php">Liste des bénévoles</a></li>';
                 } 
                 
                 if (estConnecte()) {
@@ -125,10 +125,11 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
         <div class="container-fluid">
             <div class="row justify-content-center m-2 p-2">
                 <div class="col-6 text-center">
-                    <button type="button" class="btn btn-block btn-outline-primary" value="Afficher/cacher le formulaire de mise à jour" id="cacheForm">Afficher/cacher le formulaire de mise à jour</button>
+                    <button type="button" class="btn btn-block btn-outline-primary" value="Mise à jour des informations" id="cacheForm">Mise à jour des informations</button>
                 </div><!-- fin col -->
-            <form method="POST" action="" class="shadow p-3 mb-5 bg-body rounded ">
-               <h2>Mise à jour de vos informations</h2>
+
+                <form method="POST" action="" class="shadow p-3 mb-5 bg-body rounded cache">
+                <h2>Mise à jour de vos informations</h2>
                     <div class="row">
                     <div class="col-md-6 form-group mt-2">
                         <label for="pseudo">Votre pseudo *</label>
@@ -247,21 +248,8 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
     crossorigin="anonymous"></script>
-
-    <!-- JavaScript -->
-    <script>
-        
-      let bouton = document.getElementById('cacheForm');
-      
-      let form = document.querySelector('.cache');
-      //console.log(form);
-
-      function cliqueBouton() {
-        form.classList.toggle('cache');
-      }
-
-      bouton.addEventListener('click', cliqueBouton);
-
-    </script>
+    
+    <!-- Javascript  -->
+    <script src="js/toggle.js"></script>
 </body>
 </html>

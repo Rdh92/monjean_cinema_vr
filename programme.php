@@ -112,7 +112,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">"<?php echo $ligne2['titre']; ?>" </h5>
                                     <p class="h6">"<?php echo $ligne2['description']; ?>" </p>
-                                    <a href="#" class="btn btn-primary">Synopsis et Bande-annonce</a>
+                                    <!-- <a href="#" class="btn btn-primary">Synopsis et Bande-annonce</a> -->
                                 </div>
                             </div>
                         </div>

@@ -107,7 +107,7 @@ require_once 'inc/init.inc.php';
         <section class="row m-4 justify-content-center">
             
             <?php echo $message; ?>            
-                <div class="col-md-9 p-4 text-primary bg-light bg-gradient border border-primary">
+                <div class="col-md-5 p-4 text-primary bg-light bg-gradient border border-primary">
                     <p class="lead">Rentrez vos identifiants pour vous connecter</p> 
                     <!-- 1- FORMULAIRE DE CONNEXION   -->
                     <form action="" method="POST" class="">

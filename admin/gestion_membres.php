@@ -61,7 +61,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
     <!-- Mes styles -->
     <link rel="stylesheet" href="css/styles.css" >
 
-    <title>Montjean_admin_gestion_membre</title>
+    <title>Gestion des membres</title>
 </head>
 
 <body>
@@ -74,14 +74,8 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
 
     <header class="container-fluid f-header p-2 m-2 col-12 text-center">
       <div class="col-12 text-center">
-        <h1 class="">Gestion membre</h1>
-        <p class="lead">Espace suppression</p>
-
-        <!-- passage PHP pour test -->
-        <?php
-            // $cine = "Bon ciné !";
-            // echo "<p class=\"text-primary\">$cine</p>";
-            // ?>
+        <h1 class="">Gestion des membres</h1>
+        <p class="lead">Liste des membres (Administrateurs et bénévoles)</p>
         
     </header>
     <!-- fin container-fluid header -->
@@ -89,20 +83,19 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
     <!-- ====================================================== -->
     <!--                CONTAINER : contenu principal           --> 
     <!-- ====================================================== -->
-<main class="container mx-auto">
+<main class="container-fluid">
     <section class="row text-center m-5 py-5">
       <h2>Menu du back office</h2>
       <div class="col col-lg-12 col-md-8">
-          <!-- sousnav back office -->
+          <!-- sous nav back office -->
           <ul class="nav nav-pills nav-fill justify-content-center">
             <?php 
                 if(estAdmin()) { 
-                    echo '<li class="nav-item"><a class="btn btn-success shadow" href="' .RACINE_SITE. 'admin/gestion_film.php">ESPACE ADMIN</a></li>';   
-                    echo '<li class="nav-item"><a class="btn btn-warning shadow" href="' .RACINE_SITE. 'admin/gestion_membres_admin.php">GESTION DES MEMBRES</a></li>';
-                    // echo 'Olá!';
+                    echo '<li class="nav-item"><a class="btn btn-success shadow" href="' ,'../profil.php">Retour au profil</a></li>';   
+                   
                 }                 
                 if (estConnecte()) {
-                    echo '<li class="nav-item"><a class="btn btn-danger shadow" href="' .RACINE_SITE. 'connexion.php?action=deconnexion">SE DECONNECTER</a></li>';
+                    echo '<li class="nav-item"><a class="btn btn-danger shadow" href="' ,'../connexion.php?action=deconnexion">Se déconnecter</a></li>';
                     // echo 'Bienvenue !';
                 }
             ?>
@@ -119,7 +112,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
                 // debug($nbr_membres);
             ?>
             <br>
-        <h2>Affichage des données : il y a <?php echo $nbr_membres; ?> membres dans la table MEMBRES</h2>
+        <h2>Il y a <?php echo $nbr_membres; ?> membres dans la liste</h2>
         <?php echo $contenu; ?>
         <div class="col col-lg-10 col-md-8">
             <table class="table table-striped">

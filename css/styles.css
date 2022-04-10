@@ -24,7 +24,7 @@ body {
     font-size: 1em;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
     font-family: 'Michroma', sans-serif;
     color: #110D2C;
     font-size: 1em;
@@ -60,7 +60,7 @@ a:link {
 .bouton {
     background-color: #E0E4EF;
     text-align: center;
-    padding: 1rem 2rem;
+    padding: 0.5em 0.5em;
     border-radius: 1px;
     animation: battement 5s infinite cubic-bezier(.66, 0, 0, 1);
 }

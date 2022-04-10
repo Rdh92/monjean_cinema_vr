@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : dim. 10 avr. 2022 à 17:28
+-- Généré le : dim. 10 avr. 2022 à 18:08
 -- Version du serveur : 10.4.22-MariaDB
 -- Version de PHP : 7.4.27
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `montjean_cinema`
 --
+CREATE DATABASE IF NOT EXISTS `montjean_cinema` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE `montjean_cinema`;
 
 -- --------------------------------------------------------
 

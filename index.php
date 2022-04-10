@@ -140,6 +140,17 @@ $requete = $pdoMJC->query( " SELECT * FROM films WHERE categorie = 'Films à l\'
         <!-- fin div album -->     
     </section>
     <!-- FIN SECTION : A L AFFICHE DE L'ACCUEIL -->
+
+    <section class="baniere bouton battement">
+      <div class="col text-center">
+        <div class="card card-cover h-100 overflow-hidden rounded-5 shadow-lg" style="background-color: rgba(17,13,44,1); color: rgba(224,228,239,1);">
+          <div class="d-flex flex-column h-100 p-5 p-3 text-white text-shadow-1">
+            <h2 class="lh-1 fw-light text-center mb-4"><a href="infos_pratiques.php">RESERVATIONS DIRECTEMENT AU GUICHET. CLIQUER ICI POUR VOIR NOS TARIFS.</a></h2>
+            <h3 class="lh-1 fw-light text-center"><a href="programme.php">Pour voir le programme, c'est par ici !</a></h3>
+          <div>
+          </div>
+        </div>
+    </section>
   </main>
   <!-- fin container  -->
 
@@ -159,6 +170,7 @@ $requete = $pdoMJC->query( " SELECT * FROM films WHERE categorie = 'Films à l\'
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
     crossorigin="anonymous"></script>
+
 </body>
 </html>
 

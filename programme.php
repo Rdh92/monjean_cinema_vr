@@ -66,7 +66,7 @@
     <!-- ====================================================== -->
     <!--                CONTAINER : contenu principal           --> 
     <!-- ====================================================== -->
-  <main class="container">
+  <main class="container-fluid text-center">
     <!-- DEBUT SECTION : A L AFFICHE -->
     <section class="py-5 text-center">
         <h2 class="fw-light">A l'affiche</h2>

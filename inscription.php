@@ -15,11 +15,10 @@ if ( !empty($_POST) ) {
 
     // 1/ les if qui suivent vérifient si les valeurs passées dans $_POST correspondent à ce qui est attendu et autorisé en BDD 
 
-    if ( !isset($_POST['civilite']) || $_POST['civilite'] != 'm' && $_POST['civilite'] != 'f' ) { // && ET
-        $contenu .='<div class="alert alert-warning">La civilité n\'est pas valable !</div>';// 2 ex. si il n'y a rien dans le $_POST ['civilite'] OU si il contient soit 'm' et soit 'f' (qui sont les valeurs autorisées) je ne remplis pas $contenu
+    if ( !isset($_POST['civilite']) || $_POST['civilite'] != 'm' && $_POST['civilite'] != 'f' ) { 
+        $contenu .='<div class="alert alert-warning">La civilité n\'est pas valable !</div>'; 
     }
     if ( !isset($_POST['prenom']) || strlen($_POST['prenom']) < 2 || strlen($_POST['prenom']) > 20) {
-        // !isset n'est pas isset, .= concaténation puis affectation, || ou, strlen string length longueur de la chaîne de caractère
         $contenu .='<div class="alert alert-warning">Votre prénom doit faire entre 2 et 20 caractères</div>';
     }
     if ( !isset($_POST['nom']) || strlen($_POST['nom']) < 2 || strlen($_POST['nom']) > 20) {
@@ -27,7 +26,6 @@ if ( !empty($_POST) ) {
     }
 
     if ( !isset($_POST['email']) || strlen($_POST['email']) > 50 || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-        // filter_var() fonction prédéfinie en PHP, qui filtre une variable, et dans ce filtre on passe la constante prédéfinie (NOM DE LA CONSTANTE EST EN MAJUSCULE) qui vérifie que c'est bien au format email
         $contenu .='<div class="alert alert-warning">Votre email n\'est pas conforme !</div>';
     }
 
@@ -42,7 +40,6 @@ if ( !empty($_POST) ) {
         $contenu .='<div class="alert alert-warning">Votre adresse doit faire entre 4 et 50 caractères</div>';
     }
     if ( !isset($_POST['code_postal']) || !preg_match('#^[0-9]{5}$#', $_POST['code_postal']) ) {
-        // preg_match() vérifie si la chaîne de caractère est constitué des caractères autorisés dans le premier paramètre > '#^[0-9]{5}$#'
         $contenu .='<div class="alert alert-warning">Le code postal n\'est pas valable !</div>';
     }
     if ( !isset($_POST['ville']) || strlen($_POST['ville']) < 1 || strlen($_POST['ville']) > 50) {
@@ -82,8 +79,6 @@ if ( !empty($_POST) ) {
         }
     }
 }
-
-// A FAIRE rajouter required sur les champs du form, puis rajouter un second champ mdp pour vérifier avec JS si le mdp saisi dans le 1er champ est identique dans le second 
 
 ?> 
 
@@ -174,11 +169,9 @@ if ( !empty($_POST) ) {
 
 <main class="container">
     <div class="">
-       <!-- <div class="row pt-2 justify-content-center">
-          <div class="col-6 text-center">
-               <?php echo $contenu; ?>
-          </div>
-       </div> -->
+       <div class="row pt-2 justify-content-center">
+        <?php echo $contenu; ?>
+        </div>
         <section class="row m-4 justify-content-center" style="color:rgba(17,13,44,1);">          
             <div class="col-12 col-lg-8 p-4" style="background-color: rgba(93,131,213,1); color: rgba(224,228,239,1)">             
                 <form action="" method="POST">
@@ -204,11 +197,16 @@ if ( !empty($_POST) ) {
                     <div class="form-group mt-2">
                         <label for="pseudo">Choisissez un pseudo *</label>
                         <input type="text" name="pseudo" id="pseudo" value="" class="form-control" required> 
-                   </div>
+                    </div>
                     <div class="form-group mt-2">
-                        <label for="mdp">Mot de passe *</label>
+                        <label for="mdp" id="placeholder1">Mot de passe *</label>
                         <input type="password" name="mdp" id="mdp" value="" class="form-control" required>
                     </div>
+                    <!-- vérification de mot de passe  A COMPLETER -->
+                    <!-- <div class="form-group mt-2">
+                        <label for="confmdp" id="placeholder2">Confirmez le mot de passe *</label>
+                        <input type="password" name="confmdp" id="confmdp" value="" class="form-control" required>
+                    </div> -->
                     <div class="form-group mt-2">
                         <label for="adresse">Adresse *</label>
                         <textarea name="adresse" id="adresse" class="form-control"></textarea>
@@ -253,8 +251,10 @@ if ( !empty($_POST) ) {
     integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
     crossorigin="anonymous"></script>
 
-    <!-- Scripts JS en externe  -->
-    <script src="../js"></script>
-    <script src="inscription.php"></script>
+    <!-- Scripts JS pour confirmation du mdp  -->
+ 
+    <script>
+        // a completer
+    </script>
 </body>
 </html>

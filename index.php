@@ -173,5 +173,5 @@ $requete = $pdoMJC->query( " SELECT * FROM films WHERE categorie = 'Films à l\'
 
 </body>
 </html>
-
+                
 

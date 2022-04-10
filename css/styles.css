@@ -74,4 +74,8 @@ a:link {
     }   
 }
 
+.cache {
+    display: none;
+  }
+
 

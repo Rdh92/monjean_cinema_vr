@@ -116,53 +116,62 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
             ?>
             </ul>
     </header>
-    <div class="container-fluid">
+
+    
+
     <section class="row justify-content-start">
         <div class="col-12">
-            <form method="POST" action="" class="shadow p-3 mb-5 bg-body rounded">
-                <h2>Mise à jour de vos informations</h2>
-                <div class="row">
-                <div class="col-md-6 form-group mt-2">
-                    <label for="pseudo">Votre pseudo *</label>
-                    <input type="text" name="pseudo" id="pseudo" value="<?php echo $_SESSION['membre']['pseudo']; ?>" class="form-control"> 
-                </div>
 
-                <div class="row">
-                <div class="col-md-6 form-group mt-2">
-                    <label for="nom">Nom *</label>
-                    <input type="text" name="nom" id="nom" value="<?php echo $_SESSION['membre']['nom']; ?>" class="form-control">
-                </div>
-                <div class="col-md-6  form-group mt-2">
-                    <label for="prenom">Prénom *</label>
-                    <input type="text" name="prenom" id="prenom" value="<?php echo $_SESSION['membre']['prenom']; ?>" class="form-control"> 
-                </div>
-                <div class="col-md-6  form-group mt-2">
-                    <label for="email">Email *</label>
-                    <input type="email" name="email" id="email" value="<?php echo $_SESSION['membre']['email']; ?>" class="form-control">
-                </div>
-                </div>
-                <!-- fin row  -->
-                <div class="row">
-                <div class="form-group mt-2">
-                    <label for="civilite">Civilité *</label>
-                    <input type="radio" name="civilite" value="m" checked> Homme
-                    <input type="radio" name="civilite" value="f"<?php if (isset($_SESSION['membre']['civilite']) && $_SESSION['membre']['civilite'] =='f') echo 'checked';?>> Femme            
-                </div>
-                <div class="col-4 form-group mt-2">
-                    <label for="adresse">Adresse</label>
-                    <textarea name="adresse" id="adresse" class="form-control"><?php echo $adresse ?? '' ; ?></textarea>
-                </div>
-                <div class="col-4 form-group mt-2">
-                    <label for="code_postal">Code postal</label>
-                    <input type="text" name="code_postal" id="code_postal" value="<?php echo $_SESSION['membre']['code_postal']; ?>" class="form-c²ontrol"> 
-                </div>
-                <div class="col-7 form-group mt-2">        
-                    <label for="ville">Ville</label>
-                    <input type="text" name="ville" id="ville" value="<?php echo $_SESSION['membre']['ville']; ?>" class="form-control"> 
-                </div>
-                </div>
-                <div class="form-group mt-2">
-                    <input type="submit" value="Mise à jour" class="btn btn-md btn-outline-success"> 
+        <div class="container-fluid">
+            <div class="row justify-content-center m-2 p-2">
+                <div class="col-6 text-center">
+                    <button type="button" class="btn btn-block btn-outline-primary" value="Afficher/cacher le formulaire de mise à jour" id="cacheForm">Afficher/cacher le formulaire de mise à jour</button>
+                </div><!-- fin col -->
+            <form method="POST" action="" class="shadow p-3 mb-5 bg-body rounded ">
+               <h2>Mise à jour de vos informations</h2>
+                    <div class="row">
+                    <div class="col-md-6 form-group mt-2">
+                        <label for="pseudo">Votre pseudo *</label>
+                        <input type="text" name="pseudo" id="pseudo" value="<?php echo $_SESSION['membre']['pseudo']; ?>" class="form-control"> 
+                    </div>
+
+                    <div class="row">
+                    <div class="col-md-6 form-group mt-2">
+                        <label for="nom">Nom *</label>
+                        <input type="text" name="nom" id="nom" value="<?php echo $_SESSION['membre']['nom']; ?>" class="form-control">
+                    </div>
+                    <div class="col-md-6  form-group mt-2">
+                        <label for="prenom">Prénom *</label>
+                        <input type="text" name="prenom" id="prenom" value="<?php echo $_SESSION['membre']['prenom']; ?>" class="form-control"> 
+                    </div>
+                    <div class="col-md-6  form-group mt-2">
+                        <label for="email">Email *</label>
+                        <input type="email" name="email" id="email" value="<?php echo $_SESSION['membre']['email']; ?>" class="form-control">
+                    </div>
+                    </div>
+                    <!-- fin row  -->
+                    <div class="row">
+                    <div class="form-group mt-2">
+                        <label for="civilite">Civilité *</label>
+                        <input type="radio" name="civilite" value="m" checked> Homme
+                        <input type="radio" name="civilite" value="f"<?php if (isset($_SESSION['membre']['civilite']) && $_SESSION['membre']['civilite'] =='f') echo 'checked';?>> Femme            
+                    </div>
+                    <div class="col-4 form-group mt-2">
+                        <label for="adresse">Adresse</label>
+                        <textarea name="adresse" id="adresse" class="form-control"><?php echo $adresse ?? '' ; ?></textarea>
+                    </div>
+                    <div class="col-4 form-group mt-2">
+                        <label for="code_postal">Code postal</label>
+                        <input type="text" name="code_postal" id="code_postal" value="<?php echo $_SESSION['membre']['code_postal']; ?>" class="form-c²ontrol"> 
+                    </div>
+                    <div class="col-7 form-group mt-2">        
+                        <label for="ville">Ville</label>
+                        <input type="text" name="ville" id="ville" value="<?php echo $_SESSION['membre']['ville']; ?>" class="form-control"> 
+                    </div>
+                    </div>
+                    <div class="form-group mt-2">
+                        <input type="submit" value="Mise à jour" class="btn btn-md btn-outline-success"> 
+                    </div>
                 </div>
             </form>
         </div>
@@ -238,5 +247,21 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
     crossorigin="anonymous"></script>
+
+    <!-- JavaScript -->
+    <script>
+        
+      let bouton = document.getElementById('cacheForm');
+      
+      let form = document.querySelector('.cache');
+      //console.log(form);
+
+      function cliqueBouton() {
+        form.classList.toggle('cache');
+      }
+
+      bouton.addEventListener('click', cliqueBouton);
+
+    </script>
 </body>
 </html>

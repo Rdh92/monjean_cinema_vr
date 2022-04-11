@@ -159,7 +159,7 @@ $requete = $pdoMJC->query( " SELECT * FROM films WHERE categorie = 'Films à l\'
     <!-- ====================================================== -->
     <!--                  FOOTER : en require                   --> 
     <!-- ====================================================== -->  
-    <?php require_once 'inc/footer.inc.php';?> 
+    <?php require_once 'inc/footer.inc.php';?>
 
     <!-- ====================================================== -->
     <!--              Bootstrap Bundle with Popper              --> 

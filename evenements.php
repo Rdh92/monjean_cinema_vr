@@ -4,7 +4,11 @@
 // (CONNEXION AU FICHIER INIT dans le dossier INC)
 require_once 'inc/init.inc.php';
 
-// debug($_SESSION);
+$requete = $pdoMJC->query( " SELECT * FROM categorie " );
+    //debug($requete);
+    // $nbr_films = $requete->rowCount();
+    // debug($nbr_films); 
+    //debug($ligne);
 
 ?>
 
@@ -40,7 +44,7 @@ require_once 'inc/init.inc.php';
     <!-- Mes styles -->
     <link rel="stylesheet" href="css/styles.css" >
 
-    <title>Montjean_evenements</title>
+    <title>Evènements</title>
 </head>
 
 <body>
@@ -53,155 +57,38 @@ require_once 'inc/init.inc.php';
       <div class="col-12 text-center">
         <h1 class="">Evenements</h1>
         <p class="lead"></p>
-       <!-- passage PHP pour tester s'il fonctionne avant de poursuivre -->
-          <?php
-          // $positiva = "Bon ciné !";
-          // echo "<p class=\"text-green\">$positiva</p>";
-        ?>
     </header>
     <!-- fin container-fluid header -->
     
     <!-- ====================================================== -->
     <!--                CONTAINER : contenu principal           --> 
     <!-- ====================================================== -->
+
   <main class="container">
     <section class="row py-5 justify-content-center">
-      <div class="container px-4 py-5" id="custom-cards">
-      <h2 class="pb-2 border-bottom">Prochainement</h2>
-        <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-          <div class="col">
-            <div class="card card-cover h-100 overflow-hidden text-white rounded-5 shadow-lg" style="background-image: url('img/gravure_accueil.jpg');">
-              <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">1</h2>
-                <ul class="d-flex list-unstyled mt-auto">
-                  <li class="me-auto">
-                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
-                  </li>
-                  <li class="d-flex align-items-center me-3">
-                    <img class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></img>
-                    <small>Earth</small>
-                  </li>
-                  <li class="d-flex align-items-center">
-                    <img class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></img>
-                    <small>3d</small>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card card-cover h-100 overflow-hidden text-white rounded-5 shadow-lg" style="background-image: url('img/gravure_accueil.jpg');">
-              <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">2</h2>
-                <ul class="d-flex list-unstyled mt-auto">
-                  <li class="me-auto">
-                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
-                  </li>
-                  <li class="d-flex align-items-center me-3">
-                    <img class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></img>
-                    <small>Pakistan</small>
-                  </li>
-                  <li class="d-flex align-items-center">
-                    <img class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></img>
-                    <small>4d</small>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card card-cover h-100 overflow-hidden text-white rounded-5 shadow-lg" style="background-image: url('img/gravure_accueil.jpg');">
-              <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
-                <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">3</h2>
-                <ul class="d-flex list-unstyled mt-auto">
-                  <li class="me-auto">
-                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
-                  </li>
-                  <li class="d-flex align-items-center me-3">
-                    <img class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></img>
-                    <small>California</small>
-                  </li>
-                  <li class="d-flex align-items-center">
-                    <img class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></img>
-                    <small>5d</small>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--  fin section row -->
+        <div class="container px-4 py-5" id="custom-cards">
+        <h2 class="pb-2 border-bottom">Prochainement :</h2>
+        <h2>Réservation uniquement sur place ! Pas de réservation en ligne</h2>
+          <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+          <?php while ( $ligne = $requete->fetch( PDO::FETCH_ASSOC )) { 
 
-    <section class="row py-5 justify-content-center">
-      <div class="container px-4 py-5" id="custom-cards">
-      <h2 class="pb-2 border-bottom">Evenements passés</h2>
-        <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-          <div class="col">
-            <div class="card card-cover h-100 overflow-hidden text-white rounded-5 shadow-lg" style="background-image: url('img/gravure_accueil.jpg');">
-              <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">1</h2>
-                <ul class="d-flex list-unstyled mt-auto">
-                  <li class="me-auto">
-                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
-                  </li>
-                  <li class="d-flex align-items-center me-3">
-                    <img class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></img>
-                    <small>Earth</small>
-                  </li>
-                  <li class="d-flex align-items-center">
-                    <img class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></img>
-                    <small>3d</small>
-                  </li>
-                </ul>
+                          
+          ?>
+            <div class="col">
+              <div class="card card-cover  overflow-hidden rounded-5 shadow-lg">
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1" <?php echo $ligne['photo_event']; ?>">
+                  <img src="<?php echo $ligne['photo_event']; ?>" alt="">
+                  <h2 class="pt-4 mt-4 mb-3  lh-1 fw-bold"><?php echo $ligne['nom_event']; ?></h2>
+                  <ul class="d-flex list-unstyled mt-auto">
+                    <li class="me-auto">
+                      <p class="h6" alt="photo évènement" width="32" height="32"><?php echo $ligne['type_event']; ?></p>
+                      <p class="h6"> Date de l'évènement :<?php echo $ligne['date_event']; ?> .</p>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
-
-          <div class="col">
-          <div class="card card-cover h-100 overflow-hidden text-white rounded-5 shadow-lg" style="background-image: url('img/gravure_accueil.jpg');">
-              <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">2</h2>
-                <ul class="d-flex list-unstyled mt-auto">
-                  <li class="me-auto">
-                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
-                  </li>
-                  <li class="d-flex align-items-center me-3">
-                    <img class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></img>
-                    <small>Pakistan</small>
-                  </li>
-                  <li class="d-flex align-items-center">
-                    <img class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></img>
-                    <small>4d</small>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-          <div class="card card-cover h-100 overflow-hidden text-white rounded-5 shadow-lg" style="background-image: url('img/gravure_accueil.jpg');">
-              <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
-                <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">3</h2>
-                <ul class="d-flex list-unstyled mt-auto">
-                  <li class="me-auto">
-                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
-                  </li>
-                  <li class="d-flex align-items-center me-3">
-                    <img class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></img>
-                    <small>California</small>
-                  </li>
-                  <li class="d-flex align-items-center">
-                    <img class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></img>
-                    <small>5d</small>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+          <?php  } ?>
     </section>
     <!--  fin section row -->
   </main>
@@ -224,5 +111,3 @@ require_once 'inc/init.inc.php';
     crossorigin="anonymous"></script>
 </body>
 </html>
-
-

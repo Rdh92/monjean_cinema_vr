@@ -5,10 +5,7 @@ require_once 'inc/init.inc.php';
 // debug($_SESSION);
 
 $requete = $pdoMJC->query( " SELECT * FROM films WHERE categorie = 'Films à l\'affiche' ORDER BY titre ASC LIMIT 4 " );
-//debug($requete);
 // $nbr_films = $requete->rowCount();
-// debug($nbr_films); 
-//debug($ligne);
 
 ?>
 
@@ -107,10 +104,10 @@ $requete = $pdoMJC->query( " SELECT * FROM films WHERE categorie = 'Films à l\'
     <!-- ====================================================== -->
   <main class="container">
     <!-- DEBUT SECTION en affichage de données en PHP : A L AFFICHE -->
-    <section class="text-center">
+    <section class="row">
       <!-- Ici les 2 classes pour l'animation du h1 de la page accueil -->
         <h1 class="battement bouton">A l'affiche au Montjean Cinéma</h1>
-        <div class="album">
+        <div class="album col  py-7">
           <div class="galerie justify-content-around">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
 
@@ -119,12 +116,12 @@ $requete = $pdoMJC->query( " SELECT * FROM films WHERE categorie = 'Films à l\'
                                   
               <!-- debut div col de la galerie -->
               <div class="col-md-3">
-                <div class="card shadow-lg m-4" style="width: 18rem;">
+                <div class="card shadow-lg m-4 text-center" style="width: 18rem;">
                   <img src="<?php echo $ligne['photo']; ?>" class="card-img-top rounded-3 img-fluid" alt="affiche du film Sonic 2022">
                   <div class="card-body">
                     <h5 class="card-title">"<?php echo $ligne['titre']; ?>"</h5>
                     <p class="card-text">"<?php echo $ligne['description']; ?>" .</p>
-                    <a href="https://youtu.be/NCZTYdAP6w0" class="btn btn-light" style="color: rgba(17,13,44,1);">Voir la bande d'annonce</a>
+                    <a href="<?php echo $ligne['bande_annonce']; ?>" class="btn btn-light" style="color: rgba(17,13,44,1);">Voir la bande d'annonce</a>
                   </div>
                   <!-- fin div card-body -->
                 </div>
@@ -146,7 +143,7 @@ $requete = $pdoMJC->query( " SELECT * FROM films WHERE categorie = 'Films à l\'
         <div class="card card-cover h-100 overflow-hidden rounded-5 shadow-lg" style="background-color: rgba(17,13,44,1); color: rgba(224,228,239,1);">
           <div class="d-flex flex-column h-100 p-5 p-3 text-white text-shadow-1">
             <h2 class="lh-1 fw-light text-center mb-4"><a href="infos_pratiques.php">RESERVATIONS DIRECTEMENT AU GUICHET. CLIQUER ICI POUR VOIR NOS TARIFS.</a></h2>
-            <h3 class="lh-1 fw-light text-center"><a href="programme.php">Pour voir le programme, c'est par ici !</a></h3>
+            <h3 class="lh-1 fw-light text-center"><a href="programme.php">Par ici le programme !</a></h3>
           <div>
           </div>
         </div>

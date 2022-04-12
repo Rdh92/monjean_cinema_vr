@@ -11,19 +11,19 @@ if (!empty($_POST)) {
 
     // 9 conditions pour vérifier que les champs du form sont bien remplis
     
-    if ( !isset($_POST['titre']) || strlen($_POST['titre']) < 5 || strlen($_POST['titre']) > 100) {
-        $contenu .='<div class="alert alert-warning">Titre entre 5 et 100 caractères</div>';
+    if ( !isset($_POST['titre']) || strlen($_POST['titre']) < 3 || strlen($_POST['titre']) > 100) {
+        $contenu .='<div class="alert alert-warning">Titre entre 3 et 100 caractères</div>';
     }
 
     if ( !isset($_POST['realisateur']) || strlen($_POST['realisateur']) < 4 || strlen($_POST['realisateur']) > 200) {
         $contenu .='<div class="alert alert-warning">Description incomplète !</div>';
     }
-    if ( !isset($_POST['acteurs']) || strlen($_POST['acteurs']) < 4 || strlen($_POST['acteurs']) > 20) {
-        $contenu .='<div class="alert alert-warning">Champs compris entre 4 et 50 caractères</div>';
+    if ( !isset($_POST['acteurs']) || strlen($_POST['acteurs']) < 4 || strlen($_POST['acteurs']) > 30) {
+        $contenu .='<div class="alert alert-warning">Champs "Acteurs" compris entre 4 et 30 caractères</div>';
     }
 
-    if ( !isset($_POST['pays']) || strlen($_POST['pays']) < 1 || strlen($_POST['pays']) > 50) {
-        $contenu .='<div class="alert alert-warning">Pays : Champs compris entre 5 et  caractères</div>';
+    if ( !isset($_POST['pays']) || strlen($_POST['pays']) < 5 || strlen($_POST['pays']) > 50) {
+        $contenu .='<div class="alert alert-warning">Pays : Champs compris entre 5 et 50 caractères</div>';
     }
 
     if ( empty($_FILES['photo']['name']) || 
@@ -42,6 +42,7 @@ if (!empty($_POST)) {
     $_POST['acteurs'] = $_POST['acteurs'];
     $_POST['pays'] = htmlspecialchars($_POST['pays']);
     $_POST['description'] = htmlspecialchars($_POST['description']);
+    $_POST['bande_annonce'] = htmlspecialchars($_POST['bande_annonce']);
     // $_FILES['photo'] = htmlspecialchars($_POST['photo']);
 
     // debug($_FILES);
@@ -53,7 +54,7 @@ if (!empty($_POST)) {
         copy($_FILES['photo']['tmp_name'], '../' .$photo_bdd);
     }//fin du traitement photo
 
-    $requete =  executeRequete( " INSERT INTO films (categorie, titre, realisateur, acteurs, pays, description, photo) VALUES ( :categorie, :titre, :realisateur, :acteurs, :pays, :description, :photo) ",
+    $requete =  executeRequete( " INSERT INTO films (categorie, titre, realisateur, acteurs, pays, description, photo, bande_annonce) VALUES ( :categorie, :titre, :realisateur, :acteurs, :pays, :description, :photo, :bande_annonce) ",
     array(
         ':categorie' => $_POST['categorie'],
         ':titre' => $_POST['titre'],
@@ -62,6 +63,7 @@ if (!empty($_POST)) {
         ':pays' => $_POST['pays'],
         ':description' => $_POST['description'],
         ':photo' => $photo_bdd,
+        ':bande_annonce' => $_POST['bande_annonce'],
     ));
 
     if ($requete) {
@@ -92,11 +94,18 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
 
 
 <body>
-    
-   <?php require_once '../inc/navbar.inc.php'; ?>
 
     <header class="container-fluid text-white bg-primary bg-gradient p-4">
-        <h2>Ajout d'un Nouveau Film</h2> 
+        <h2>Ajout d'un Nouveau Film</h2>
+        <ul class="nav nav-pills nav-fill">
+            <?php
+                  if(estAdmin()) { 
+                        echo '<li class="nav-item"><a class="btn btn-success shadow" href="../profil.php">Retour au profil</a></li>';
+                        
+                        echo '<li class="nav-item"><a class="btn btn-danger shadow" href="../connexion.php?action=deconnexion">Se déconnecter</a></li>';
+                    } 
+                  ?>
+        </ul>
     </header>
         <main>
             <div class="col-12">
@@ -149,6 +158,12 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
                                 <label for="photo" class="form-label">Photo</label>
                                 <input type="file" name="photo" id="photo" value="<?php echo $_FILES['photo']['name']?? '' ;?>" class="form-control">
                             </div>
+
+                            <div class="mb-3">
+                                <label for="bande_annonce" class="form-label">Bande-annonce (URL)</label>
+                                <input type="text" name="bande_annonce" id="bande_annonce" value="<?php echo $_POST['bande_annonce']?? '' ;?>" class="form-control">
+                            </div>
+
 
                             <button type="submit" class="btn btn-primary position-relative">Ajouter le nouveau film</button> 
                         </form>

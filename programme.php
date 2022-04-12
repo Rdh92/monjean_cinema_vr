@@ -4,13 +4,12 @@
     // (CONNEXION AU FICHIER INIT dans le dossier INC)
     require_once 'inc/init.inc.php';
 
-    // debug($_SESSION);
 
     $requete = $pdoMJC->query( " SELECT * FROM films WHERE categorie = 'Films à l\'affiche' " );
-              //debug($requete);
-              // $nbr_films = $requete->rowCount();
-              // debug($nbr_films); 
-            //debug($ligne);
+    //debug($requete);
+    // $nbr_films = $requete->rowCount();
+    // debug($nbr_films); 
+    //debug($ligne);
 ?>
 
 <!DOCTYPE html>
@@ -57,7 +56,8 @@
   
     <header class="container-fluid f-header p-2 mb-4 col-12 text-center">
         <div class="p-4 m-4 text-center">
-           <h1 class="">Programme</h1>
+           <h1>Programme</h1>
+           <h2 class="lead">Pas de réservation en ligne; uniquement en guichet</h2>
         </div>
     </header>
     <!-- fin container-fluid header -->
@@ -83,12 +83,12 @@
                                 <div class="card-body">
                                     <h5 class="card-title">"<?php echo $ligne['titre']; ?>" </h5>
                                     <p class="h6">"<?php echo $ligne['description']; ?>" .</p>
-                                    <a href="#" class="btn btn-primary">Synopsis et Bande-annonce</a>
+                                    <a href="<?php echo $ligne['bande_annonce']; ?>" class="btn btn-primary">Bande-annonce</a>
                                 </div>
                             </div>
                         </div>
                  <?php  } ?>
-                   
+    </section>            
 
     <!-- DEBUT SECTION : A VENIR -->
     <?php
@@ -98,21 +98,21 @@
     ?>
     <section class="py-5 text-center">
         <h2 class="fw-light">A venir</h2>
-        <div class="album py-5 bg-light">
-            <div class="galerie">
+        <div class="album  py-5 bg-light">
+            <div class="galerie justify-content-evenly">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
 
                     <?php while ( $ligne2 = $newRequete->fetch( PDO::FETCH_ASSOC )) {
                         
                     ?>
                     
-                    <div class="col-md-4"> 
-                            <div class="card shadow-sm m-4" style="width: 18rem;">
+                    <div class="col-md-3"> 
+                            <div class="card shadow-sm m-4" style="width: 20rem;">
                                 <img src="<?php echo $ligne2['photo']; ?>" class="figure-img img-fluid rounded img-admin">
                                 <div class="card-body">
                                     <h5 class="card-title">"<?php echo $ligne2['titre']; ?>" </h5>
-                                    <p class="h6">"<?php echo $ligne2['description']; ?>" </p>
-                                    <!-- <a href="#" class="btn btn-primary">Synopsis et Bande-annonce</a> -->
+                                    <p class="h6">"<?php echo $ligne2['description']; ?>"</p>
+                                    <a href="<?php echo $ligne2['bande_annonce']; ?>" class="btn btn-primary">Bande-annonce</a>
                                 </div>
                             </div>
                         </div>

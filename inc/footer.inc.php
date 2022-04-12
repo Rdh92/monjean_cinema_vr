@@ -18,7 +18,7 @@
   </div>
   <!-- fin row -->
 
-  <div class="" style="color: rgba(17,13,44,1);">
+  <div class="text-white">
     <small>Copyright &copy; Vanusa Santos & Redha Talamine - Soutenance Colombbus 2022</small>
   </div>
   <!-- fin div copyright -->      

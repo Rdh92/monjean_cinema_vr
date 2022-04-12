@@ -61,30 +61,22 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
 </head>
 
 <body>    
-      <?php require_once '../inc/navbar.inc.php'; ?>
-
     <header class="container-fluid text-white bg-primary bg-gradient p-4">
-            <h1 class="display-4 text-white ">Bonjour <?php echo $_SESSION['membre']['prenom']; ?></h1>
+            <h1 class="display-4 text-white ">Messages</h1>
             <p class="lead">
             <?php
             if(estAdmin()) { // si le membre est 'admin' il n'a pas les mêmes accès qu'un membre 'client'
                 echo ' -- Vous êtes administrateur</p>';
-            } else {
-                echo ' --  Bienvenue dans votre espace Bénévole !</p>';
             }
             ?>
 
             <ul class="nav nav-pills nav-fill">
             <?php 
                 if(estAdmin()) { 
-                    echo '<li class="nav-item"><a class="btn btn-success shadow" href="admin/gestion_film.php">Ajouter un nouveau film </a></li>';
+                    echo '<li class="nav-item"><a class="btn btn-success shadow" href="../profil.php">Retour au profil</a></li>';
                     
-                    echo '<li class="nav-item"><a class="btn btn-warning shadow" href="admin/benevoles.php">Liste des bénévoles</a></li>';
+                    echo '<li class="nav-item"><a class="btn btn-danger shadow" href="../connexion.php?action=deconnexion">Se déconnecter</a></li>';
                 } 
-                
-                if (estConnecte()) {
-                    echo '<li class="nav-item"><a class="btn btn-danger shadow" href="connexion.php?action=deconnexion">Se déconnecter</a></li>';
-                }
             ?>
             </ul>
     </header>
@@ -95,7 +87,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
         <div class="col-12">
             <section>
                 <div class="col-9">
-                    <h2>Liste des films :</h2>
+                    <h2>Liste des messages :</h2>
                     <br>
                     <?php
                     // 3 affichage de données 
@@ -136,11 +128,6 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
         </div>
    
     </div>
-   <!-- ====================================================== -->
-    <!--                  FOOTER : en require                   --> 
-    <!-- ====================================================== -->  
-    <?php require_once '../inc/footer.inc.php';?> 
-
 
     <!-- ====================================================== -->
     <!--              Bootstrap Bundle with Popper              --> 

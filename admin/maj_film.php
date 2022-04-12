@@ -38,6 +38,7 @@ $_POST['description'] = $_POST['description'];
 $_POST['realisateur'] = htmlspecialchars($_POST['realisateur']);
 $_POST['acteurs'] = htmlspecialchars($_POST['acteurs']);
 $_POST['pays'] = htmlspecialchars($_POST['pays']);
+$_POST['bande_annonce'] = htmlspecialchars($_POST['bande_annonce']);
 
 // traitement du fichier image, de la photo
 
@@ -47,7 +48,7 @@ if (!empty($_FILES['photo']['name'])) {
     copy($_FILES['photo']['tmp_name'], '../' .$photo_bdd);
 }//fin du traitement photo
 
-$resultat = $pdoMJC->prepare( " UPDATE films SET  categorie = :categorie, titre = :titre, description = :description, realisateur = :realisateur, acteurs = :acteurs, pays = :pays, photo = :photo WHERE id_film = :id_film " );// requete préparée avec des marqueurs
+$resultat = $pdoMJC->prepare( " UPDATE films SET  categorie = :categorie, titre = :titre, description = :description, realisateur = :realisateur, acteurs = :acteurs, pays = :pays, photo = :photo, bande_annonce = :bande_annonce WHERE id_film = :id_film " );// requete préparée avec des marqueurs
 
 $resultat->execute( array(
   ':categorie' => $_POST['categorie'],
@@ -58,6 +59,7 @@ $resultat->execute( array(
   ':id_film' => $_GET['id_film'],
   ':pays' => $_POST['pays'],
   ':photo' => $photo_bdd,
+  ':bande_annonce' => $_POST['bande_annonce'],
 
 ));
 header('location:../profil.php');
@@ -81,7 +83,7 @@ exit();
   <body>
     
   <!-- Navbar  -->
-    <?php require_once '../inc/navbar.inc.php'; ?>
+    
   
   <!-- En-tête  -->
   <header class="container-fluid bg-primary bg-gradient text-white p-4 ">
@@ -89,6 +91,15 @@ exit();
           <div class="col-5">
             <h1 class="display-4">Admin</h1>
             <p class="lead">Mise à jour - Fiche du film <?php echo $fiche['titre']; ?> </p>
+            <ul class="nav nav-pills nav-fill">
+              <?php
+                if(estAdmin()) { 
+                      echo '<li class="nav-item"><a class="btn btn-success shadow" href="../profil.php">Retour au profil</a></li>';
+                      
+                      echo '<li class="nav-item"><a class="btn btn-danger shadow" href="../connexion.php?action=deconnexion">Se déconnecter</a></li>';
+                  } 
+                ?>
+            </ul>
           </div>         
         </div>
    </header>
@@ -109,6 +120,7 @@ exit();
                     <td>Description : <br> <?php echo $fiche['description']; ?></td>
                     <td>Réalisateurs : <?php echo $fiche['realisateur']; ?></td>
                     <td>Acteurs : <?php echo $fiche['acteurs']; ?></td>
+                    <td>Bande-annonce : <?php echo $fiche['bande_annonce']; ?></td>
                     
                 </tr>
                 <!-- fermeture de la boucle -->
@@ -164,6 +176,10 @@ exit();
                         <label for="photo" class="form-label">Photo</label>
                         <input type="file" name="photo" id="photo" value="<?php echo $_FILES['photo']['name']?? '' ;?>" class="form-control">
                     </div>
+
+                    <label for="bande_annonce" class="form-label">Bande-annonce (URL)</label>
+                    <textarea name="bande_annonce" id="bande_annonce" cols="30" rows="3" class="form-control"><?php echo $fiche['bande_annonce']; ?></textarea>
+
 
                     <button class="btn btn-outline-success" type="submit">Mise à jour</button>
 

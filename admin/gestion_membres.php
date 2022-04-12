@@ -65,45 +65,29 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
 </head>
 
 <body>
-   
-    <!-- ====================================================== -->
-    <!--                  EN-TETE : NAVBAR en require           --> 
-    <!-- ====================================================== --> 
-    
-    <?php require_once '../inc/navbar.inc.php'; ?> 
-
-    <header class="container-fluid f-header p-2 m-2 col-12 text-center">
-      <div class="col-12 text-center">
-        <h1 class="">Gestion des membres</h1>
-        <p class="lead">Liste des membres (Administrateurs et bénévoles)</p>
-        
-    </header>
+<header class="container-fluid bg-primary bg-gradient text-white p-4 ">
+        <div class="row">
+          <div class="col-5">
+            <h1 class="display-4">Gestion des membres</h1>
+            <p class="lead">Liste des membres (Administrateurs et bénévoles)</p>
+            <ul class="nav nav-pills nav-fill">
+              <?php
+                if(estAdmin()) { 
+                      echo '<li class="nav-item"><a class="btn btn-success shadow" href="../profil.php">Retour au profil</a></li>';
+                      
+                      echo '<li class="nav-item"><a class="btn btn-danger shadow" href="../connexion.php?action=deconnexion">Se déconnecter</a></li>';
+                  } 
+                ?>
+            </ul>
+          </div>         
+        </div>
+   </header>
     <!-- fin container-fluid header -->
     
     <!-- ====================================================== -->
     <!--                CONTAINER : contenu principal           --> 
     <!-- ====================================================== -->
 <main class="container-fluid">
-    <section class="row text-center m-5 py-5">
-      <h2>Menu du back office</h2>
-      <div class="col col-lg-12 col-md-8">
-          <!-- sous nav back office -->
-          <ul class="nav nav-pills nav-fill justify-content-center">
-            <?php 
-                if(estAdmin()) { 
-                    echo '<li class="nav-item"><a class="btn btn-success shadow" href="' ,'../profil.php">Retour au profil</a></li>';   
-                   
-                }                 
-                if (estConnecte()) {
-                    echo '<li class="nav-item"><a class="btn btn-danger shadow" href="' ,'../connexion.php?action=deconnexion">Se déconnecter</a></li>';
-                    // echo 'Bienvenue !';
-                }
-            ?>
-            </ul>
-      </div>
-    </section>
-    <!-- fin row --> 
-    
     <section class="text-center m-5 py-5">
             <?php
                 $requete = $pdoMJC->query( " SELECT * FROM membres ORDER BY id_membre ASC " );

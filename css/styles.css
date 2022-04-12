@@ -43,9 +43,9 @@ footer {
 }
 
 /* styles pour les nav */
-a:link {
+/* a:link {
     text-decoration: none;
-}
+} */
 
 .nav-link {
     font-size: 0.9em;

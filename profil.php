@@ -35,7 +35,7 @@ if ( !empty($_POST) ) {//not empty
   exit();
   }
 
-// 2 - SUPPRESSION D'UN FILM
+// - SUPPRESSION D'UN FILM
 
 // debug($_GET);
 if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_film'])) {
@@ -51,6 +51,23 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
     $suppression .= '<div class="alert alert-success"> Film supprimé</div>';
   }
 }
+
+// - SUPPRESSION D'UN EVENEMENT
+
+// debug($_GET);
+if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_categorie'])) {
+    $resultat = $pdoMJC->prepare( " DELETE FROM categorie WHERE id_categorie = :id_categorie " );
+  
+    $resultat->execute(array(
+      ':id_categorie' => $_GET['id_categorie']
+    ));
+  
+    if ($resultat->rowCount() == 0) {
+      $suppression .= '<div class="alert alert-danger"> Erreur de suppression</div>';
+    } else {
+      $suppression .= '<div class="alert alert-success"> Evènement supprimé</div>';
+    }
+  }
 ?> 
 
 <!DOCTYPE html>
@@ -105,10 +122,10 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
             <ul class="nav nav-pills nav-fill">
             <?php 
                 if(estAdmin()) { 
-                    echo '<li class="nav-item"><a class="btn btn-success shadow" href="admin/gestion_film.php">Ajouter un nouveau film </a></li>';
+                    echo '<li class="nav-item"><a class="btn btn-success shadow" href="admin/gestion_film.php">Ajouter un film / évènement </a></li>';
                     
                     echo '<li class="nav-item"><a class="btn btn-warning shadow" href="admin/gestion_membres.php">Liste des bénévoles</a></li>';
-                } 
+                }
                 
                 if (estConnecte()) {
                     echo '<li class="nav-item"><a class="btn btn-danger shadow" href="connexion.php?action=deconnexion">Se déconnecter</a></li>';
@@ -116,123 +133,198 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
             ?>
             </ul>
     </header>
-
-    
+   
 
     <section class="row justify-content-start">
         <div class="col-12">
+            <div class="container-fluid">
+                <div class="row justify-content-center m-2 p-2">
+                    <div class="col-6 text-center">
+                        <button type="button" class="btn btn-block btn-outline-primary" value="Mise à jour de vos informations" id="cacheForm">Mise à jour de vos informations</button>
+                    </div>
+                    <?php
+                        if(estAdmin()) { // si le membre est 'admin' il n'a pas les mêmes accès qu'un membre 'client'
+                        echo '<div>
+                                <button type="button"class="btn btn-warning position-relative" value="Consulter les messages">
+                                    <a href="admin/contact_admin.php" class="text-decoration-none">Consulter les messages</a> 
+                                </button>
+                            </div>';
+                        } 
+                    ?>
+                    
+               
+                    <form method="POST" action="" class="shadow p-3 mb-5 bg-body rounded cache">
+                            <h2>Mise à jour de vos informations</h2>
 
-        <div class="container-fluid">
-            <div class="row justify-content-center m-2 p-2">
-                <div class="col-6 text-center">
-                    <button type="button" class="btn btn-block btn-outline-primary" value="Mise à jour des informations" id="cacheForm">Mise à jour des informations</button>
-                </div><!-- fin col -->
+                            <div class="row">
+                                <div class="col-md-6 form-group mt-2">
+                                <label for="pseudo">Votre pseudo *</label>
+                                <input type="text" name="pseudo" id="pseudo" value="<?php echo $_SESSION['membre']['pseudo']; ?>" class="form-control"> 
+                            </div>
 
-                <form method="POST" action="" class="shadow p-3 mb-5 bg-body rounded cache">
-                <h2>Mise à jour de vos informations</h2>
-                    <div class="row">
-                    <div class="col-md-6 form-group mt-2">
-                        <label for="pseudo">Votre pseudo *</label>
-                        <input type="text" name="pseudo" id="pseudo" value="<?php echo $_SESSION['membre']['pseudo']; ?>" class="form-control"> 
-                    </div>
+                            <div class="row">
+                            <div class="col-md-6 form-group mt-2">
+                                <label for="nom">Nom *</label>
+                                <input type="text" name="nom" id="nom" value="<?php echo $_SESSION['membre']['nom']; ?>" class="form-control">
+                            </div>
+                            <div class="col-md-6  form-group mt-2">
+                                <label for="prenom">Prénom *</label>
+                                <input type="text" name="prenom" id="prenom" value="<?php echo $_SESSION['membre']['prenom']; ?>" class="form-control"> 
+                            </div>
+                            <div class="col-md-6  form-group mt-2">
+                                <label for="email">Email *</label>
+                                <input type="email" name="email" id="email" value="<?php echo $_SESSION['membre']['email']; ?>" class="form-control">
+                            </div>
+                            </div>
+                            <!-- fin row  -->
+                            <div class="row">
+                                <div class="form-group mt-2">
+                                    <label for="civilite">Civilité *</label>
+                                    <input type="radio" name="civilite" value="m" checked> Homme
+                                    <input type="radio" name="civilite" value="f"<?php if (isset($_SESSION['membre']['civilite']) && $_SESSION['membre']['civilite'] =='f') echo 'checked';?>> Femme            
+                                </div>
 
-                    <div class="row">
-                    <div class="col-md-6 form-group mt-2">
-                        <label for="nom">Nom *</label>
-                        <input type="text" name="nom" id="nom" value="<?php echo $_SESSION['membre']['nom']; ?>" class="form-control">
-                    </div>
-                    <div class="col-md-6  form-group mt-2">
-                        <label for="prenom">Prénom *</label>
-                        <input type="text" name="prenom" id="prenom" value="<?php echo $_SESSION['membre']['prenom']; ?>" class="form-control"> 
-                    </div>
-                    <div class="col-md-6  form-group mt-2">
-                        <label for="email">Email *</label>
-                        <input type="email" name="email" id="email" value="<?php echo $_SESSION['membre']['email']; ?>" class="form-control">
-                    </div>
-                    </div>
-                    <!-- fin row  -->
-                    <div class="row">
-                    <div class="form-group mt-2">
-                        <label for="civilite">Civilité *</label>
-                        <input type="radio" name="civilite" value="m" checked> Homme
-                        <input type="radio" name="civilite" value="f"<?php if (isset($_SESSION['membre']['civilite']) && $_SESSION['membre']['civilite'] =='f') echo 'checked';?>> Femme            
-                    </div>
-                    <div class="col-4 form-group mt-2">
-                        <label for="adresse">Adresse</label>
-                        <textarea name="adresse" id="adresse" class="form-control"><?php echo $adresse ?? '' ; ?></textarea>
-                    </div>
-                    <div class="col-4 form-group mt-2">
-                        <label for="code_postal">Code postal</label>
-                        <input type="text" name="code_postal" id="code_postal" value="<?php echo $_SESSION['membre']['code_postal']; ?>" class="form-c²ontrol"> 
-                    </div>
-                    <div class="col-7 form-group mt-2">        
-                        <label for="ville">Ville</label>
-                        <input type="text" name="ville" id="ville" value="<?php echo $_SESSION['membre']['ville']; ?>" class="form-control"> 
-                    </div>
-                    </div>
-                    <div class="form-group mt-2">
-                        <input type="submit" value="Mise à jour" class="btn btn-md btn-outline-success"> 
-                    </div>
+                                <div class="col-4 form-group mt-2">
+                                    <label for="adresse">Adresse</label>
+                                    <textarea name="adresse" id="adresse" class="form-control"><?php echo $adresse ?? '' ; ?></textarea>
+                                </div>
+
+                                <div class="col-4 form-group mt-2">
+                                    <label for="code_postal">Code postal</label>
+                                    <input type="text" name="code_postal" id="code_postal" value="<?php echo $_SESSION['membre']['code_postal']; ?>" class="form-c²ontrol"> 
+                                </div>
+
+                                <div class="col-7 form-group mt-2">        
+                                    <label for="ville">Ville</label>
+                                    <input type="text" name="ville" id="ville" value="<?php echo $_SESSION['membre']['ville']; ?>" class="form-control"> 
+                                </div>
+
+                            </div>
+                            
+                            <div class="form-group mt-2">
+                                <input type="submit" value="Mise à jour" class="btn btn-md btn-outline-success"> 
+                            </div>
+                        </div>
+                    </form>
                 </div>
-            </form>
+            </div>
         </div>
         <a href="profil.php"></a>
           <!-- fin col -->
     </section>
         <!-- fin row -->  
 
+    <!-- LISTE DE TOUT LES FILMS  -->
+    <section class="row justify-content-start">
         <div class="col-12">
-            <section>
-                <div class="col-9">
-                    <h2>Liste des films :</h2>
-                    <br>
-                    <?php
-                    // 3 affichage de données 
-                    $requete = $pdoMJC->query( " SELECT * FROM films ORDER BY id_film ASC " );
-                    // debug($resultat);
-                    $nbr_films = $requete->rowCount();
-                    // debug($nbr_commentaires);
-                    ?>
+            <div class="container-fluid">
+                <h2>Liste des films :</h2>
+                        <br>
+                        <?php
+                            // 3 affichage de données 
+                            $requete = $pdoMJC->query( " SELECT * FROM films ORDER BY id_film ASC " );
+                            // debug($resultat);
+                            $nbr_films = $requete->rowCount();
+                            // debug($nbr_commentaires);
+                        ?>
+                        
+                        <h5>Il y a <?php echo $nbr_films; ?> films </h5>
+                        <?php echo $contenu; ?>
+                        
+                        
+                            <table class="table table-striped shadow p-3 mb-5 bg-body rounded">
+                                <thead>
+                                    <tr>
+                                        <th>Titre</th>
+                                        <th>Réalisateurs</th>
+                                        <th>Acteurs</th>
+                                        <th>Pays</th>
+                                        <th>Description</th>
+                                        <th>Catégorie</th>
+                                        <th>Photo</th>
+                                        <th>Bande-annonce</th>
+                                                        
+                                    </tr>
+                                </thead>;
 
-                    <h5>Il y a <?php echo $nbr_films; ?> films </h5>
-                    <?php echo $contenu; ?>
+                            <tbody>
+                                <!-- ouverture de la boucle while -->
+                                <?php while ( $ligne = $requete->fetch( PDO::FETCH_ASSOC )) { ?>
+                                <tr>                  
+                                    <td><?php echo $ligne['titre']; ?></td>
+                                    <td><?php echo $ligne['realisateur']; ?></td>
+                                    <td><?php echo $ligne['acteurs']; ?></td>
+                                    <td><?php echo $ligne['pays']; ?></td>
+                                    <td><?php echo $ligne['description']; ?></td>
+                                    <td><?php echo $ligne['categorie']; ?></td>
+                                    <td><?php echo $ligne['photo']; ?></td>
+                                    <td><?php echo $ligne['bande_annonce']; ?></td>
+                                    <td><a href="admin/maj_film.php?id_film=<?php echo $ligne['id_film']; ?>">MAJ</a></td>
+                                    <td><a href="?action=supprimer&id_film=<?php echo $ligne['id_film']; ?>" onclick="return(confi('Voulez-vous supprimer le film ? '))">Supprimer le film</a></td>
+                                </tr>
+                                <!-- fermeture de la boucle -->
+                                <?php } ?>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                
+           </div>
+        </div>   
+    </section>
+    <!-- FIN LISTE DE TOUT LES FILMS  -->
+     <hr>
+    <!-- LISTE DES EVENEMENTS  -->
+    <section class="row justify-content-start">
+        <div class="col-12">
+            <div class="container-fluid">
+                <h2>Liste des évènements :</h2>
+                        <br>
+                        <?php
+                            // 3 affichage de données 
+                            $requete = $pdoMJC->query( " SELECT * FROM categorie ORDER BY id_categorie ASC " );
+                            // debug($resultat);
+                            $nbr_evenements = $requete->rowCount();
+                            // debug($nbr_commentaires);
+                        ?>
+                        
+                        <h5>Il y a <?php echo  $nbr_evenements; ?>  évènements</h5>
+                        <?php echo $contenu; ?>
+                        
+                        
+                            <table class="table table-striped shadow p-3 mb-5 bg-body rounded">
+                                <thead>
+                                    <tr>
+                                        <th>Catégorie</th>
+                                        <th>Nom de l'évènement</th>
+                                        <th>Date de l'évènement</th>
+                                        <th>Photo</th>
+                                        <th>Suppression</th>
+                                    </tr>
+                                </thead>;
 
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>Titre</th>
-                                <th>Réalisateurs</th>
-                                <th>Acteurs</th>
-                                <th>Pays</th>
-                                <th>Description</th>
-                                <th>Catégorie</th>
-                                <th>Photo</th>
-                                
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- ouverture de la boucle while -->
-                            <?php while ( $ligne = $requete->fetch( PDO::FETCH_ASSOC )) { ?>
-                            <tr>                  
-                                <td><?php echo $ligne['titre']; ?></td>
-                                <td><?php echo $ligne['realisateur']; ?></td>
-                                <td><?php echo $ligne['acteurs']; ?></td>
-                                <td><?php echo $ligne['pays']; ?></td>
-                                <td><?php echo $ligne['description']; ?></td>
-                                <td><?php echo $ligne['categorie']; ?></td>
-                                <td><?php echo $ligne['photo']; ?></td>
-                                <td><a href="admin/maj_film.php?id_film=<?php echo $ligne['id_film']; ?>">MAJ</a></td>
-                                <td><a href="?action=supprimer&id_film=<?php echo $ligne['id_film']; ?>" onclick="return(confirm('Voulez-vous supprimer le film ? '))">Supprimer le film</a></td>
-                            </tr>
-                            <!-- fermeture de la boucle -->
-                            <?php } ?>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-        </div>
-   
-    </div>
+                            <tbody>
+                                <!-- ouverture de la boucle while -->
+                                <?php while ( $ligne = $requete->fetch( PDO::FETCH_ASSOC )) { ?>
+                                <tr>                  
+                                    <td><?php echo $ligne['type_event']; ?></td>
+                                    <td><?php echo $ligne['nom_event']; ?></td>
+                                    <td><?php echo $ligne['date_event']; ?></td>
+                                    <td><?php echo $ligne['photo_event']; ?></td>
+                                    <td><a href="?action=supprimer&id_categorie=<?php echo $ligne['id_categorie']; ?>" onclick="return(confi('Voulez-vous supprimer l\'évènement' ? '))">Supprimer l'évènement</a></td>
+                                </tr>
+                                <!-- fermeture de la boucle -->
+                                <?php } ?>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                
+           </div>
+        </div>   
+    </section>
+    <!-- FIN LISTE DES EVENEMENTS  -->
+
    <!-- ====================================================== -->
     <!--                  FOOTER : en require                   --> 
     <!-- ====================================================== -->  

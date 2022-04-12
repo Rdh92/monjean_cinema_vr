@@ -2,7 +2,6 @@
 <footer class="container-fluid p-4 m-4 col-12 text-center bg-image " style="background-image: url('img/background_peliculle_bleu_royal.png'); color: rgba(17,13,44,1);"> 
   <div class="row text-center justify-content-center">
     <div class="col-12 ">
-      <a class="p-4" href="qui_sommes_nous.php">Qui sommes-nous ?</a>
       <a class="p-4" href="inscription.php">S'inscrire</a>
       <a class="p-4" href="contact.php">Restons en contact !</a>
       <a class="p-4" href="infos_pratiques.php">Informations pratiques</a>

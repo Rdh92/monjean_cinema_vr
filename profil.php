@@ -112,7 +112,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
             <h1 class="display-4 text-white ">Bonjour <?php echo $_SESSION['membre']['prenom']; ?></h1>
             <p class="lead">
             <?php
-            if(estAdmin()) { // si le membre est 'admin' il n'a pas les mêmes accès qu'un membre 'client'
+            if(estAdmin()) { // si le membre est 'admin' il n'a pas les mêmes accès qu'un membre 'bénévole'
                 echo ' -- Vous êtes administrateur</p>';
             } else {
                 echo ' --  Bienvenue dans votre espace Bénévole !</p>';
@@ -143,7 +143,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
                         <button type="button" class="btn btn-block btn-outline-primary" value="Mise à jour de vos informations" id="cacheForm">Mise à jour de vos informations</button>
                     </div>
                     <?php
-                        if(estAdmin()) { // si le membre est 'admin' il n'a pas les mêmes accès qu'un membre 'client'
+                        if(estAdmin()) { // si le membre est 'admin' il n'a pas les mêmes accès qu'un membre 'bénévole'
                         echo '<div>
                                 <button type="button"class="btn btn-warning position-relative" value="Consulter les messages">
                                     <a href="admin/contact_admin.php" class="text-decoration-none">Consulter les messages</a> 

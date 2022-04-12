@@ -65,7 +65,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
             <h1 class="display-4 text-white ">Messages</h1>
             <p class="lead">
             <?php
-            if(estAdmin()) { // si le membre est 'admin' il n'a pas les mêmes accès qu'un membre 'client'
+            if(estAdmin()) { // si le membre est 'admin' il n'a pas les mêmes accès qu'un membre 'bénévole'
                 echo ' -- Vous êtes administrateur</p>';
             }
             ?>

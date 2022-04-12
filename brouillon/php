@@ -1,9 +1,0 @@
-//<?php
-    foreach ($pdoMJC->query( " SELECT * FROM films ORDER BY categorie ASC ") as $ligne_categorie) {
-    echo '<option value="' .$ligne_categorie['categorie']. '"';
-    if ($ligne_categorie['categorie'] == $fiche['categorie']) {
-    echo 'selected';
-    }
-    echo '>' .$ligne_categorie['categorie']. '</option>';
-    }
-    ?> -->

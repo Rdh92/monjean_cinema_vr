@@ -17,11 +17,14 @@
 /* taille img pour carousel : 1920x1080jpg = export depuis PSD pour web au format png, resolution 72 : H233 x W315 */
 /* taille des affiches (pour les cards) : */
 
-
+* {
+    box-sizing: border-box;
+}
 body {
     font-family: 'Barlow', bold, sans-serif;
     color: #110D2C;
     font-size: 1em;
+    overflow-x:hidden;
 }
 
 h1, h2, h3, h4, h5 {

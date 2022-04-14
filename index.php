@@ -69,16 +69,16 @@ $requete = $pdoMJC->query( " SELECT * FROM films WHERE categorie = 'Films à l\'
     <div id="carouselExampleControls" class="carousel slide shadow-lg" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <a href="programme.php"><img src="img/affiche_carousel_bienvenue.png" class="d-block w-100 rounded-pill" alt="Affiche de bienvenue"></a>         
+          <a href="programme.php"><img src="img/affiche_carousel_bienvenue.png" class="d-block w-100" alt="Affiche de bienvenue"></a>         
         </div>
         <div class="carousel-item">
-          <a href="https://video.wbdsta.net/ops/allocine/PrintempsDuCinema/PrintempsDuCinema_2.mp4"><img src="img/printemps_du_cinema_1920_1080.png" class="d-block w-100 rounded-pill" alt="Affiche du Printemps du cinéma 2022"></a>
+          <a href="https://video.wbdsta.net/ops/allocine/PrintempsDuCinema/PrintempsDuCinema_2.mp4"><img src="img/printemps_du_cinema_1920_1080.png" class="d-block w-100" alt="Affiche du Printemps du cinéma 2022"></a>
         </div>
         <div class="carousel-item">
-          <a href="https://www.allocine.fr/article/fichearticle_gen_carticle=18708133.html"><img src="img/box_office_carousel.png" class="d-block w-100 rounded-pill" alt="Affiche du box office - film Batman 2022"></a>         
+          <a href="https://www.allocine.fr/article/fichearticle_gen_carticle=18708133.html"><img src="img/box_office_carousel.png" class="d-block w-100" alt="Affiche du box office - film Batman 2022"></a>         
         </div>
         <div class="carousel-item">
-          <a href="https://www.allocine.fr/video/player_gen_cmedia=19586202&cfilm=248481.html?jwsource=cl"><img src="img/minions_carousel.png" class="d-block w-100 rounded-pill" alt="Affiche du box office - film Batman 2022"></a>         
+          <a href="https://www.allocine.fr/video/player_gen_cmedia=19586202&cfilm=248481.html?jwsource=cl"><img src="img/minions_carousel.png" class="d-block w-100" alt="Affiche du box office - film Batman 2022"></a>         
         </div>
         <!-- <div class="carousel-item">
           <a href="evenements.php"><img src="img/cine_debat_carousel.png" class="d-block w-100" alt="Affiche evenement Ciné débat"></a>         
@@ -104,23 +104,23 @@ $requete = $pdoMJC->query( " SELECT * FROM films WHERE categorie = 'Films à l\'
     <!-- ====================================================== -->
   <main class="container">
     <!-- DEBUT SECTION en affichage de données en PHP : A L AFFICHE -->
-    <section class="row">
+    <!-- <section class="row"> -->
       <!-- Ici les 2 classes pour l'animation du h1 de la page accueil -->
         <h1 class="battement bouton">A l'affiche au Montjean Cinéma</h1>
-        <div class="album col  py-7">
+      
           <div class="galerie justify-content-around">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+            <div class="row g-3">
 
               <!-- boucle while -->
               <?php while ( $ligne = $requete->fetch( PDO::FETCH_ASSOC )) { ?>
                                   
               <!-- debut div col de la galerie -->
-              <div class="col-md-3">
-                <div class="card shadow-lg m-4 text-center" style="width: 18rem;">
-                  <img src="<?php echo $ligne['photo']; ?>" class="card-img-top rounded-3 img-fluid" alt="affiche du film Sonic 2022">
-                  <div class="card-body">
+              <div class="col-sm-12 col-md-3 col-lg-3">
+                <div class="card shadow-lg text-center" >
+                  <img src="<?php echo $ligne['photo']; ?>" class="rounded-3 img-fluid" alt="affiche du film Sonic 2022">
+                  <div class="card-body" >
                     <h5 class="card-title">"<?php echo $ligne['titre']; ?>"</h5>
-                    <p class="card-text">"<?php echo $ligne['description']; ?>" .</p>
+                    <p class="card-text" >"<?php echo $ligne['description']; ?>" .</p>
                     <a href="<?php echo $ligne['bande_annonce']; ?>" class="btn btn-light" style="color: rgba(17,13,44,1);">Voir la bande d'annonce</a>
                   </div>
                   <!-- fin div card-body -->
@@ -133,8 +133,7 @@ $requete = $pdoMJC->query( " SELECT * FROM films WHERE categorie = 'Films à l\'
             <!-- fin div row de la galerie -->
           </div>
           <!-- fin div galerie -->
-        </div>
-        <!-- fin div album -->     
+         
     </section>
     <!-- FIN SECTION : A L AFFICHE DE L'ACCUEIL -->
 
@@ -147,7 +146,7 @@ $requete = $pdoMJC->query( " SELECT * FROM films WHERE categorie = 'Films à l\'
           <div>
           </div>
         </div>
-    </section>
+    <!-- </section> -->
   </main>
   <!-- fin container  -->
 

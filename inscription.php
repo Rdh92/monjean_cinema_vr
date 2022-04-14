@@ -168,10 +168,10 @@ if ( !empty($_POST) ) {
 <!-- fin container-fluid header -->
 
 <main class="container">
-    <div class="">
-       <div class="row pt-2 justify-content-center">
+    
+
         <?php echo $contenu; ?>
-        </div>
+      
         <section class="row m-4 justify-content-center" style="color:rgba(17,13,44,1);">          
             <div class="col-12 col-lg-8 p-4" style="background-color: rgba(93,131,213,1); color: rgba(224,228,239,1)">             
                 <form action="" method="POST">
@@ -230,7 +230,7 @@ if ( !empty($_POST) ) {
             <!-- fin div qui contient le form -->
         </section>
         <!-- fin row -->
-   </div>
+  
    <!-- fin div qui contient la session -->
 </main>
 <!-- fin -->

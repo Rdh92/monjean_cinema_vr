@@ -6,9 +6,15 @@
 
 
     $requete = $pdoMJC->query( " SELECT * FROM films WHERE categorie = 'Films à l\'affiche' " );
+<<<<<<< Updated upstream
     //debug($requete);
     // $nbr_films = $requete->rowCount();
     // debug($nbr_films); 
+=======
+        //debug($requete);
+        // $nbr_films = $requete->rowCount();
+        // debug($nbr_films); 
+>>>>>>> Stashed changes
     //debug($ligne);
 ?>
 

@@ -69,16 +69,16 @@ $requete = $pdoMJC->query( " SELECT * FROM films WHERE categorie = 'Films à l\'
     <div id="carouselExampleControls" class="carousel slide shadow-lg" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <a href="programme.php"><img src="img/affiche_carousel_bienvenue.png" class="d-block w-100" alt="Affiche de bienvenue"></a>         
+          <a href="programme.php"><img src="img/affiche_carousel_bienvenue.png" class="d-block w-100 rounded-pill" alt="Affiche de bienvenue"></a>         
         </div>
         <div class="carousel-item">
-          <a href="https://video.wbdsta.net/ops/allocine/PrintempsDuCinema/PrintempsDuCinema_2.mp4"><img src="img/printemps_du_cinema_1920_1080.png" class="d-block w-100" alt="Affiche du Printemps du cinéma 2022"></a>
+          <a href="https://video.wbdsta.net/ops/allocine/PrintempsDuCinema/PrintempsDuCinema_2.mp4"><img src="img/printemps_du_cinema_1920_1080.png" class="d-block w-100 rounded-pill" alt="Affiche du Printemps du cinéma 2022"></a>
         </div>
         <div class="carousel-item">
-          <a href="https://www.allocine.fr/article/fichearticle_gen_carticle=18708133.html"><img src="img/box_office_carousel.png" class="d-block w-100" alt="Affiche du box office - film Batman 2022"></a>         
+          <a href="https://www.allocine.fr/article/fichearticle_gen_carticle=18708133.html"><img src="img/box_office_carousel.png" class="d-block w-100 rounded-pill" alt="Affiche du box office - film Batman 2022"></a>         
         </div>
         <div class="carousel-item">
-          <a href="https://www.allocine.fr/video/player_gen_cmedia=19586202&cfilm=248481.html?jwsource=cl"><img src="img/minions_carousel.png" class="d-block w-100" alt="Affiche du box office - film Batman 2022"></a>         
+          <a href="https://www.allocine.fr/video/player_gen_cmedia=19586202&cfilm=248481.html?jwsource=cl"><img src="img/minions_carousel.png" class="d-block w-100 rounded-pill" alt="Affiche du box office - film Batman 2022"></a>         
         </div>
         <!-- <div class="carousel-item">
           <a href="evenements.php"><img src="img/cine_debat_carousel.png" class="d-block w-100" alt="Affiche evenement Ciné débat"></a>         

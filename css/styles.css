@@ -20,6 +20,7 @@
 * {
     box-sizing: border-box;
 }
+
 body {
     font-family: 'Barlow', bold, sans-serif;
     color: #110D2C;
@@ -80,6 +81,6 @@ footer {
 
 .cache {
     display: none;
-  }
+}
 
 

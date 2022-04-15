@@ -65,14 +65,14 @@ $requete = $pdoMJC->query( " SELECT * FROM categorie " );
     <!-- ====================================================== -->
 
   <main class="container">
+    <!-- DEBUT SECTION EVENEMENTS : PROCHAINEMENT -->
     <section class="row py-5 justify-content-center">
         <div class="container px-4 py-5" id="custom-cards">
         <h2 class="pb-2 border-bottom">Prochainement :</h2>
-        <h2>Réservation uniquement sur place ! Pas de réservation en ligne</h2>
+        <h3>Réservation uniquement sur place ! Pas de réservation en ligne</h3>
           <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-          <?php while ( $ligne = $requete->fetch( PDO::FETCH_ASSOC )) { 
-
-                          
+          <?php
+            while ( $ligne = $requete->fetch( PDO::FETCH_ASSOC )) {                           
           ?>
             <div class="col">
               <div class="card card-cover  overflow-hidden rounded-5 shadow-lg">

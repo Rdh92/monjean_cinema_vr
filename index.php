@@ -65,35 +65,35 @@ $requete = $pdoMJC->query( " SELECT * FROM films WHERE categorie = 'Films à l\'
     ?>
 
   <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-  <div class="container p-3 mb-5 rounded">
-    <div id="carouselExampleControls" class="carousel slide shadow-lg" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <a href="programme.php"><img src="img/affiche_carousel_bienvenue.png" class="d-block w-100" alt="Affiche de bienvenue"></a>         
+    <div class="container p-3 mb-5">
+      <div id="carouselExampleControls" class="carousel slide shadow-lg rounded-3" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <a href="programme.php"><img src="img/affiche_carousel_bienvenue.png" class="d-block w-100" alt="Affiche de bienvenue"></a>         
+          </div>
+          <div class="carousel-item">
+            <a href="https://video.wbdsta.net/ops/allocine/PrintempsDuCinema/PrintempsDuCinema_2.mp4"><img src="img/printemps_du_cinema_1920_1080.png" class="d-block w-100" alt="Affiche du Printemps du cinéma 2022"></a>
+          </div>
+          <div class="carousel-item">
+            <a href="https://www.allocine.fr/article/fichearticle_gen_carticle=18708133.html"><img src="img/box_office_carousel.png" class="d-block w-100" alt="Affiche du box office - film Batman 2022"></a>         
+          </div>
+          <div class="carousel-item">
+            <a href="https://www.allocine.fr/video/player_gen_cmedia=19586202&cfilm=248481.html?jwsource=cl"><img src="img/minions_carousel.png" class="d-block w-100" alt="Affiche du box office - film Batman 2022"></a>         
+          </div>
+          <!-- <div class="carousel-item">
+            <a href="evenements.php"><img src="img/cine_debat_carousel.png" class="d-block w-100" alt="Affiche evenement Ciné débat"></a>         
+          </div> -->
         </div>
-        <div class="carousel-item">
-          <a href="https://video.wbdsta.net/ops/allocine/PrintempsDuCinema/PrintempsDuCinema_2.mp4"><img src="img/printemps_du_cinema_1920_1080.png" class="d-block w-100" alt="Affiche du Printemps du cinéma 2022"></a>
-        </div>
-        <div class="carousel-item">
-          <a href="https://www.allocine.fr/article/fichearticle_gen_carticle=18708133.html"><img src="img/box_office_carousel.png" class="d-block w-100" alt="Affiche du box office - film Batman 2022"></a>         
-        </div>
-        <div class="carousel-item">
-          <a href="https://www.allocine.fr/video/player_gen_cmedia=19586202&cfilm=248481.html?jwsource=cl"><img src="img/minions_carousel.png" class="d-block w-100" alt="Affiche du box office - film Batman 2022"></a>         
-        </div>
-        <!-- <div class="carousel-item">
-          <a href="evenements.php"><img src="img/cine_debat_carousel.png" class="d-block w-100" alt="Affiche evenement Ciné débat"></a>         
-        </div> -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-    <!-- fin carousel -->
+      <!-- fin carousel -->
   </div>
   <!-- fin container du carousel -->
 </header>
@@ -121,7 +121,8 @@ $requete = $pdoMJC->query( " SELECT * FROM films WHERE categorie = 'Films à l\'
                   <div class="card-body" >
                     <h5 class="card-title">"<?php echo $ligne['titre']; ?>"</h5>
                     <p class="card-text" >"<?php echo $ligne['description']; ?>" .</p>
-                    <a href="<?php echo $ligne['bande_annonce']; ?>" class="btn btn-light" style="color: rgba(17,13,44,1);">Voir la bande d'annonce</a>
+                    <a href="<?php echo $ligne['fiche_film']; ?>" class="btn btn-primary style="color: rgba(17,13,44,1);"">Fiche du film</a>
+                    <a href="<?php echo $ligne['bande_annonce']; ?>" class="btn btn-primary">Bande-annonce</a>
                   </div>
                   <!-- fin div card-body -->
                 </div>
@@ -139,13 +140,14 @@ $requete = $pdoMJC->query( " SELECT * FROM films WHERE categorie = 'Films à l\'
 
     <section class="baniere bouton battement">
       <div class="col text-center">
-        <div class="card card-cover h-100 overflow-hidden rounded-5 shadow-lg" style="background-color: rgba(17,13,44,1); color: rgba(224,228,239,1);">
-          <div class="d-flex flex-column h-100 p-5 p-3 text-white text-shadow-1">
-            <h2 class="lh-1 fw-light text-center mb-4"><a href="infos_pratiques.php">RESERVATIONS DIRECTEMENT AU GUICHET. CLIQUER ICI POUR VOIR NOS TARIFS.</a></h2>
-            <h3 class="lh-1 fw-light text-center"><a href="programme.php">Par ici le programme !</a></h3>
+        <div class="card card-cover overflow-hidden rounded-5 shadow-lg" style="color: rgba(224,228,239,1);">
+          <div class="d-flex flex-column p-5 p-3 text-white text-shadow-1">
+            <h2 class="lh-1 fw-light text-center mb-4">Réservations directement au guichet</a></h2>
+            <h2 class="lh-1 fw-light text-center mb-4"><a href="infos_pratiques.php">Cliquer ici pour voir nos tarifs !</a></h2>
+            <h3 class="lh-1 fw-light text-center"><a href="programme.php">Pour voir le programme complet, c'est par ici !</a></h3>
           <div>
-          </div>
         </div>
+      </div>
     <!-- </section> -->
   </main>
   <!-- fin container  -->

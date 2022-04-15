@@ -120,7 +120,7 @@ if ( !isset($_POST['nom']) || strlen($_POST['nom']) < 5|| strlen($_POST['nom']) 
       <h3><?php echo $contenu; ?>Que pouvons-nous faire pour vous ?</h3>
       <h4 class="fw-light">Dites-nous tout en quelques mots !</h4>
       <div class="col-lg-8 col-md-6 mx-auto p-4" >
-        <form action="" method="POST" class="form-control" class="border border-primary">
+        <form action="" method="POST" class="form-control" class="border border-dark">
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Votre prenom</label>
             <input name="prenom" type="text" class="form-control" id="prenom" placeholder="Votre prenom">        

@@ -43,6 +43,7 @@ if (!empty($_POST)) {
     $_POST['pays'] = htmlspecialchars($_POST['pays']);
     $_POST['description'] = htmlspecialchars($_POST['description']);
     $_POST['bande_annonce'] = htmlspecialchars($_POST['bande_annonce']);
+    $_POST['fiche_film'] = htmlspecialchars($_POST['fiche_film']);
     // $_FILES['photo'] = htmlspecialchars($_POST['photo']);
 
     // debug($_FILES);
@@ -54,7 +55,7 @@ if (!empty($_POST)) {
         copy($_FILES['photo']['tmp_name'], '../' .$photo_bdd);
     }//fin du traitement photo
 
-    $requete =  executeRequete( " INSERT INTO films (categorie, titre, realisateur, acteurs, pays, description, photo, bande_annonce) VALUES ( :categorie, :titre, :realisateur, :acteurs, :pays, :description, :photo, :bande_annonce) ",
+    $requete =  executeRequete( " INSERT INTO films (categorie, titre, realisateur, acteurs, pays, description, photo, bande_annonce, fiche_film) VALUES ( :categorie, :titre, :realisateur, :acteurs, :pays, :description, :photo, :bande_annonce, :fiche_film) ",
     array(
         ':categorie' => $_POST['categorie'],
         ':titre' => $_POST['titre'],
@@ -64,6 +65,7 @@ if (!empty($_POST)) {
         ':description' => $_POST['description'],
         ':photo' => $photo_bdd,
         ':bande_annonce' => $_POST['bande_annonce'],
+        ':fiche_film' => $_POST['fiche_film'],
     ));
 
     if ($requete) {
@@ -85,9 +87,9 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
     ));
   
     if ($resultat->rowCount() == 0) {
-      $contenu02 .= '<div class="alert alert-danger"> Erreur de suppression</div>';
+      $contenu02 .= '<div class="alert alert-danger"> Erreur de suppression !</div>';
     } else {
-      $contenu02 .= '<div class="alert alert-success"> Film supprimé</div>';
+      $contenu02 .= '<div class="alert alert-success"> Film supprimé !</div>';
     }
   }
 ?>
@@ -164,6 +166,10 @@ if (isset($_GET['action']) && $_GET['action'] == 'supprimer' && isset($_GET['id_
                                 <input type="text" name="bande_annonce" id="bande_annonce" value="<?php echo $_POST['bande_annonce']?? '' ;?>" class="form-control">
                             </div>
 
+                            <div class="mb-3">
+                                <label for="fiche_film" class="form-label">Fiche du film</label>
+                                <input type="text" name="fiche_film" id="fiche_film" value="<?php echo $_POST['fiche_film']?? '' ;?>" class="form-control">
+                            </div>
 
                             <button type="submit" class="btn btn-primary position-relative">Ajouter le nouveau film</button> 
                         </form>

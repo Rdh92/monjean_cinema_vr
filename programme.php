@@ -3,13 +3,6 @@
 
     // (CONNEXION AU FICHIER INIT dans le dossier INC)
     require_once 'inc/init.inc.php';
-
-
-    $requete = $pdoMJC->query( " SELECT * FROM films WHERE categorie = 'Films à l\'affiche' " );
-        //debug($requete);
-        // $nbr_films = $requete->rowCount();
-        // debug($nbr_films); 
-    //debug($ligne);
 ?>
 
 <!DOCTYPE html>
@@ -56,8 +49,8 @@
   
     <header class="container-fluid f-header p-2 mb-4 col-12 text-center">
         <div class="p-4 m-4 text-center">
-           <h1>Programme</h1>
-           <h2 class="lead">Pas de réservation en ligne; uniquement en guichet</h2>
+           <h1 class="lead">Programme</h1>
+           <h2><a href="infos_pratiques.php"></a>Réservations uniquement au guichet !</h2>
         </div>
     </header>
     <!-- fin container-fluid header -->
@@ -67,45 +60,48 @@
     <!--                CONTAINER : contenu principal           --> 
     <!-- ====================================================== -->
   <main class="container-fluid text-center">
-    <!-- DEBUT SECTION : A L AFFICHE -->
+
+    <!-- DEBUT SECTION : A L'AFFICHE -->
+    <?php
+        $requete = $pdoMJC->query( " SELECT * FROM films WHERE categorie = 'Films à l\'affiche' " );
+        //debug($requete);
+        //$nbr_films = $requete->rowCount();
+        //debug($nbr_films); 
+    ?>
     <section class="py-5 text-center">
         <h2 class="fw-light">A l'affiche</h2>
-        <div class="album py-5 bg-light">
-            <div class="galerie justify-content-evenly">
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
-                    <?php while ( $ligne = $requete->fetch( PDO::FETCH_ASSOC )) {
-                        
-                    ?>
-                    
-                    <div class="col-md-3"> 
-                            <div class="card shadow-sm m-4">
-                                <img src="<?php echo $ligne['photo']; ?>" class="figure-img img-fluid rounded img-admin">
-                                <div class="card-body">
-                                    <h5 class="card-title">"<?php echo $ligne['titre']; ?>" </h5>
-                                    <p class="h6">"<?php echo $ligne['description']; ?>" .</p>
-                                    <a href="<?php echo $ligne['bande_annonce']; ?>" class="btn btn-primary">Bande-annonce</a>
-                                </div>
-                            </div>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+                <?php
+                    while ( $ligne = $requete->fetch( PDO::FETCH_ASSOC )) {        
+                ?>                 
+                <div class="col-md-3"> 
+                    <div class="card shadow-sm m-4">
+                        <img src="<?php echo $ligne['photo']; ?>" class="figure-img img-fluid rounded img-admin">
+                        <div class="card-body">
+                            <h5 class="card-title">"<?php echo $ligne['titre']; ?>" </h5>
+                            <p class="h6">"<?php echo $ligne['description']; ?>" .</p>
+                            <a href="<?php echo $ligne['bande_annonce']; ?>" class="btn btn-primary">Bande-annonce</a>
                         </div>
-                 <?php  } ?>
-    </section>            
+                    </div>
+                </div>
+                <?php  } ?>
+            </div>
 
     <!-- DEBUT SECTION : A VENIR -->
     <?php
-
-    $newRequete = $pdoMJC->query( " SELECT * FROM films WHERE categorie = 'Films à venir' " );
-
+        $newRequete = $pdoMJC->query( " SELECT * FROM films WHERE categorie = 'Films à venir' " );
+        //debug($newrequete);
+        //$nbr_films = $newrequete->rowCount();
+        //debug($nbr_films); 
     ?>
     <section class="py-5 text-center">
         <h2 class="fw-light">A venir</h2>
         <div class="album  py-5 bg-light">
             <div class="galerie justify-content-evenly">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
-
-                    <?php while ( $ligne2 = $newRequete->fetch( PDO::FETCH_ASSOC )) {
-                        
-                    ?>
-                    
+                    <?php
+                        while ( $ligne2 = $newRequete->fetch( PDO::FETCH_ASSOC )) {                    
+                    ?>                  
                     <div class="col-md-3"> 
                             <div class="card shadow-sm m-4" style="width: 20rem;">
                                 <img src="<?php echo $ligne2['photo']; ?>" class="figure-img img-fluid rounded img-admin">
@@ -117,9 +113,7 @@
                             </div>
                         </div>
                  <?php  } ?>
-                    <!-- fin col -->
-                    
-                    
+                    <!-- fin col -->                  
             </div>
            <!--  fin div galerie container -->
         </div>

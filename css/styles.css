@@ -46,10 +46,11 @@ footer {
     font-family: 'Michroma', sans-serif;
 }
 
-/* styles pour les nav */
-/* a:link {
+/* styles pour les liens */ */
+
+a:link {
     text-decoration: none;
-} */
+}
 
 .nav-link {
     font-size: 0.9em;
@@ -71,7 +72,7 @@ footer {
 
  @keyframes battement {
     from {
-        box-shadow: 0 0 5px -15px rgba(17,13,44,1), 0 0 5px -5px rgba(17,13,44,0);
+        box-shadow: 0 0 5px -15px rgba(224,228,239,1), 0 0 5px -5px rgba(17,13,44,0);
     }
 
     to {

@@ -39,6 +39,7 @@ $_POST['realisateur'] = htmlspecialchars($_POST['realisateur']);
 $_POST['acteurs'] = htmlspecialchars($_POST['acteurs']);
 $_POST['pays'] = htmlspecialchars($_POST['pays']);
 $_POST['bande_annonce'] = htmlspecialchars($_POST['bande_annonce']);
+$_POST['fiche_film'] = htmlspecialchars($_POST['fiche_film']);
 
 // traitement du fichier image, de la photo
 
@@ -48,7 +49,7 @@ if (!empty($_FILES['photo']['name'])) {
     copy($_FILES['photo']['tmp_name'], '../' .$photo_bdd);
 }//fin du traitement photo
 
-$resultat = $pdoMJC->prepare( " UPDATE films SET  categorie = :categorie, titre = :titre, description = :description, realisateur = :realisateur, acteurs = :acteurs, pays = :pays, photo = :photo, bande_annonce = :bande_annonce WHERE id_film = :id_film " );// requete préparée avec des marqueurs
+$resultat = $pdoMJC->prepare( " UPDATE films SET  categorie = :categorie, titre = :titre, description = :description, realisateur = :realisateur, acteurs = :acteurs, pays = :pays, photo = :photo, bande_annonce = :bande_annonce, fiche_film = :fiche_film WHERE id_film = :id_film " );// requete préparée avec des marqueurs
 
 $resultat->execute( array(
   ':categorie' => $_POST['categorie'],
@@ -60,6 +61,7 @@ $resultat->execute( array(
   ':pays' => $_POST['pays'],
   ':photo' => $photo_bdd,
   ':bande_annonce' => $_POST['bande_annonce'],
+  ':fiche_film' => $_POST['fiche_film'],
 
 ));
 header('location:../profil.php');
@@ -121,7 +123,7 @@ exit();
                     <td>Réalisateurs : <?php echo $fiche['realisateur']; ?></td>
                     <td>Acteurs : <?php echo $fiche['acteurs']; ?></td>
                     <td>Bande-annonce : <?php echo $fiche['bande_annonce']; ?></td>
-                    
+                    <td>Fiche du film<?php echo $fiche['fiche_film']; ?></td>                 
                 </tr>
                 <!-- fermeture de la boucle -->
             </table>
@@ -177,9 +179,15 @@ exit();
                         <input type="file" name="photo" id="photo" value="<?php echo $_FILES['photo']['name']?? '' ;?>" class="form-control">
                     </div>
 
-                    <label for="bande_annonce" class="form-label">Bande-annonce (URL)</label>
-                    <textarea name="bande_annonce" id="bande_annonce" cols="30" rows="3" class="form-control"><?php echo $fiche['bande_annonce']; ?></textarea>
+                    <div class="mb-3">
+                      <label for="bande_annonce" class="form-label">Bande-annonce (URL)</label>
+                      <textarea name="bande_annonce" id="bande_annonce" cols="30" rows="3" class="form-control"><?php echo $fiche['bande_annonce']; ?></textarea>
+                    </div>
 
+                    <div class="mb-3">
+                      <label for="fiche_film" class="form-label">Fiche du film</label>
+                      <textarea name="fiche_film" id="fiche_film" cols="30" rows="3" class="form-control"><?php echo $fiche['fiche_film']; ?></textarea>
+                    </div>
 
                     <button class="btn btn-outline-success" type="submit">Mise à jour</button>
 
